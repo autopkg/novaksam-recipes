@@ -3,7 +3,7 @@
     <is_smart>true</is_smart>
     <criteria>
         <criterion>
-            <name>%EXTENSION_NAME%</name>
+            <name>ShockwaveVersion</name>
             <priority>0</priority>
             <and_or>and</and_or>
             <search_type>is not</search_type>
@@ -18,3 +18,4 @@
         </criterion>
     </criteria>
 </computer_group>
+

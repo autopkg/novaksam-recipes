@@ -1,15 +1,15 @@
 <computer_extension_attribute>
-    <name>ShockwaveVersion</name>
-    <description />
-    <data_type>String</data_type>
+    <name>%EXTENSION_NAME%</name>
+    <description>%EXTENSION_DESCRIPTION%</description>
+    <data_type>%EXTENSION_DATA_TYPE%</data_type>
     <input_type>
         <type>script</type>
         <platform>Mac</platform>
         <script>#!/bin/bash
 
-ShockwaveVersion=$(defaults read /Library/Internet\ Plug-Ins/DirectorShockwave.plugin/Contents/Info.plist CFBundleShortVersionString)
+ExtensionVersion=$(defaults read %EXTENSION_PATH%/Info.plist %EXTENSION_PARAMETER%)
 
-echo "&lt;result&gt;$ShockwaveVersion&lt;/result&gt;"
+echo "&lt;result&gt;$ExtensionVersion&lt;/result&gt;"
 
 exit 0</script>
     </input_type>
