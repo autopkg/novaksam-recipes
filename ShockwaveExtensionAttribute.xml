@@ -1,0 +1,30 @@
+<computer_extension_attribute>
+    <name>SilverlightVersion</name>
+    <description />
+    <data_type>String</data_type>
+    <input_type>
+        <type>script</type>
+        <platform>Mac</platform>
+        <script>#!/bin/bash
+
+PLUGINPATH="/Library/Internet Plug-Ins/DirectorShockwave.plugin"
+
+# Plugin version
+S_VERSION=$( /usr/bin/defaults read "${PLUGINPATH}/Contents/Info" CFBundleShortVersionString 2>/dev/null )
+
+if [[ -e "${PLUGINPATH}" ]]; then
+    if [[ "${S_VERSION}" != "" ]]; then
+        EA_RESULT="${S_VERSION}"
+    fi
+else
+    EA_RESULT="Not installed"
+fi
+
+echo "&lt;result&gt;$SilverlightVersion&lt;/result&gt;"
+
+exit 0
+        </script>
+    </input_type>
+    <inventory_display>Extension Attributes</inventory_display>
+    <recon_display>Extension Attributes</recon_display>
+</computer_extension_attribute>
