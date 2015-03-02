@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+# Deleting the old copy
+if [ -d "/Applications/Microsoft Remote Desktop.app" ]; then
+	cd /Applications/
+	rm -fr Microsoft\ Remote\ Desktop.app
+fi
+
+exit 0

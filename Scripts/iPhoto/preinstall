@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+# Deleting the old copy
+if [ -d "/Applications/iPhoto.app" ]; then
+	cd /Applications/
+	rm -fr iPhoto.app
+fi
+
+exit 0

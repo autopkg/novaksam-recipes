@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+# Deleting the old copy
+if [ -d "/Applications/Motion 5" ]; then
+	cd /Applications/Motion\ 5
+	rm -fr Motion.app
+fi
+
+exit 0

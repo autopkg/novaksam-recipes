@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+# Deleting the old copy
+if [ -d "/Applications/Final Cut Pro X" ]; then
+	cd /Applications/Final\ Cut\ Pro\ X
+	rm -fr Final\ Cut\ Pro.app
+fi
+
+exit 0

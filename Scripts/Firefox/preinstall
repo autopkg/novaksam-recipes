@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+# Deleting the old copy
+if [ -d "/Applications/Firefox.app" ]; then
+	cd /Applications/
+	rm -fr Firefox.app
+fi
+
+exit 0
