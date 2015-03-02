@@ -3,19 +3,19 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Downloads Adobe Shockwave Player installer and extracts the embedded package, uploads to JSS.</string>
+        <string>Downloads Adobe AIR installer and extracts the embedded package, uploads to JSS.</string>
         <key>Identifier</key>
-        <string>com.github.novaksam.AdobeShockwavePlayer.jss</string>
+        <string>com.github.novaksam.AdobeAIR.jss</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>Adobe Shockwave Player</string>
+            <string>Adobe AIR</string>
             <key>CATEGORY</key>
             <string>Plugins and Frameworks</string>
             <key>POLICY_CATEGORY</key>
             <string>Third Party Applications</string>
             <key>POLICY_TEMPLATE</key>
-            <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+            <string>%RECIPE_DIR%/Templates/PolicyTemplate.xml</string>
             <key>POLICY_CHECKIN</key>
             <string>false</string>
             <key>POLICY_ENROLLMENT</key>
@@ -29,13 +29,13 @@
             <key>POLICY_STARTUP</key>
             <string>false</string>
             <key>POLICY_TRIGGER</key>
-            <string>Install_Shockwave</string>
+            <string>Install_AIR</string>
             <key>GROUP_NAME</key>
-            <string>Outdated Shockwave - Test</string>
+            <string>Outdated AIR - Test</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/SmartGroupTemplate-Extension.xml</string>
+            <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Extension.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/Shockwave.png</string>
+            <string>%RECIPE_DIR%/Images/Shockwave.png</string>
             <key>EXTENSION_NAME</key>
             <string>Shockwave Version - test</string>
             <key>EXTENSION_PATH</key>
@@ -45,7 +45,7 @@
             <key>EXTENSION_DATA_TYPE</key>
             <string>string</string>
             <key>EXTENSION_TEMPLATE</key>
-            <string>%RECIPE_DIR%/ExtensionAttributeTemplate.xml</string>
+            <string>%RECIPE_DIR%/Templates/ExtensionAttributeTemplate.xml</string>
             <key>EXTENSION_DESCRIPTION</key>
             <string>Returns the installed version of Adobe Shockwave.</string>
         </dict>

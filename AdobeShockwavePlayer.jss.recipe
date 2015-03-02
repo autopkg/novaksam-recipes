@@ -15,7 +15,7 @@
             <key>POLICY_CATEGORY</key>
             <string>Third Party Applications</string>
             <key>POLICY_TEMPLATE</key>
-            <string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+            <string>%RECIPE_DIR%/Templates/PolicyTemplate.xml</string>
             <key>POLICY_CHECKIN</key>
             <string>false</string>
             <key>POLICY_ENROLLMENT</key>
@@ -33,9 +33,9 @@
             <key>GROUP_NAME</key>
             <string>Outdated Shockwave - Test</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/SmartGroupTemplate-Extension.xml</string>
+            <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Extension.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/Shockwave.png</string>
+            <string>%RECIPE_DIR%/Images/Shockwave.png</string>
             <key>EXTENSION_NAME</key>
             <string>Shockwave Version - test</string>
             <key>EXTENSION_PATH</key>
@@ -45,7 +45,7 @@
             <key>EXTENSION_DATA_TYPE</key>
             <string>string</string>
             <key>EXTENSION_TEMPLATE</key>
-            <string>%RECIPE_DIR%/ExtensionAttributeTemplate.xml</string>
+            <string>%RECIPE_DIR%/Templates/ExtensionAttributeTemplate.xml</string>
             <key>EXTENSION_DESCRIPTION</key>
             <string>Returns the installed version of Adobe Shockwave.</string>
         </dict>
