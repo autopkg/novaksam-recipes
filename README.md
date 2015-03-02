@@ -6,3 +6,4 @@ The recipes must be kept in the root folder so that it can correctly access temp
 
 Requires the following repos:
     scriptingosx
+    golbiga
