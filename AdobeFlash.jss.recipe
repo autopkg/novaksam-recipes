@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Downloads Adobe Flash Player installer and extracts the embedded package, uploads to JSS.</string>
         <key>Identifier</key>
-        <string>com.github.novaksam.AdobeFlashPlayer.jss</string>
+        <string>com.github.novaksam.jss.AdobeFlashPlayer</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
