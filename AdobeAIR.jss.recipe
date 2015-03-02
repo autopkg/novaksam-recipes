@@ -35,9 +35,9 @@
             <key>GROUP_TEMPLATE</key>
             <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Extension.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/Images/Shockwave.png</string>
+            <string>%RECIPE_DIR%/Images/AdobeAIR.png</string>
             <key>EXTENSION_NAME</key>
-            <string>Shockwave Version - test</string>
+            <string>Adobe AIR Version - test</string>
             <key>EXTENSION_PATH</key>
             <string>/Library/Frameworks/Adobe\ AIR.framework/Versions/Current/Resources</string>
             <key>EXTENSION_PARAMETER</key>
