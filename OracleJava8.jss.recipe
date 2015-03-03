@@ -3,9 +3,9 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Downloads Oracle Java 7 installer and extracts the embedded package, uploads to JSS.</string>
+        <string>Downloads Oracle Java 8 installer and extracts the embedded package, uploads to JSS.</string>
         <key>Identifier</key>
-        <string>com.github.novaksam.jss.OracleJava7</string>
+        <string>com.github.novaksam.jss.OracleJava8</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
@@ -15,13 +15,13 @@
             <key>POLICY_TEMPLATE</key>
             <string>%RECIPE_DIR%/Templates/PolicyTemplate.xml</string>
             <key>POLICY_TRIGGER</key>
-            <string>Install_Java7</string>
+            <string>Install_Java8</string>
             <key>GROUP_NAME</key>
-            <string>Outdated Java7 - Test</string>
+            <string>Outdated Java8 - Test</string>
             <key>GROUP_TEMPLATE</key>
             <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Extension.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/Images/OracleJava7.png</string>
+            <string>%RECIPE_DIR%/Images/OracleJava8.png</string>
             <key>EXTENSION_PATH</key>
             <string>/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents</string>
             <key>EXTENSION_TEMPLATE</key>
@@ -30,7 +30,7 @@
         <key>MinimumVersion</key>
         <string>0.4.0</string>
         <key>ParentRecipe</key>
-        <string>com.github.autopkg.pkg.OracleJava7</string>
+        <string>com.github.autopkg.pkg.OracleJava8</string>
         <key>Process</key>
         <array>
             <dict>
