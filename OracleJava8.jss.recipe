@@ -33,6 +33,15 @@
         <string>com.github.autopkg.pkg.OracleJava8</string>
         <key>Process</key>
         <array>
+        	<dict>
+		    	<key>Processor</key>
+		        <string>Versioner</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>input_plist_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/unpack/root/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist</string>
+		        </dict>
+		   	</dict>
             <dict>
                 <key>Arguments</key>
                 <dict>

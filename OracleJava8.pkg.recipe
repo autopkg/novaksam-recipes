@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Oracle Java 8 and creates a package.</string>
+	<key>Identifier</key>
+	<string>com.github.novaksam.pkg.OracleJava8</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Oracle Java 8</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.pkg.OracleJava8</string>
+	<key>Process</key>
+	<array>
+			<dict>
+		    	<key>Processor</key>
+		        <string>Versioner</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>input_plist_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/unpack/root/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist</string>
+		        </dict>
+		   	</dict>
+			<dict>
+		    	<key>Processor</key>
+		        <string>FileMover</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>source</key>
+		        	<string>%pkg_path%</string>
+		        	<key>target</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
+		        </dict>
+		   	</dict>
+			<dict>
+		    	<key>Processor</key>
+		        <string>PkgCopier</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>source_pkg</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
+		        	<key>pkg_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+		        </dict>
+		   	</dict>
+	</array>
+</dict>
+</plist>
