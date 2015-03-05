@@ -19,7 +19,7 @@ I just wanted to tweak it a little and get the version number on the installer.
         <string>11</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.4.0</string>
     <key>ParentRecipe</key>
     <string>com.github.autopkg.download.AdobeReader</string>
     <key>Process</key>
