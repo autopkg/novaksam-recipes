@@ -24,8 +24,6 @@
             <string>%RECIPE_DIR%/Images/MicrosoftRemoteDesktop.png</string>
 			<key>PATH</key>
 			<string>/Applications/%NAME%.app</string>
-			<key>scripts</key>
-			<string>Scripts/MSRemote</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
