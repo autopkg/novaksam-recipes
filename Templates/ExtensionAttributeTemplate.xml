@@ -10,7 +10,7 @@
 ExtensionVersion=""
 ExtensionVersion=$(defaults read %EXTENSION_PATH%/Info.plist CFBundleShortVersionString)
 
-if [ $ExtensionVersion == "" ]
+if [ "$ExtensionVersion" == "" ]
     then
         ExtensionVersion=$(defaults read %EXTENSION_PATH%/Info.plist CFBundleVersion)
 fi
