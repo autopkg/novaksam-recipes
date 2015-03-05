@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Renames the MSLync installer to show the version number.</string>
+    <key>Identifier</key>
+    <string>com.github.novaksam.pkg.MicrosoftLync</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Microsoft Lync</string>
+        <key>VERSION</key>
+        <string>latest</string>
+        <key>CULTURE_CODE</key>
+        <string>0409</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.arubdesu.pkg.LyncInstaller</string>
+    <key>Process</key>
+    <array>
+    		<dict>
+		    	<key>Processor</key>
+		        <string>FileFinder</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>pattern</key>
+		        	<string>%RECIPE_CACHE_DIR%/*.pkg</string>
+		        </dict>
+		   	</dict>
+			<dict>
+		    	<key>Processor</key>
+		        <string>FileMover</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>source</key>
+		        	<string>%found_filename%</string>
+		        	<key>target</key>
+		        	<string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+		        </dict>
+		   	</dict>
+		   	<dict>
+		    	<key>Processor</key>
+		        <string>FlatPkgUnpacker</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>flat_pkg_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+		        	<key>destination_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+		        </dict>
+		   	</dict>
+    		<dict>
+		    	<key>Processor</key>
+		        <string>FileFinder</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>pattern</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Lync*_all_lync_*.pkg</string>
+		        </dict>
+		   	</dict>
+		   	<dict>
+		    	<key>Processor</key>
+		        <string>PkgPayloadUnpacker</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>pkg_payload_path</key>
+		        	<string>%found_filename%/Payload</string>
+		        	<key>destination_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
+		        </dict>
+		   	</dict>
+		   	<dict>
+		    	<key>Processor</key>
+		        <string>Versioner</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>input_plist_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Applications/Microsoft Lync.app/Contents/Info.plist</string>
+		        </dict>
+		   	</dict>
+		   	<dict>
+		    	<key>Processor</key>
+		        <string>FileMover</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>source</key>
+		        	<string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+		        	<key>target</key>
+		        	<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+		        </dict>
+		   	</dict>
+    </array>
+</dict>
+</plist>
