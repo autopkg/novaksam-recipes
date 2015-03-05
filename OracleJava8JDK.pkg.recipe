@@ -41,11 +41,20 @@
 		   	</dict>
 		   	<dict>
 		    	<key>Processor</key>
+		        <string>FileFinder</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>pattern</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/jdk*.pkg</string>
+		        </dict>
+		   	</dict>
+		   	<dict>
+		    	<key>Processor</key>
 		        <string>PkgPayloadUnpacker</string>
 		        <key>Arguments</key>
 		        <dict>
 		        	<key>pkg_payload_path</key>
-		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/javaappletplugin.pkg/Payload</string>
+		        	<string>%found_filename%/Payload</string>
 		        	<key>destination_path</key>
 		        	<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
 		        </dict>
@@ -57,6 +66,8 @@
 		        <dict>
 		        	<key>input_plist_path</key>
 		        	<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Contents/Info.plist</string>
+		        	<key>plist_version_key</key>
+		        	<string>CFBundleVersion</string>
 		        </dict>
 		   	</dict>
 		   	<dict>

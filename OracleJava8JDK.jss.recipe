@@ -23,7 +23,7 @@
             <key>ICON</key>
             <string>%RECIPE_DIR%/Images/OracleJava8.png</string>
             <key>EXTENSION_PATH</key>
-            <string>/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents</string>
+            <string>/Library/Java/JavaVirtualMachines</string>
             <key>EXTENSION_TEMPLATE</key>
             <string>%RECIPE_DIR%/Templates/ExtensionAttributeTemplate.xml</string>
         </dict>
@@ -33,6 +33,17 @@
         <string>com.github.novaksam.pkg.OracleJava8JDK</string>
         <key>Process</key>
         <array>
+        	<dict>
+		    	<key>Processor</key>
+		        <string>Versioner</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>input_plist_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Contents/Info.plist</string>
+		        	<key>plist_version_key</key>
+		        	<string>CFBundleVersion</string>
+		        </dict>
+		   	</dict>
             <dict>
                 <key>Arguments</key>
                 <dict>
@@ -47,7 +58,7 @@
                     <key>self_service_icon</key>
                     <string>%ICON%</string>
                     <key>extension_path</key>
-                    <string>%EXTENSION_PATH%</string>
+                    <string>%EXTENSION_PATH%/jdk%version%.jdk/Contents</string>
                     <key>groups</key>
                     <array>
                         <dict>
