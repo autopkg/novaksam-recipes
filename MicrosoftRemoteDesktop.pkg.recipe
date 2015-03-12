@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Identifier</key>
+	<string>com.github.novaksam.pkg.MicrosoftRemoteDesktop</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Microsoft Remote Desktop</string>
+		<key>PATH</key>
+		<string>/Applications/%NAME%.app</string>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.nmcspadden.pkg.appstore</string>
+</dict>
+</plist>
