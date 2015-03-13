@@ -12,6 +12,8 @@
             <string>Motion</string>
             <key>CATEGORY</key>
             <string>Media</string>
+            <key>POLICY_CATEGORY</key>
+            <string>Third Party Updates</string>
             <key>PATH</key>
 			<string>/Applications/Motion 5/%NAME%.app</string>
             <key>POLICY_TEMPLATE</key>
@@ -38,6 +40,8 @@
                     <string>%NAME%</string>
                     <key>category</key>
                     <string>%CATEGORY%</string>
+                    <key>policy_category</key>
+                    <string>%POLICY_CATEGORY%</string>
                     <key>policy_template</key>
                     <string>%POLICY_TEMPLATE%</string>
                     <key>policy_trigger</key>

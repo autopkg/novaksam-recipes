@@ -11,7 +11,7 @@
     	<trigger_other>%POLICY_TRIGGER%</trigger_other>
         <frequency>Ongoing</frequency>
         <category>
-            <name>Third Party Applications</name>
+            <name>%POLICY_CATEGORY%</name>
         </category>
     </general>
 	<scope>

@@ -12,6 +12,8 @@
             <string>Final Cut Pro</string>
             <key>CATEGORY</key>
             <string>Media</string>
+            <key>POLICY_CATEGORY</key>
+            <string>Third Party Updates</string>
             <key>PATH</key>
 			<string>/Applications/Final Cut Pro X/%NAME%.app</string>
             <key>POLICY_TEMPLATE</key>

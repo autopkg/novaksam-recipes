@@ -12,6 +12,8 @@
 			<string>Compressor</string>
        		<key>CATEGORY</key>
 			<string>Media</string>
+			<key>POLICY_CATEGORY</key>
+            <string>Third Party Updates</string>
 			<key>PATH</key>
 			<string>/Applications/Compressor 4/%NAME%.app</string>
             <key>POLICY_TEMPLATE</key>

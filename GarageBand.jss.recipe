@@ -12,6 +12,8 @@
             <string>Garageband</string>
             <key>CATEGORY</key>
             <string>Media</string>
+            <key>POLICY_CATEGORY</key>
+            <string>Third Party Updates</string>
             <key>POLICY_TEMPLATE</key>
             <string>%RECIPE_DIR%/Templates/PolicyTemplate.xml</string>
             <key>POLICY_TRIGGER</key>
