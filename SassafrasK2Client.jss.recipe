@@ -50,6 +50,8 @@
                     <string>%POLICY_TRIGGER%</string>
                     <key>self_service_icon</key>
                     <string>%ICON%</string>
+                    <key>extension_path</key>
+                    <string>%EXTENSION_PATH%</string>
                     <key>groups</key>
                     <array>
                         <dict>
