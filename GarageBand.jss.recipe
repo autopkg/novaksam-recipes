@@ -46,6 +46,8 @@
                     <string>%POLICY_TRIGGER%</string>
                     <key>self_service_icon</key>
                     <string>%ICON%</string>
+                    <key>os_requirements</key>
+                    <string>10.9.x,10.10.x</string>
                     <key>groups</key>
                     <array>
                         <dict>
