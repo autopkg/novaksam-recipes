@@ -23,7 +23,7 @@
             <key>GROUP_NAME</key>
             <string>Outdated Final Cut Pro - Test</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Application.xml</string>
+            <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Application-Mav-Yose.xml</string>
             <key>ICON</key>
             <string>%RECIPE_DIR%/Images/FinalCutPro.png</string>
         </dict>

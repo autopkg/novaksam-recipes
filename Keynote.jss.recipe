@@ -21,7 +21,7 @@
             <key>GROUP_NAME</key>
             <string>Outdated Keynote - Test</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Application.xml</string>
+            <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Application-Yose.xml</string>
             <key>ICON</key>
             <string>%RECIPE_DIR%/Images/Keynote.png</string>
         </dict>
