@@ -27,7 +27,7 @@
             <key>EXTENSION_PATH</key>
             <string>/Library/Java/JavaVirtualMachines</string>
             <key>EXTENSION_TEMPLATE</key>
-            <string>%RECIPE_DIR%/Templates/ExtensionAttributeTemplate.xml</string>
+            <string>%RECIPE_DIR%/Templates/ExtensionAttributeTemplate-CFBundleVersion.xml</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
