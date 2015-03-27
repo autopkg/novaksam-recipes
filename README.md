@@ -9,7 +9,7 @@ Keys:
     Please note, case sensitivity.
     CATEGORY - The category the pkg will be uploaded into.
     EXTENSION_PATH - (Extension attributes only) The folder path pointing to the folder where Info.plist resides.
-    EXTENSION_TEMPLATE - The template file to use when creating the extension attribute.
+    EXTENSION_TEMPLATE - (Extension attributes only) The template file to use when creating the extension attribute.
     GROUP_NAME - The name of the group in JSS that will keep track of the software version.
     GROUP_TEMPLATE - The template file to use when creating the group.
     ICON - The path to the icon file to upload for self service.
@@ -26,16 +26,16 @@ I've made the template files pretty flexible too, so you can modify them how you
 
 Example:
 
-    You want a policy to run at checkin:
+    You want a policy to run at checkin.
     Duplicate PolicyTemplate.xml to MyPolicyTemplate.xml (or some other name) and open it
     Modify the line 
-    <trigger_checkin>false</trigger_checkin>
+        <trigger_checkin>false</trigger_checkin>
     to
-    <trigger_checkin>true</trigger_checkin>
+        <trigger_checkin>true</trigger_checkin>
     Now open the recipe/override you want to run at checkin and modify
-    <string>%RECIPE_DIR%/Templates/PolicyTemplate.xml</string>
+        <string>%RECIPE_DIR%/Templates/PolicyTemplate.xml</string>
     to
-    <string>%RECIPE_DIR%/Templates/MyPolicyTemplate.xml</string>
+        <string>%RECIPE_DIR%/Templates/MyPolicyTemplate.xml</string>
 
 There are some pieces of software that require Extension Attributes to keep track of software versions, and those recipes are constructed a slightly different way.
 
@@ -43,12 +43,12 @@ Example:
 
     You want to keep track of flash
     In the recipe/override modify the GROUP_TEMPLATE to use
-    <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Extension.xml</string>
+        <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Extension.xml</string>
     and add the following Keys/strings to the input section
-    <key>EXTENSION_PATH</key>
-    <string>/Library/Internet\ Plug-Ins/Flash\ Player.plugin/Contents</string>
-    <key>EXTENSION_TEMPLATE</key>
-    <string>%RECIPE_DIR%/Templates/ExtensionAttributeTemplate.xml</string>
+        <key>EXTENSION_PATH</key>
+        <string>/Library/Internet\ Plug-Ins/Flash\ Player.plugin/Contents</string>
+        <key>EXTENSION_TEMPLATE</key>
+        <string>%RECIPE_DIR%/Templates/ExtensionAttributeTemplate.xml</string>
     The EXTENSION_PATH key is used to give the path where the Info.plist file resides for a particular piece of software.
 
 There are some pieces of software that have minimum operating system requirements (iMovie, iPhoto, etc) so in the case of these recpies the GROUP_TEMPLATE string must be changed to the appropriate template.
@@ -57,9 +57,9 @@ Example:
 
     iMovie get updated and requires 10.10
     In the iMovie recipe, change 
-    %RECIPE_DIR%/Templates/SmartGroupTemplate-Application.xml
+        %RECIPE_DIR%/Templates/SmartGroupTemplate-Application.xml
     to
-    %RECIPE_DIR%/Templates/SmartGroupTemplate-Application-Yose.xml
+        %RECIPE_DIR%/Templates/SmartGroupTemplate-Application-Yose.xml
 
 There are also some extension atributes that are a pain to get because of the variable they use in the Info.plist file, so there is another EA template for this scenario.
 
