@@ -25,6 +25,7 @@ My recipes overall are pretty flexible, so you should be able to create override
 I've made the template files pretty flexible too, so you can modify them how you'd like to use them in your shop.
 
 Example:
+
     You want a policy to run at checkin:
     Duplicate PolicyTemplate.xml to MyPolicyTemplate.xml (or some other name) and open it
     Modify the line 
@@ -39,6 +40,7 @@ Example:
 There are some pieces of software that require Extension Attributes to keep track of software versions, and those recipes are constructed a slightly different way.
 
 Example:
+
     You want to keep track of flash
     In the recipe/override modify the GROUP_TEMPLATE to use
     <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Extension.xml</string>
@@ -52,7 +54,7 @@ Example:
 There are some pieces of software that have minimum operating system requirements (iMovie, iPhoto, etc) so in the case of these recpies the GROUP_TEMPLATE string must be changed to the appropriate template.
 
 Example:
-    
+
     iMovie get updated and requires 10.10
     In the iMovie recipe, change 
     %RECIPE_DIR%/Templates/SmartGroupTemplate-Application.xml
