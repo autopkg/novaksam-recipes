@@ -41,7 +41,7 @@ to
 
     <string>%RECIPE_DIR%/Templates/MyPolicyTemplate.xml</string>
 
-There are some pieces of software that require Extension Attributes to keep track of software versions, and those recipes are constructed a slightly different way.
+**There** are some pieces of software that require Extension Attributes to keep track of software versions, and those recipes are constructed a slightly different way.
 
 <h3>Example:</h3>
 
@@ -58,7 +58,7 @@ and add the following Keys/strings to the input section
 The EXTENSION_PATH key is used to give the path where the Info.plist file resides for a particular piece of software.
 
 
-There are some pieces of software that have minimum operating system requirements (iMovie, iPhoto, etc) so in the case of these recpies the GROUP_TEMPLATE string must be changed to the appropriate template.
+**There** are some pieces of software that have minimum operating system requirements (iMovie, iPhoto, etc) so in the case of these recpies the GROUP_TEMPLATE string must be changed to the appropriate template.
 
 <h3>Example:</h3>
 
@@ -70,7 +70,7 @@ to
 
     %RECIPE_DIR%/Templates/SmartGroupTemplate-Application-Yose.xml
 
-There are also some extension atributes that are a pain to get because of the variable they use in the Info.plist file, so there is another EA template for this scenario.
+**There** are also some extension atributes that are a pain to get because of the variable they use in the Info.plist file, so there is another EA template for this scenario.
 
 Github uses a funky CFBundleShortVersion string in their Info.plist file for version tracking
 to work around this, there is a specific template used to track the software that reads the CFBundleVersion string instead.
