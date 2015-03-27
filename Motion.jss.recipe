@@ -15,7 +15,7 @@
             <key>POLICY_CATEGORY</key>
             <string>Third Party Updates</string>
             <key>PATH</key>
-			<string>/Applications/Motion 5/%NAME%.app</string>
+			<string>/Applications/%NAME%.app</string>
             <key>POLICY_TEMPLATE</key>
             <string>%RECIPE_DIR%/Templates/PolicyTemplate.xml</string>
             <key>POLICY_TRIGGER</key>
