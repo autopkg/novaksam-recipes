@@ -97,9 +97,9 @@ nmcspadden: appstore
 
     Nmcspadden offers the appstore recipe, which is super useful when packaging appstore software. I use it multiple times.
 
-cgerke-recipes: GitHub, GoogleDrive, Wireshark
+cgerke-recipes: GoogleDrive, Wireshark
 
-    Cgerke-recipes offers a PKG for GitHub, GoogleDrive and Wireshark, which I would otherwise have to pull from at least 2 other repos.
+    Cgerke-recipes offers a PKG for GoogleDrive and Wireshark, which I would otherwise have to pull from at least 2 other repos.
 
 arubdesu: LyncInstaller
 
@@ -112,3 +112,7 @@ jazzace: processing
 justinrummel: VMwareFusion
 
     Justinrummel is the only repo currently offering a PKG of VMWareFusion
+
+kelleysam: Github
+    
+    Kelleysam offer both the download and pkg recipe for github.
