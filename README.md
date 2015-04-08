@@ -89,7 +89,7 @@ jleggat: AdobeShockwavePlayer
 
     Jleggat is the only repo currently offering Shockwave Player.
 
-scriptingosx: audacity, garageband, iMovie, iPhoto_, keynote_, Numbers_, Pages_, xcode_, XQuartz
+scriptingosx: audacity, Casper Suite, garageband, iMovie, iPhoto_, keynote_, Numbers_, Pages_, xcode_, XQuartz
     
     Scriptingosx offers a number of AppStore pieces of software, along with some additional pkg recipes that are only offered there (currently)
 
