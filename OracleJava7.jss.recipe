@@ -23,7 +23,7 @@
             <key>GROUP_TEMPLATE</key>
             <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Extension.xml</string>
             <key>ICON</key>
-            <string>%RECIPE_DIR%/Images/OracleJava7.png</string>
+            <string>%RECIPE_DIR%/Images/OracleJava8.png</string>
             <key>EXTENSION_PATH</key>
             <string>/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents</string>
             <key>EXTENSION_TEMPLATE</key>
@@ -35,6 +35,15 @@
         <string>com.github.autopkg.pkg.OracleJava7</string>
         <key>Process</key>
         <array>
+        	<dict>
+		    	<key>Processor</key>
+		        <string>Versioner</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>input_plist_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/unpack/root/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist</string>
+		        </dict>
+		   	</dict>
             <dict>
                 <key>Arguments</key>
                 <dict>
@@ -70,8 +79,6 @@
                             <string>%EXTENSION_TEMPLATE%</string>
                         </dict>
                     </array>
-                    <key>version</key>
-					<string>%version%</string>
                 </dict>
                 <key>Processor</key>
                 <string>JSSImporter</string>
