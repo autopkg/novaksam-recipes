@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads latest CUDA Toolkit and builds a package.</string>
+    <key>Identifier</key>
+    <string>com.github.novaksam.pkg.NvidiaCudaDriver</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Nvidia CUDA Driver</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.4.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.novaksam.download.NvidiaCudaToolkit</string>
+    <key>Process</key>
+    <array>
+		   	<dict>
+		    	<key>Processor</key>
+		        <string>FlatPkgUnpacker</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>flat_pkg_path</key>
+		        	<string>%pathname%</string>
+		        	<key>destination_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+		        </dict>
+		   	</dict>
+			<dict>
+		    	<key>Processor</key>
+		        <string>PkgPayloadUnpacker</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>pkg_payload_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/CUDAFramework.pkg/Payload</string>
+		        	<key>destination_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Framework</string>
+		        	<key>purge_destination</key>
+		        	<string>true</string>
+		        </dict>
+		   	</dict>
+		   	<dict>
+		    	<key>Processor</key>
+		        <string>Versioner</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>input_plist_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Framework/CUDA.framework/Versions/Current/Resources/Info.plist</string>
+		        </dict>
+		   	</dict>
+		   	<dict>
+		    	<key>Processor</key>
+		        <string>PathDeleter</string>
+		        <key>Comment</key>
+            	<string>Gotta clean up after myself!</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>path_list</key>
+		        	<array>
+		        		<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Framework</string>
+						<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/CUDAToolkit.pkg</string>
+						<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/CUDASamples.pkg</string>
+						<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Distribution</string>
+					</array>
+		        </dict>
+		   	</dict>
+			<dict>
+		    	<key>Processor</key>
+		        <string>Copier</string>
+		        <key>Comment</key>
+		        <string>I have a custom distribution file, so it'll only install the driver portions, none of the samples or toolkit.</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>source_path</key>
+		        	<string>%RECIPE_DIR%/Extras/NvidiaCUDADistributionDriver</string>
+		        	<key>destination_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Distribution</string>
+		        </dict>
+		   	</dict>
+		   	<dict>
+		    	<key>Processor</key>
+		        <string>FlatPkgPacker</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>source_flatpkg_dir</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+		        	<key>destination_pkg</key>
+		        	<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+		        </dict>
+		   	</dict>
+    </array>
+</dict>
+</plist>
