@@ -1,0 +1,22 @@
+<computer_extension_attribute>
+    <name>%PROD_NAME%</name>
+    <description>Returns the installed version of %PROD_NAME%</description>
+    <data_type>string</data_type>
+    <input_type>
+        <type>script</type>
+        <platform>Mac</platform>
+        <script>#!/bin/bash
+
+cd /Developer/NVIDIA/
+
+VERSION=$(find ./ -name "nvcc" -exec {} -V \; | grep compilation | cut -d ',' -f3)
+VERSION2=`echo ${VERSION:2}`
+
+
+echo "&lt;result&gt;$VERSION2&lt;/result&gt;"
+
+exit 0</script>
+    </input_type>
+    <inventory_display>Extension Attributes</inventory_display>
+    <recon_display>Extension Attributes</recon_display>
+</computer_extension_attribute>
