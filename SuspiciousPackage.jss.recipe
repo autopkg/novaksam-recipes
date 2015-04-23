@@ -61,6 +61,13 @@
                             <string>%GROUP_TEMPLATE%</string>
                         </dict>
                     </array>
+                    <key>extension_attributes</key>
+                    <array>
+                        <dict>
+                            <key>ext_attribute_path</key>
+                            <string>%EXTENSION_TEMPLATE%</string>
+                        </dict>
+                    </array>
                 </dict>
                 <key>Processor</key>
                 <string>JSSImporter</string>
