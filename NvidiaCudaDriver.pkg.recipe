@@ -14,16 +14,27 @@
     <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.novaksam.download.NvidiaCudaToolkit</string>
+    <string>com.github.novaksam.download.NvidiaCudaDriver</string>
     <key>Process</key>
     <array>
+		   	<dict>
+		    	<key>Processor</key>
+		        <string>PkgCopier</string>
+		        <key>Arguments</key>
+		        <dict>
+		        	<key>source_pkg</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/CUDADriver.pkg</string>
+		        	<key>pkg_path</key>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/CUDADriver.pkg</string>
+		        </dict>
+		   	</dict>
 		   	<dict>
 		    	<key>Processor</key>
 		        <string>FlatPkgUnpacker</string>
 		        <key>Arguments</key>
 		        <dict>
 		        	<key>flat_pkg_path</key>
-		        	<string>%pathname%</string>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/CUDADriver.pkg</string>
 		        	<key>destination_path</key>
 		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
 		        </dict>
@@ -50,55 +61,15 @@
 		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Framework/CUDA.framework/Versions/Current/Resources/Info.plist</string>
 		        </dict>
 		   	</dict>
-		   	<dict>
-		    	<key>Processor</key>
-		        <string>PathDeleter</string>
-		        <key>Comment</key>
-            	<string>Gotta clean up after myself!</string>
-		        <key>Arguments</key>
-		        <dict>
-		        	<key>path_list</key>
-		        	<array>
-		        		<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Framework</string>
-						<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/CUDAToolkit.pkg</string>
-						<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/CUDASamples.pkg</string>
-						<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Distribution</string>
-					</array>
-		        </dict>
-		   	</dict>
-			<dict>
-		    	<key>Processor</key>
-		        <string>Copier</string>
-		        <key>Comment</key>
-		        <string>I have a custom distribution file, so it'll only install the driver portions, none of the samples or toolkit.</string>
-		        <key>Arguments</key>
-		        <dict>
-		        	<key>source_path</key>
-		        	<string>%RECIPE_DIR%/Extras/NvidiaCUDADistributionDriver</string>
-		        	<key>destination_path</key>
-		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Distribution</string>
-		        </dict>
-		   	</dict>
-		   	<dict>
-		    	<key>Processor</key>
-		        <string>FlatPkgPacker</string>
-		        <key>Arguments</key>
-		        <dict>
-		        	<key>source_flatpkg_dir</key>
-		        	<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
-		        	<key>destination_pkg</key>
-		        	<string>%RECIPE_CACHE_DIR%/downloads/%NAME%-Driver.pkg</string>
-		        </dict>
-		   	</dict>
-		   	<dict>
+		   	  	<dict>
 		    	<key>Processor</key>
 		        <string>PkgCopier</string>
 		        <key>Arguments</key>
 		        <dict>
 		        	<key>source_pkg</key>
-		        	<string>%RECIPE_CACHE_DIR%/downloads/%NAME%-Driver.pkg</string>
+		        	<string>%RECIPE_CACHE_DIR%/downloads/CUDADriver.pkg</string>
 		        	<key>pkg_path</key>
-		        	<string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.pkg</string>
+		        	<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
 		        </dict>
 		   	</dict>
     </array>
