@@ -25,7 +25,7 @@
             <key>ICON</key>
             <string>%RECIPE_DIR%/Images/Nvidia.png</string>
             <key>EXTENSION_PATH</key>
-            <string>/Library/Frameworks/CUDA.framework/Versions/Current/Resources/Info.plist</string>
+            <string>/Library/Frameworks/CUDA.framework/Versions/Current/Resources</string>
             <key>EXTENSION_TEMPLATE</key>
             <string>%RECIPE_DIR%/Templates/ExtensionAttributeTemplate.xml</string>
         </dict>
