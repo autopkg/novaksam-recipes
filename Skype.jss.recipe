@@ -21,7 +21,7 @@
             <key>GROUP_NAME</key>
             <string>Outdated Skype - Test</string>
             <key>GROUP_TEMPLATE</key>
-            <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Application.xml</string>
+            <string>%RECIPE_DIR%/Templates/SmartGroupTemplate-Application-Mav-Yose.xml</string>
             <key>ICON</key>
             <string>%RECIPE_DIR%/Images/Skype.png</string>
         </dict>
@@ -46,6 +46,8 @@
                     <string>%POLICY_TRIGGER%</string>
                     <key>self_service_icon</key>
                     <string>%ICON%</string>
+                    <key>os_requirements</key>
+                    <string>10.10.x,10.9.x</string>
                     <key>groups</key>
                     <array>
                         <dict>
@@ -57,6 +59,8 @@
                             <string>%GROUP_TEMPLATE%</string>
                         </dict>
                     </array>
+                    <key>version</key>
+					<string>%version%</string>
                 </dict>
                 <key>Processor</key>
                 <string>JSSImporter</string>
