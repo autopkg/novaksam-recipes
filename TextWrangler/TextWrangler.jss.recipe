@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Text Wrangler</string>
+		<string>TextWrangler</string>
 		<key>CATEGORY</key>
 		<string>Media</string>
 		<key>POLICY_CATEGORY</key>
@@ -23,7 +23,7 @@
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Text Wrangler.png</string>
+		<string>TextWrangler.png</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Install the latest version of %NAME%.</string>
 	</dict>
