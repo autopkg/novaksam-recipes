@@ -21,7 +21,7 @@
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>SmartGroupTemplate.xml</string>
+		<string>Adobe ReaderSmartGroupTemplate.xml</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>Adobe Reader.png</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
