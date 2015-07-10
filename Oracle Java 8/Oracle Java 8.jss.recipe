@@ -26,6 +26,8 @@
 		<string>Oracle Java 8.png</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Install the latest version of %NAME%.</string>
+		<key>OS_REQUIREMENTS</key>
+        <string>10.11.x,10.10.x,10.9.x,10.8.x</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
@@ -60,7 +62,7 @@
 				<key>self_service_description</key>
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>os_requirements</key>
-				<string>10.10.x,10.9.x,10.8.x</string>
+				<string>%OS_REQUIREMENTS%</string>
 				<key>groups</key>
 				<array>
 					<dict>
