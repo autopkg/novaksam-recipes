@@ -13,15 +13,14 @@
             # Cut out the version number from the first three characters between '.'s
             # and return the first result (ex. 7.0.29)'
             VERSION=$(find /Developer/NVIDIA/ -name "cuda-gdb*.src.tar.gz" | cut -d '-' -f4 | sort -r | cut -d '.' -f1,2,3 | head -n 1)
-            VERSION2=`echo ${VERSION:2}`
             
-            if [ "$VERSION2" == "" ]
+            if [ "$VERSION" == "" ]
                 then
-                    VERSION2="Not Installed"
+                    VERSION="Not Installed"
             fi
             
             
-            echo "&lt;result&gt;$VERSION2&lt;/result&gt;"
+            echo "&lt;result&gt;$VERSION&lt;/result&gt;"
             
             exit 0</script>
     </input_type>
