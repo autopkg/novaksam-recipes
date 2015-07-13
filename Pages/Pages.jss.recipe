@@ -51,7 +51,7 @@
 				<key>self_service_description</key>
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>os_requirements</key>
-				<string>10.10.x</string>
+                <string>%OS_REQUIREMENTS%</string>
 				<key>groups</key>
 				<array>
 					<dict>
