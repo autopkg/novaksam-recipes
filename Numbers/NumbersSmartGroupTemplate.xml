@@ -30,5 +30,12 @@
             <search_type>like</search_type>
             <value>10.10</value>
         </criterion>
+        <criterion>
+            <name>Operating System</name>
+            <priority>4</priority>
+            <and_or>or</and_or>
+            <search_type>like</search_type>
+            <value>10.11</value>
+        </criterion>
     </criteria>
 </computer_group>
