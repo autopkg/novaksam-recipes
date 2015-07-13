@@ -8,24 +8,24 @@
 	<string>com.github.novaksam.jss.AdobeReader</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Adobe Reader</string>
 		<key>CATEGORY</key>
 		<string>Media</string>
+		<key>GROUP_NAME</key>
+		<string>%NAME%-update-smart</string>
+		<key>GROUP_TEMPLATE</key>
+		<string>Adobe ReaderSmartGroupTemplate.xml</string>
+		<key>NAME</key>
+		<string>Adobe Reader</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>POLICY_TRIGGER</key>
 		<string>Install_AdobeReader</string>
-		<key>GROUP_NAME</key>
-		<string>%NAME%-update-smart</string>
-		<key>GROUP_TEMPLATE</key>
-		<string>Adobe ReaderSmartGroupTemplate.xml</string>
-		<key>SELF_SERVICE_ICON</key>
-		<string>Adobe Reader.png</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Install the latest version of %NAME%.</string>
+		<key>SELF_SERVICE_ICON</key>
+		<string>Adobe Reader.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>

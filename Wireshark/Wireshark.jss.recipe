@@ -8,24 +8,24 @@
 	<string>com.github.novaksam.jss.Wireshark</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Wireshark</string>
 		<key>CATEGORY</key>
 		<string>Utilities</string>
+		<key>GROUP_NAME</key>
+		<string>%NAME%-update-smart</string>
+		<key>GROUP_TEMPLATE</key>
+		<string>SmartGroupTemplate.xml</string>
+		<key>NAME</key>
+		<string>Wireshark</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>POLICY_TRIGGER</key>
 		<string>Install_Wireshark</string>
-		<key>GROUP_NAME</key>
-		<string>%NAME%-update-smart</string>
-		<key>GROUP_TEMPLATE</key>
-		<string>SmartGroupTemplate.xml</string>
-		<key>SELF_SERVICE_ICON</key>
-		<string>Wireshark.png</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Install the latest version of %NAME%.</string>
+		<key>SELF_SERVICE_ICON</key>
+		<string>Wireshark.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
