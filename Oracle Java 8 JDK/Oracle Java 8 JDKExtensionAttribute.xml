@@ -20,7 +20,7 @@ fi
 
 if [ "$ExtensionVersion" == "" ]
     then
-        ExtensionVerision="Not Installed"
+        ExtensionVersion="Not Installed"
 fi
 
 echo "&lt;result&gt;$ExtensionVersion&lt;/result&gt;"
