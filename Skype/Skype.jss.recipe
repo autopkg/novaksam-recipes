@@ -65,6 +65,13 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
+				<key>extension_attributes</key>
+				<array>
+					<dict>
+						<key>ext_attribute_path</key>
+						<string>SkypeExtensionAttribute.xml</string>
+					</dict>
+				</array>
 				<key>version</key>
 				<string>%version%</string>
 			</dict>
