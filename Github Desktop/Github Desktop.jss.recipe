@@ -13,9 +13,9 @@
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>GithubSmartGroupTemplate.xml</string>
+		<string>GitHub DesktopSmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>GitHub</string>
+		<string>GitHub Desktop</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
@@ -25,7 +25,7 @@
 		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Install the latest version of %NAME%.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Github.png</string>
+		<string>Github Desktop.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
@@ -65,7 +65,7 @@
 				<array>
 					<dict>
 						<key>ext_attribute_path</key>
-						<string>GithubExtensionAttribute.xml</string>
+						<string>GitHub DesktopExtensionAttribute.xml</string>
 					</dict>
 				</array>
 			</dict>

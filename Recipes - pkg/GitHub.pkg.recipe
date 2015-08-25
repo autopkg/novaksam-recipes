@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>GitHub</string>
+        <string>GitHub Desktop</string>
     </dict>
     <key>ParentRecipe</key>
     <string>com.github.keeleysam.recipes.GitHub.download</string>
@@ -43,23 +43,12 @@
             </dict>
         </dict>
         <dict>
-        	<key>Processor</key>
-        	<string>FileMover</string>
-        	<key>Arguments</key>
-        	<dict>
-        		<key>source</key>
-        		<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/GitHub Desktop.app</string>
-        		<key>target</key>
-        		<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/GitHub.app</string>
-        	</dict>
-        </dict>
-        <dict>
             <key>Processor</key>
             <string>Versioner</string>
             <key>Arguments</key>
             <dict>
                 <key>input_plist_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/GitHub.app/Contents/Info.plist</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Contents/Info.plist</string>
                 <key>plist_version_key</key>
                 <string>CFBundleVersion</string>
             </dict>
