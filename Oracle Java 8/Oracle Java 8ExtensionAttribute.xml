@@ -8,7 +8,7 @@
         <script>#!/bin/bash
 
 ExtensionVersion=""
-ExtensionVersion=$(defaults read /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist CFBundleVersion
+ExtensionVersion=$(defaults read /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist CFBundleVersion)
 
 
 if [ "$ExtensionVersion" == "" ]
