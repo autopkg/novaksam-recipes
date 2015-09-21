@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads Nvidia CUDA installer and extracts the embedded package, uploads to JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jss.NvidiaCudaToolkit</string>
+	<string>com.github.novaksam.jss.NvidiaCudaToolkit_DEAD</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
