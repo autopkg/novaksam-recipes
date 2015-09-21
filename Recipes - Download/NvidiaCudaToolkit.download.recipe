@@ -13,19 +13,32 @@
         <key>SEARCH_URL</key>
         <string>https://developer.nvidia.com/cuda-downloads</string>
         <key>SEARCH_PATTERN</key>
-        <string>(http\://developer.download.nvidia.com/compute/cuda/[0-9]_[0-9]/Prod/local_installers/cuda_[0-9].[0-9].[0-9][0-9]_mac.pkg)</string>
+        <string>(http\://developer.download.nvidia.com/compute/cuda/[0-9].[0-9]/Prod/local_installers/cuda_[0-9].[0-9].[0-9][0-9]_mac.dmg)</string>
+        <key>SEARCH_PATTERN_2</key>
+        <string>(https\://developer.nvidia.com/sites/default/files/js/js_.+\.js)</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>Process</key>
     <array>
-        <dict>
+    	<dict>
             <key>Processor</key>
             <string>URLTextSearcher</string>
             <key>Arguments</key>
             <dict>
                 <key>url</key>
                 <string>%SEARCH_URL%</string>
+                <key>re_pattern</key>
+                <string>%SEARCH_PATTERN_2%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%match%</string>
                 <key>re_pattern</key>
                 <string>%SEARCH_PATTERN%</string>
             </dict>
@@ -38,7 +51,7 @@
                 <key>url</key>
                 <string>%match%</string>
                 <key>filename</key>
-                <string>%NAME%.pkg</string>
+                <string>%NAME%.dmg</string>
             </dict>
         </dict>
         <dict>
