@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# reset the FinderInfo section to the folder icon displays correctly
+cd /Applications/
+FOLDER=$(ls | grep EndNote)
+cd "$FOLDER"
+/usr/bin/xattr-2.6 -xw com.apple.FinderInfo '00 00 00 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00' .
