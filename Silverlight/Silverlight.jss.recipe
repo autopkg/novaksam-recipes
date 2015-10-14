@@ -30,7 +30,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.pkg.Silverlight</string>
+	<string>com.github.novaksam.pkg.Silverlight</string>
 	<key>Process</key>
 	<array>
 		<dict>
