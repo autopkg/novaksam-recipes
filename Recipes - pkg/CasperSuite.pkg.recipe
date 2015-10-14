@@ -16,6 +16,8 @@
     <key>Process</key>
     <array>
 		<dict>
+			<key>Processor</key>
+			<string>PathListCopier</string>
 			<key>Arguments</key>
 			<dict>
 				<key>check_version_path</key>
@@ -27,14 +29,14 @@
 					<string>/Applications/%NAME%</string>
 				</array>
 			</dict>
-			<key>Processor</key>
-			<string>PathListCopier</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
 		<dict>
+			<key>Processor</key>
+			<string>PlistReader</string>
 			<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
@@ -47,10 +49,10 @@
 					<string>version</string>
 				</dict>
 			</dict>
-			<key>Processor</key>
-			<string>PlistReader</string>
 		</dict>
 		<dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
@@ -80,8 +82,6 @@
 					<string>%version%</string>
 				</dict>
 			</dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
 		</dict>
 	</array>
 </dict>
