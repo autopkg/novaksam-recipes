@@ -30,7 +30,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.grahamgilbert.BlackboardCollaborateLauncher.pkg</string>
+	<string>com.github.novaksam.recipes.pkg.BlackboardCollaborateLauncher</string>
 	<key>Process</key>
 	<array>
 		<dict>
