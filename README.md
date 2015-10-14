@@ -65,21 +65,17 @@ Now you'll be able to track github version with an Extension attribute that retu
 
 <h2>Requires the following repos:</h2>
 
-autopkg: AdobeAIR, FlashPlayerExtractPackage, AdobeReader, Dropbox, Evernote, Firefox, GoogleChrome, Handbrake, OracleJava7, OracleJava8, sassafras-k2client, Silverlight, Skype, TheUnarchiver, VLC
+autopkg: AdobeAIR, Blackboard Collaborate Launcher,FlashPlayerExtractPackage, Dropbox, Evernote, Firefox_EN, GoogleChrome, Handbrake, OracleJava7, OracleJava8, sassafras-k2client, Silverlight, Skype, TextWrangler, VLC
 
-hansen-m: AdobeDigitalEditions, OracleJava8JDK
+hansen-m: AdobeDigitalEditions, Endnote X7, OracleJava8JDK
 
     hansen-m is currently the only repo offering pkg for AdobeDigitalEditions and Oracle JDK 8
 
-jleggat: AdobeShockwavePlayer
-
-    Jleggat is the only repo currently offering Shockwave Player.
-
-scriptingosx: audacity, Casper Suite, garageband, iMovie, iPhoto_, keynote_, Numbers_, Pages_, xcode_, XQuartz
+scriptingosx: garageband, iMovie, iPhoto_, keynote_, Numbers_, Pages_, xcode_, XQuartz
     
     Scriptingosx offers a number of AppStore pieces of software, along with some additional pkg recipes that are only offered there (currently)
 
-nmcspadden: appstore
+nmcspadden: appstore (Final Cut, Compressor, etc)
 
     Nmcspadden offers the appstore recipe, which is super useful when packaging appstore software. I use it multiple times.
 
