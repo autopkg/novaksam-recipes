@@ -32,7 +32,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.install.MSWord2016</string>
+	<string>com.github.autopkg.download.MSWord2016</string>
 	<key>Process</key>
 	<array>
 		<dict>
