@@ -17,6 +17,21 @@
 	<string>com.github.hansen-m.download.AdobeDigitalEditions</string>
 	<key>Process</key>
 	<array>
+		<dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%/*.pkg</string>
+                <key>expected_authority_names</key>
+                <array>
+                    <string>Developer ID Installer: Adobe Systems, Inc.</string>
+                    <string>Developer ID Certification Authority</string>
+                    <string>Apple Root CA</string>
+                </array>
+            </dict>
+        </dict>
 			<dict>
 				<key>Processor</key>
 				<string>Copier</string>

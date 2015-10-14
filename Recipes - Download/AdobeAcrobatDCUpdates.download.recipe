@@ -47,10 +47,6 @@ Set MAJOR_VERSION to "Acrobat2015" to download the 'Classic Track' updates for a
         </dict>
         <dict>
             <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-        <dict>
-            <key>Processor</key>
             <string>CodeSignatureVerifier</string>
             <key>Arguments</key>
             <dict>
@@ -63,6 +59,10 @@ Set MAJOR_VERSION to "Acrobat2015" to download the 'Classic Track' updates for a
                     <string>Apple Root CA</string>
                 </array>
             </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
         </dict>
     </array>
 </dict>
