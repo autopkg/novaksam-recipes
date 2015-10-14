@@ -44,13 +44,46 @@
         </dict>
         <dict>
             <key>Processor</key>
-            <string>Versioner</string>
+            <string>PlistReader</string>
             <key>Arguments</key>
             <dict>
-                <key>input_plist_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Contents/Info.plist</string>
-                <key>plist_version_key</key>
-                <string>CFBundleVersion</string>
+            	<key>plist_keys</key>
+            	<dict>
+					<key>CFBundleIdentifier</key>
+					<string>bundleid</string>
+					<key>CFBundleVersion</key>
+					<string>version</string>
+				</dict>
+               	<key>info_path</key>
+               	<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Contents/Info.plist</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>PkgBuildTester</string>
+            <key>comment</key>
+            <string>Look in our recipe cache for an existing, current package.</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_build_name</key>
+                <string>%NAME%-%version%</string>
+                <key>pkg_dir</key>
+                <string>%RECIPE_CACHE_DIR%</string>
+                <key>bundleid</key>
+                <string>%bundleid%</string>
+                <key>version</key>
+                <string>%version%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>StopProcessingIf</string>
+            <key>comment</key>
+            <string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
+            <key>Arguments</key>
+            <dict>
+                <key>predicate</key>
+                <string>pkg_build_matches == YES</string>
             </dict>
         </dict>
         <dict>
@@ -65,7 +98,7 @@
                     <key>version</key>
                     <string>%version%</string>
                     <key>id</key>
-                    <string>com.github.GitHub</string>
+                    <string>%bundleid%</string>
                     <key>options</key>
                     <string>purge_ds_store</string>
                     <key>chown</key>

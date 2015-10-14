@@ -19,6 +19,50 @@
     <array>
         <dict>
             <key>Processor</key>
+            <string>PlistReader</string>
+            <key>Arguments</key>
+            <dict>
+            	<key>plist_keys</key>
+            	<dict>
+					<key>CFBundleIdentifier</key>
+					<string>bundleid</string>
+					<key>CFBundleShortVersionString</key>
+					<string>version</string>
+				</dict>
+               	<key>info_path</key>
+               	<string>%pathname%/%NAME%/%NAME%.app</string>
+            </dict>
+        </dict>
+   		<dict>
+            <key>Processor</key>
+            <string>PkgBuildTester</string>
+            <key>comment</key>
+            <string>Look in our recipe cache for an existing, current package.</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_build_name</key>
+                <string>%NAME%-%version%</string>
+                <key>pkg_dir</key>
+                <string>%RECIPE_CACHE_DIR%</string>
+                <key>bundleid</key>
+                <string>%bundleid%</string>
+                <key>version</key>
+                <string>%version%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>StopProcessingIf</string>
+            <key>comment</key>
+            <string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
+            <key>Arguments</key>
+            <dict>
+                <key>predicate</key>
+                <string>pkg_build_matches == YES</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
             <string>PkgRootCreator</string>
             <key>Arguments</key>
             <dict>
@@ -49,29 +93,6 @@
             <dict>
                	<key>input_path</key>
                	<string>%pkgroot%/Applications/%NAME%/%NAME%.app</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>Versioner</string>
-            <key>Arguments</key>
-            <dict>
-               	<key>input_plist_path</key>
-               	<string>%pkgroot%/Applications/%NAME%/%NAME%.app/Contents/info.plist</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>PlistReader</string>
-            <key>Arguments</key>
-            <dict>
-            	<key>plist_keys</key>
-            	<dict>
-            		<key>CFBundleIdentifier</key>
-            		<string>bundleid</string>
-            	</dict>
-               	<key>info_path</key>
-               	<string>%pkgroot%/Applications/%NAME%/%NAME%.app/Contents/info.plist</string>
             </dict>
         </dict>
         <dict>
