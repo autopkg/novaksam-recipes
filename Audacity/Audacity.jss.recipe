@@ -30,7 +30,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.pkg.audacity</string>
+	<string>com.github.novaksam.pkg.Audacity</string>
 	<key>Process</key>
 	<array>
 		<dict>

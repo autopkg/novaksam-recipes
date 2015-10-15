@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.download.AdobeAcrobatDC</string>
+	<string>com.github.novaksam.download.AdobeAcrobatDCUpdate</string>
 	<key>Description</key>
 	<string>Downloads updates for Adobe Acrobat Pro X or XI and copies pkg.</string>
 	<key>Identifier</key>

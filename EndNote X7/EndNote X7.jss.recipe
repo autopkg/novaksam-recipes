@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads EndNote disk image and builds a package, then uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jss.EndNote</string>
+	<string>com.github.novaksam.jss.EndNoteX7</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -21,16 +21,16 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>POLICY_TRIGGER</key>
-		<string>Install_EndNote</string>
+		<string>Install_EndNoteX7</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Install the latest version of %NAME%.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>EndNote.png</string>
+		<string>EndNote X7.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.pkg.EndNote</string>
+	<string>com.github.novaksam.pkg.EndNoteX7</string>
 	<key>Process</key>
 	<array>
 		<dict>

@@ -8,7 +8,7 @@
 		<script>#!/bin/bash
 
 ExtensionVersion=""
-ExtensionVersion=$(defaults read /Applications/Github Desktop.app/Contents/Info.plist CFBundleVersion)
+ExtensionVersion=$(defaults read /Applications/GitHub Desktop.app/Contents/Info.plist CFBundleVersion)
 
 if [ "$ExtensionVersion" == "" ]
 	then

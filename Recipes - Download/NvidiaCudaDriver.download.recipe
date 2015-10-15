@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest CUDA Driver from Nvidia.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.download.NvidiaCudaDriver</string>
+	<string>com.github.novaksam.download.NvidiaCUDADriver</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

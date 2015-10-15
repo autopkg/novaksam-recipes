@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads Github disk image and builds a package, then uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jss.Github Desktop</string>
+	<string>com.github.novaksam.jss.GitHubDesktop</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -21,16 +21,16 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>POLICY_TRIGGER</key>
-		<string>Install_Github</string>
+		<string>Install_GitHubDesktop</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Install the latest version of %NAME%.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Github Desktop.png</string>
+		<string>GitHub Desktop.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.recipes.pkg.GitHub</string>
+	<string>com.github.novaksam.recipes.pkg.GithubDesktop</string>
 	<key>Process</key>
 	<array>
 		<dict>

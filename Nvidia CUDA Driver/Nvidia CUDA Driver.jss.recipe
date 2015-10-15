@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads Nvidia CUDA installer and extracts the embedded package, uploads to JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jss.NvidiaCudaDriver</string>
+	<string>com.github.novaksam.jss.NvidiaCUDADriver</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -32,7 +32,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.pkg.NvidiaCudaDriver</string>
+	<string>com.github.novaksam.pkg.NvidiaCUDADriver</string>
 	<key>Process</key>
 	<array>
 			<dict>

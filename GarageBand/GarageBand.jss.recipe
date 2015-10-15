@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Packages a local installation of Garageband, then uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jss.garageband</string>
+	<string>com.github.novaksam.jss.GarageBand</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>

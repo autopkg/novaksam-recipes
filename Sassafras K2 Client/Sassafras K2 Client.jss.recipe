@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads Sassafras K2 Client installer and extracts the embedded package, uploads to JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jss.sassafras-k2client</string>
+	<string>com.github.novaksam.jss.SassafrasK2Client</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -30,7 +30,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.pkg.sassafras-k2client</string>
+	<string>com.github.novaksam.pkg.SassafrasK2Client</string>
 	<key>Process</key>
 	<array>
 		<dict>

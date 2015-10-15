@@ -8,7 +8,7 @@ website. The downloads redirect to a fosshub.com download page, which
 is also searched for a download link.
 Originally from Tim Sutton</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.download.audacity</string>
+	<string>com.github.novaksam.download.Audacity</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Packages a local installation of Keynote, then uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jss.keynote</string>
+	<string>com.github.novaksam.jss.Keynote</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
