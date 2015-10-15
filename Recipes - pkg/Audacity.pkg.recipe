@@ -11,7 +11,7 @@
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.download.audacity</string>
+	<string>com.github.novaksam.download.Audacity</string>
 	<key>Process</key>
 	<array>
 		<dict>
