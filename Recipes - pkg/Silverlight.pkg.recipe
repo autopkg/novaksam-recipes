@@ -2,37 +2,37 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads latest Silverlight installer and copies the package to the build directory with an appended version number.</string>
-    <key>Identifier</key>
-    <string>com.github.novaksam.pkg.Silverlight</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>Silverlight</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.2.0</string>
+	<key>Description</key>
+	<string>Downloads latest Silverlight installer and copies the package to the build directory with an appended version number.</string>
+	<key>Identifier</key>
+	<string>com.github.novaksam.pkg.Silverlight</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Silverlight</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.autopkg.download.Silverlight</string>
-    <key>Process</key>
-    <array>
-    	<dict>
-            <key>Processor</key>
-            <string>CodeSignatureVerifier</string>
-            <key>Arguments</key>
-            <dict>
-                <key>input_path</key>
-                <string>%pathname%/Silverlight.pkg</string>
-                <key>expected_authority_names</key>
-                <array>
-                    <string>Developer ID Installer: Microsoft Corporation</string>
-                    <string>Developer ID Certification Authority</string>
-                    <string>Apple Root CA</string>
-                </array>
-            </dict>
-        </dict>
-        <dict>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/Silverlight.pkg</string>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Microsoft Corporation</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
 			<key>Processor</key>
 			<string>FlatPkgUnpacker</string>
 			<key>Arguments</key>
@@ -45,27 +45,27 @@
 		</dict>
 		<dict>
 		 	<key>Processor</key>
-            <string>PkgPayloadUnpacker</string>
-            <key>Arguments</key>
-            <dict>
-                <key>pkg_payload_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/UNPACK/silverlight_plugin.pkg/Payload</string>
-                <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
-            </dict>
-        </dict>
-        <dict>
-       		<key>Processor</key>
-            <string>Versioner</string>
-            <key>Arguments</key>
-            <dict>
-                <key>input_plist_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Library/Internet Plug-Ins/Silverlight.plugin/Contents/Info.plist</string>
-                <key>plist_version_key</key>
-                <string>CFBundleVersion</string>
-            </dict>
-        </dict>
-        <dict>
+			<string>PkgPayloadUnpacker</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/silverlight_plugin.pkg/Payload</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
+			</dict>
+		</dict>
+		<dict>
+	   		<key>Processor</key>
+			<string>Versioner</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Library/Internet Plug-Ins/Silverlight.plugin/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleVersion</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>Processor</key>
 			<string>PathDeleter</string>
 			<key>Comment</key>
@@ -79,17 +79,17 @@
 				</array>
 			</dict>
 		</dict>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>source_pkg</key>
-                <string>%pathname%/Silverlight.pkg</string>
-                <key>pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/Silverlight-%version%.pkg</string>
-            </dict>
-            <key>Processor</key>
-            <string>PkgCopier</string>
-        </dict>
-    </array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>source_pkg</key>
+				<string>%pathname%/Silverlight.pkg</string>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/Silverlight-%version%.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
+		</dict>
+	</array>
 </dict>
 </plist>

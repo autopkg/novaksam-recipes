@@ -2,19 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Builds a package containing the installed version of Casper Suite</string>
-    <key>Identifier</key>
-    <string>com.github.novaksam.pkg.CasperSuite</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>Casper Suite</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.4.0</string>
-    <key>Process</key>
-    <array>
+	<key>Description</key>
+	<string>Builds a package containing the installed version of Casper Suite</string>
+	<key>Identifier</key>
+	<string>com.github.novaksam.pkg.CasperSuite</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Casper Suite</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>Process</key>
+	<array>
 		<dict>
 			<key>Processor</key>
 			<string>PathListCopier</string>
@@ -31,50 +31,50 @@
 			</dict>
 		</dict>
 		<dict>
-            <key>Processor</key>
-            <string>CodeSignatureVerifier</string>
-            <key>Arguments</key>
-            <dict>
-                <key>input_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Admin.app</string>
-                <key>expected_authority_names</key>
-                <array>
-                    <string>Developer ID Application: JAMF Software</string>
-                    <string>Developer ID Certification Authority</string>
-                    <string>Apple Root CA</string>
-                </array>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>CodeSignatureVerifier</string>
-            <key>Arguments</key>
-            <dict>
-                <key>input_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Imaging.app</string>
-                <key>expected_authority_names</key>
-                <array>
-                    <string>Developer ID Application: JAMF Software</string>
-                    <string>Developer ID Certification Authority</string>
-                    <string>Apple Root CA</string>
-                </array>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>CodeSignatureVerifier</string>
-            <key>Arguments</key>
-            <dict>
-                <key>input_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Remote.app</string>
-                <key>expected_authority_names</key>
-                <array>
-                    <string>Developer ID Application: JAMF Software</string>
-                    <string>Developer ID Certification Authority</string>
-                    <string>Apple Root CA</string>
-                </array>
-            </dict>
-        </dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Admin.app</string>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Application: JAMF Software</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Imaging.app</string>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Application: JAMF Software</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Remote.app</string>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Application: JAMF Software</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+			</dict>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
@@ -96,33 +96,33 @@
 			</dict>
 		</dict>
 		<dict>
-            <key>Processor</key>
-            <string>PkgBuildTester</string>
-            <key>comment</key>
-            <string>Look in our recipe cache for an existing, current package.</string>
-            <key>Arguments</key>
-            <dict>
-                <key>pkg_build_name</key>
-                <string>%NAME%-%version%</string>
-                <key>pkg_dir</key>
-                <string>%RECIPE_CACHE_DIR%</string>
-                <key>bundleid</key>
-                <string>%bundleid%</string>
-                <key>version</key>
-                <string>%version%</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>StopProcessingIf</string>
-            <key>comment</key>
-            <string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
-            <key>Arguments</key>
-            <dict>
-                <key>predicate</key>
-                <string>pkg_build_matches == YES</string>
-            </dict>
-        </dict>
+			<key>Processor</key>
+			<string>PkgBuildTester</string>
+			<key>comment</key>
+			<string>Look in our recipe cache for an existing, current package.</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_build_name</key>
+				<string>%NAME%-%version%</string>
+				<key>pkg_dir</key>
+				<string>%RECIPE_CACHE_DIR%</string>
+				<key>bundleid</key>
+				<string>%bundleid%</string>
+				<key>version</key>
+				<string>%version%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+			<key>comment</key>
+			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
+			<key>Arguments</key>
+			<dict>
+				<key>predicate</key>
+				<string>pkg_build_matches == YES</string>
+			</dict>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>PkgCreator</string>
@@ -150,7 +150,7 @@
 					<key>pkgroot</key>
 					<string>%pathname%</string>
 					<key>scripts</key>
-                    <string>CasperSuiteScripts</string>
+					<string>CasperSuiteScripts</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>

@@ -2,64 +2,64 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the latest Android Studio IDE from Google.</string>
-    <key>Identifier</key>
-    <string>com.github.novaksam.download.AndroidStudio</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>AndroidStudio</string>
-        <key>SEARCH_URL</key>
-        <string>https://developer.android.com/sdk/index.html</string>
-        <key>SEARCH_PATTERN</key>
-        <string>(https\://dl\.google\.com/dl/android/studio/install/.+/android-studio-ide.+\.dmg)</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.4.0</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%SEARCH_URL%</string>
-                <key>re_pattern</key>
-                <string>%SEARCH_PATTERN%</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%match%</string>
-                <key>filename</key>
-                <string>%NAME%.dmg</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>CodeSignatureVerifier</string>
-            <key>Arguments</key>
-            <dict>
-                <key>input_path</key>
-                <string>%pathname%/*.app</string>
-                <key>expected_authority_names</key>
-                <array>
-                    <string>Developer ID Application: Google Inc.</string>
-                    <string>Developer ID Certification Authority</string>
-                    <string>Apple Root CA</string>
-                </array>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-    </array>
+	<key>Description</key>
+	<string>Downloads the latest Android Studio IDE from Google.</string>
+	<key>Identifier</key>
+	<string>com.github.novaksam.download.AndroidStudio</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>AndroidStudio</string>
+		<key>SEARCH_URL</key>
+		<string>https://developer.android.com/sdk/index.html</string>
+		<key>SEARCH_PATTERN</key>
+		<string>(https\://dl\.google\.com/dl/android/studio/install/.+/android-studio-ide.+\.dmg)</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%SEARCH_URL%</string>
+				<key>re_pattern</key>
+				<string>%SEARCH_PATTERN%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%match%</string>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/*.app</string>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Application: Google Inc.</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
 </dict>
 </plist>

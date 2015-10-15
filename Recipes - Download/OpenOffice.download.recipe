@@ -2,20 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the latest Open Office. From io.github.hjuutilainen.download.OpenOffice</string>
-    <key>Identifier</key>
-    <string>com.github.novaksam.download.OpenOffice</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
+	<key>Description</key>
+	<string>Downloads the latest Open Office. From io.github.hjuutilainen.download.OpenOffice</string>
+	<key>Identifier</key>
+	<string>com.github.novaksam.download.OpenOffice</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
 		<string>Open Office</string>
 		<key>LANGUAGE</key>
 		<string>en-US</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.4.0</string>
-    <key>Process</key>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>Process</key>
 	<array>
 		<dict>
 			<key>Processor</key>

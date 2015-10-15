@@ -17,7 +17,7 @@
 		<key>NAME</key>
 		<string>Oracle Java 8 JDK</string>
 		<key>OS_REQUIREMENTS</key>
-        <string>10.11.x,10.10.x,10.9.x,10.8.x</string>
+		<string>10.11.x,10.10.x,10.9.x,10.8.x</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
@@ -45,7 +45,7 @@
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>os_requirements</key>
-                <string>%OS_REQUIREMENTS%</string>
+				<string>%OS_REQUIREMENTS%</string>
 				<key>policy_template</key>
 				<string>%POLICY_TEMPLATE%</string>
 				<key>policy_trigger</key>
