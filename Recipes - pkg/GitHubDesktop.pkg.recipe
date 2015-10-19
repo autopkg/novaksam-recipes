@@ -12,7 +12,7 @@
 		<string>GitHub Desktop</string>
 	</dict>
 	<key>ParentRecipe</key>
-	<string>com.github.keeleysam.recipes.GitHub.download</string>
+	<string>com.github.homebysix.download.GitHubDesktop</string>
 	<key>Process</key>
 	<array>
 		<dict>
