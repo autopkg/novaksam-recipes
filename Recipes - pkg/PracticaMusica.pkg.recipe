@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Builds a package for Practica Musica containing the license file of a locally installed copy</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.pkg.PracticaMusica</string>
+	<string>com.github.novaksam.pkg.PracticaMusica_TESTING</string>
 	<key>Input</key>
 	<dict>
 		<key>Comments</key>
