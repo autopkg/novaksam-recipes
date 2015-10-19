@@ -19,12 +19,8 @@ Originally from Tim Sutton</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>http://audacityteam.org/download/mac</string>
 				<key>re_pattern</key>
 				<string>(?P&lt;first_url&gt;http.*?dmg)</string>
 				<key>request_headers</key>
@@ -33,18 +29,22 @@ Originally from Tim Sutton</string>
 					<key>User-Agent</key>
 					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X)</string>
 				</dict>
+				<key>url</key>
+				<string>http://audacityteam.org/download/mac</string>
 			</dict>
-		</dict>
-		<dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>%first_url%</string>
 				<key>re_pattern</key>
 				<string>(?P&lt;url&gt;http.*?dmg)</string>
+				<key>url</key>
+				<string>%first_url%</string>
 			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

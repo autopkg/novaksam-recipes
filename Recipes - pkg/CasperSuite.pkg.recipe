@@ -16,8 +16,6 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>PathListCopier</string>
 			<key>Arguments</key>
 			<dict>
 				<key>check_version_path</key>
@@ -29,59 +27,59 @@
 					<string>/Applications/%NAME%</string>
 				</array>
 			</dict>
+			<key>Processor</key>
+			<string>PathListCopier</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
 			<key>Arguments</key>
 			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Application: JAMF Software</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
 				<key>input_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Admin.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Application: JAMF Software</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-			<key>Arguments</key>
-			<dict>
 				<key>input_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Imaging.app</string>
-				<key>expected_authority_names</key>
-				<array>
-					<string>Developer ID Application: JAMF Software</string>
-					<string>Developer ID Certification Authority</string>
-					<string>Apple Root CA</string>
-				</array>
 			</dict>
-		</dict>
-		<dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Remote.app</string>
 				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Application: JAMF Software</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Remote.app</string>
 			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PlistReader</string>
 			<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
@@ -94,38 +92,38 @@
 					<string>version</string>
 				</dict>
 			</dict>
+			<key>Processor</key>
+			<string>PlistReader</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgBuildTester</string>
-			<key>comment</key>
-			<string>Look in our recipe cache for an existing, current package.</string>
 			<key>Arguments</key>
 			<dict>
+				<key>bundleid</key>
+				<string>%bundleid%</string>
 				<key>pkg_build_name</key>
 				<string>%NAME%-%version%</string>
 				<key>pkg_dir</key>
 				<string>%RECIPE_CACHE_DIR%</string>
-				<key>bundleid</key>
-				<string>%bundleid%</string>
 				<key>version</key>
 				<string>%version%</string>
 			</dict>
+			<key>Processor</key>
+			<string>PkgBuildTester</string>
+			<key>comment</key>
+			<string>Look in our recipe cache for an existing, current package.</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>StopProcessingIf</string>
-			<key>comment</key>
-			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>predicate</key>
 				<string>pkg_build_matches == YES</string>
 			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+			<key>comment</key>
+			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
@@ -155,6 +153,8 @@
 					<string>%version%</string>
 				</dict>
 			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
 		</dict>
 	</array>
 </dict>

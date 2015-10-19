@@ -14,10 +14,10 @@ Set MAJOR_VERSION to "Acrobat2015" to download the 'Classic Track' updates for a
 		<string>English</string>
 		<key>MAJOR_VERSION</key>
 		<string>AcrobatDC</string>
-		<key>OS_VERSION</key>
-		<string>10.9.0</string>
 		<key>NAME</key>
 		<string>Acrobat DC Updates</string>
+		<key>OS_VERSION</key>
+		<string>10.9.0</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.3.1</string>
@@ -37,28 +37,28 @@ Set MAJOR_VERSION to "Acrobat2015" to download the 'Classic Track' updates for a
 			<string>AdobeAcrobatDcUpdateInfoProvider</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>input_path</key>
-				<string>%pathname%/*.pkg</string>
 				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Installer: Adobe Systems, Inc.</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
+				<key>input_path</key>
+				<string>%pathname%/*.pkg</string>
 			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

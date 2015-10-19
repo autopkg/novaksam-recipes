@@ -18,45 +18,43 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>input_path</key>
-				<string>%pathname%/Silverlight.pkg</string>
 				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Installer: Microsoft Corporation</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
+				<key>input_path</key>
+				<string>%pathname%/Silverlight.pkg</string>
 			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>FlatPkgUnpacker</string>
 			<key>Arguments</key>
 			<dict>
-				<key>flat_pkg_path</key>
-				<string>%pathname%/Silverlight.pkg</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+				<key>flat_pkg_path</key>
+				<string>%pathname%/Silverlight.pkg</string>
 			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
 		</dict>
 		<dict>
-		 	<key>Processor</key>
-			<string>PkgPayloadUnpacker</string>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/silverlight_plugin.pkg/Payload</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/silverlight_plugin.pkg/Payload</string>
 			</dict>
+			<key>Processor</key>
+			<string>PkgPayloadUnpacker</string>
 		</dict>
 		<dict>
-	   		<key>Processor</key>
-			<string>Versioner</string>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
@@ -64,12 +62,10 @@
 				<key>plist_version_key</key>
 				<string>CFBundleVersion</string>
 			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PathDeleter</string>
-			<key>Comment</key>
-			<string>Gotta clean up after myself!</string>
 			<key>Arguments</key>
 			<dict>
 				<key>path_list</key>
@@ -78,14 +74,18 @@
 					<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
 				</array>
 			</dict>
+			<key>Comment</key>
+			<string>Gotta clean up after myself!</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>source_pkg</key>
-				<string>%pathname%/Silverlight.pkg</string>
 				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/Silverlight-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%pathname%/Silverlight.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCopier</string>

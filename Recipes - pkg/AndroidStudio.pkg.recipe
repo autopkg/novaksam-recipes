@@ -18,19 +18,15 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>AppDmgVersioner</string>
 			<key>Arguments</key>
 			<dict>
 				<key>dmg_path</key>
 				<string>%pathname%</string>
 			</dict>
+			<key>Processor</key>
+			<string>AppDmgVersioner</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgBuildTester</string>
-			<key>comment</key>
-			<string>Look in our recipe cache for an existing, current package.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_build_name</key>
@@ -38,71 +34,75 @@
 				<key>pkg_dir</key>
 				<string>%RECIPE_CACHE_DIR%</string>
 			</dict>
+			<key>Processor</key>
+			<string>PkgBuildTester</string>
+			<key>comment</key>
+			<string>Look in our recipe cache for an existing, current package.</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>StopProcessingIf</string>
-			<key>comment</key>
-			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>predicate</key>
 				<string>pkg_build_matches == YES</string>
 			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+			<key>comment</key>
+			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
 			<key>Arguments</key>
 			<dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 				<key>pkgdirs</key>
 				<dict>
 					<key>Applications</key>
 					<string>0775</string>
 				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>Copier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>source_path</key>
-				<string>%pathname%/%app_name%</string>
 				<key>destination_path</key>
 				<string>%pkgroot%/Applications/%app_name%</string>
+				<key>source_path</key>
+				<string>%pathname%/%app_name%</string>
 			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
 				<dict>
-					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
-					<key>version</key>
-					<string>%version%</string>
-					<key>id</key>
-					<string>%bundleid%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>chown</key>
 					<array>
 						<dict>
+							<key>group</key>
+							<string>admin</string>
 							<key>path</key>
 							<string>Applications</string>
 							<key>user</key>
 							<string>root</string>
-							<key>group</key>
-							<string>admin</string>
 						</dict>
 					</array>
+					<key>id</key>
+					<string>%bundleid%</string>
+					<key>options</key>
+					<string>purge_ds_store</string>
+					<key>pkgname</key>
+					<string>%NAME%-%version%</string>
+					<key>version</key>
+					<string>%version%</string>
 				</dict>
 			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
 		</dict>
 	</array>
 </dict>

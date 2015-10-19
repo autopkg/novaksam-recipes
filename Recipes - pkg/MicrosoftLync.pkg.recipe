@@ -8,12 +8,12 @@
 	<string>com.github.novaksam.pkg.MicrosoftLync</string>
 	<key>Input</key>
 	<dict>
+		<key>CULTURE_CODE</key>
+		<string>0409</string>
 		<key>NAME</key>
 		<string>Microsoft Lync</string>
 		<key>VERSION</key>
 		<string>latest</string>
-		<key>CULTURE_CODE</key>
-		<string>0409</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
@@ -21,114 +21,114 @@
 	<string>com.github.arubdesu.pkg.LyncInstaller</string>
 	<key>Process</key>
 	<array>
-			<dict>
-				<key>Processor</key>
-				<string>FileFinder</string>
-				<key>Arguments</key>
-				<dict>
-					<key>pattern</key>
-					<string>%RECIPE_CACHE_DIR%/*Installer.pkg</string>
-				</dict>
-		   	</dict>
-		   	<dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
+		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>input_path</key>
-				<string>%found_filename%</string>
+				<key>pattern</key>
+				<string>%RECIPE_CACHE_DIR%/*Installer.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Installer: Microsoft Corporation</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
+				<key>input_path</key>
+				<string>%found_filename%</string>
 			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
+		<dict>
+			<key>Arguments</key>
 			<dict>
-				<key>Processor</key>
-				<string>FileMover</string>
-				<key>Arguments</key>
-				<dict>
-					<key>source</key>
-					<string>%found_filename%</string>
-					<key>target</key>
-					<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
-				</dict>
-		   	</dict>
-		   	<dict>
-				<key>Processor</key>
-				<string>FlatPkgUnpacker</string>
-				<key>Arguments</key>
-				<dict>
-					<key>flat_pkg_path</key>
-					<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
-					<key>destination_path</key>
-					<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
-				</dict>
-		   	</dict>
+				<key>source</key>
+				<string>%found_filename%</string>
+				<key>target</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileMover</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
 			<dict>
-				<key>Processor</key>
-				<string>FileFinder</string>
-				<key>Arguments</key>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+				<key>flat_pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pattern</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Lync*_all_lync_*.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
+				<key>pkg_payload_path</key>
+				<string>%found_filename%/Payload</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgPayloadUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>info_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Applications/Microsoft Lync.app</string>
+				<key>plist_keys</key>
 				<dict>
-					<key>pattern</key>
-					<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Lync*_all_lync_*.pkg</string>
-				</dict>
-		   	</dict>
-		   	<dict>
-				<key>Processor</key>
-				<string>PkgPayloadUnpacker</string>
-				<key>Arguments</key>
-				<dict>
-					<key>pkg_payload_path</key>
-					<string>%found_filename%/Payload</string>
-					<key>destination_path</key>
-					<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
-				</dict>
-		   	</dict>
-		   	<dict>
-				<key>Processor</key>
-				<string>PlistReader</string>
-				<key>Arguments</key>
-				<dict>
-					<key>plist_keys</key>
-					<dict>
-						<key>CFBundleIdentifier</key>
-						<string>bundleid</string>
-						<key>CFBundleShortVersionString</key>
-						<string>version</string>
-					</dict>
-					<key>info_path</key>
-					<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Applications/Microsoft Lync.app</string>
+					<key>CFBundleIdentifier</key>
+					<string>bundleid</string>
+					<key>CFBundleShortVersionString</key>
+					<string>version</string>
 				</dict>
 			</dict>
-		   	<dict>
-				<key>Processor</key>
-				<string>PkgCopier</string>
-				<key>Arguments</key>
-				<dict>
-					<key>source_pkg</key>
+			<key>Processor</key>
+			<string>PlistReader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+					<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
 					<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
-					<key>pkg_path</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
-				</dict>
-		   	</dict>
-		   	<dict>
-				<key>Processor</key>
-				<string>PathDeleter</string>
-				<key>Comment</key>
-				<string>Gotta clean up after myself!</string>
-				<key>Arguments</key>
-				<dict>
-					<key>path_list</key>
-					<array>
-						<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
-						<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
-						<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
-					</array>
-				</dict>
-		   	</dict>
+				</array>
+			</dict>
+			<key>Comment</key>
+			<string>Gotta clean up after myself!</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
 	</array>
 </dict>
 </plist>

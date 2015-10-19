@@ -18,10 +18,10 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>PlistReader</string>
 			<key>Arguments</key>
 			<dict>
+				<key>info_path</key>
+				<string>%pathname%/%NAME%/%NAME%.app</string>
 				<key>plist_keys</key>
 				<dict>
 					<key>CFBundleIdentifier</key>
@@ -29,117 +29,117 @@
 					<key>CFBundleShortVersionString</key>
 					<string>version</string>
 				</dict>
-			   	<key>info_path</key>
-			   	<string>%pathname%/%NAME%/%NAME%.app</string>
 			</dict>
-		</dict>
-   		<dict>
 			<key>Processor</key>
-			<string>PkgBuildTester</string>
-			<key>comment</key>
-			<string>Look in our recipe cache for an existing, current package.</string>
+			<string>PlistReader</string>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>bundleid</key>
+				<string>%bundleid%</string>
 				<key>pkg_build_name</key>
 				<string>%NAME%-%version%</string>
 				<key>pkg_dir</key>
 				<string>%RECIPE_CACHE_DIR%</string>
-				<key>bundleid</key>
-				<string>%bundleid%</string>
 				<key>version</key>
 				<string>%version%</string>
 			</dict>
+			<key>Processor</key>
+			<string>PkgBuildTester</string>
+			<key>comment</key>
+			<string>Look in our recipe cache for an existing, current package.</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>StopProcessingIf</string>
-			<key>comment</key>
-			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>predicate</key>
 				<string>pkg_build_matches == YES</string>
 			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+			<key>comment</key>
+			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>input_path</key>
-				<string>%pathname%/%NAME%/%NAME%.app</string>
 				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Application: Thomson Reuters (Scientific) Inc.</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
+				<key>input_path</key>
+				<string>%pathname%/%NAME%/%NAME%.app</string>
 			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
 			<key>Arguments</key>
 			<dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 				<key>pkgdirs</key>
 				<dict>
 					<key>Applications</key>
 					<string>0775</string>
 				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/%NAME%</string>
+				<key>source_path</key>
+				<string>%pathname%/%NAME%</string>
+			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
-			<key>Arguments</key>
-			<dict>
-			   	<key>source_path</key>
-			   	<string>%pathname%/%NAME%</string>
-			   	<key>destination_path</key>
-			   	<string>%pkgroot%/Applications/%NAME%</string>
-			</dict>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pkgroot%/Applications/%NAME%/%NAME%.app</string>
+			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
-			<key>Arguments</key>
-			<dict>
-			   	<key>input_path</key>
-			   	<string>%pkgroot%/Applications/%NAME%/%NAME%.app</string>
-			</dict>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
 				<dict>
-					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
-					<key>version</key>
-					<string>%version%</string>
-					<key>id</key>
-					<string>%bundleid%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
-					<key>scripts</key>
-					<string>EndNoteScripts</string>
 					<key>chown</key>
 					<array>
 						<dict>
+							<key>group</key>
+							<string>admin</string>
 							<key>path</key>
 							<string>Applications</string>
 							<key>user</key>
 							<string>root</string>
-							<key>group</key>
-							<string>admin</string>
 						</dict>
 					</array>
+					<key>id</key>
+					<string>%bundleid%</string>
+					<key>options</key>
+					<string>purge_ds_store</string>
+					<key>pkgname</key>
+					<string>%NAME%-%version%</string>
+					<key>scripts</key>
+					<string>EndNoteScripts</string>
+					<key>version</key>
+					<string>%version%</string>
 				</dict>
 			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
 		</dict>
 	</array>
 </dict>

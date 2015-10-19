@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ParentRecipe</key>
-	<string>com.github.autopkg.download.AdobeAcrobatProXUpdate</string>
 	<key>Description</key>
 	<string>Downloads updates for Adobe Acrobat Pro X or XI and copies pkg.</string>
 	<key>Identifier</key>
@@ -15,18 +13,20 @@
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.download.AdobeAcrobatProXUpdate</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>PkgCopier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>source_pkg</key>
-				<string>%pathname%</string>
 				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%pathname%</string>
 			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
 		</dict>
 	</array>
 </dict>

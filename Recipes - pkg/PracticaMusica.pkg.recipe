@@ -8,10 +8,10 @@
 	<string>com.github.novaksam.pkg.PracticaMusica</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Practica Musica</string>
 		<key>Comments</key>
 		<string>This pkg requires an existing installation of Practica Musica in /Applications, which it will grab the license file from.</string>
+		<key>NAME</key>
+		<string>Practica Musica</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
@@ -20,8 +20,6 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>PlistReader</string>
 			<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
@@ -33,39 +31,39 @@
 					<key>CFBundleShortVersionString</key>
 					<string>version</string>
 				</dict>
-			</dict>	
+			</dict>
+			<key>Processor</key>
+			<string>PlistReader</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgBuildTester</string>
-			<key>comment</key>
-			<string>Look in our recipe cache for an existing, current package.</string>
 			<key>Arguments</key>
 			<dict>
+				<key>bundleid</key>
+				<string>%bundleid%</string>
 				<key>pkg_build_name</key>
 				<string>%NAME%-%version%</string>
 				<key>pkg_dir</key>
 				<string>%RECIPE_CACHE_DIR%</string>
-				<key>bundleid</key>
-				<string>%bundleid%</string>
 				<key>version</key>
 				<string>%version%</string>
 			</dict>
+			<key>Processor</key>
+			<string>PkgBuildTester</string>
+			<key>comment</key>
+			<string>Look in our recipe cache for an existing, current package.</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>StopProcessingIf</string>
-			<key>comment</key>
-			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>predicate</key>
 				<string>pkg_build_matches == YES</string>
 			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+			<key>comment</key>
+			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkgdirs</key>
@@ -76,10 +74,10 @@
 				<key>pkgroot</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>Copier</string>
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
@@ -87,10 +85,10 @@
 				<key>source_path</key>
 				<string>%pathname%/%NAME%.app</string>
 			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PathListCopier</string>
 			<key>Arguments</key>
 			<dict>
 				<key>check_version_path</key>
@@ -102,12 +100,10 @@
 					<string>/Applications/%NAME%.app/Practica Musica Preferences</string>
 				</array>
 			</dict>
+			<key>Processor</key>
+			<string>PathListCopier</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PathDeleter</string>
-			<key>Comment</key>
-			<string>Delete the included license file</string>
 			<key>Arguments</key>
 			<dict>
 				<key>path_list</key>
@@ -115,10 +111,12 @@
 					<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Practica Musica Preferences</string>
 				</array>
 			</dict>
+			<key>Comment</key>
+			<string>Delete the included license file</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>Copier</string>
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
@@ -126,21 +124,19 @@
 				<key>source_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/license/Applications/%NAME%.app/Practica Musica Preferences</string>
 			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>Versioner</string>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Contents/Info.plist</string>
 			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PathDeleter</string>
-			<key>Comment</key>
-			<string>Delete the copied license file</string>
 			<key>Arguments</key>
 			<dict>
 				<key>path_list</key>
@@ -148,10 +144,12 @@
 					<string>%RECIPE_CACHE_DIR%/%NAME%/license</string>
 				</array>
 			</dict>
+			<key>Comment</key>
+			<string>Delete the copied license file</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
@@ -179,6 +177,8 @@
 					<string>%version%</string>
 				</dict>
 			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
 		</dict>
 	</array>
 </dict>

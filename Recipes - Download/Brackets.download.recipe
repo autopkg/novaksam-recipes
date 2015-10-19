@@ -8,66 +8,66 @@
 	<string>com.github.novaksam.download.Brackets</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Brackets</string>
-		<key>VERSION_URL</key>
-		<string>https://github.com/adobe/brackets/releases.atom</string>
-		<key>VERSION_PATTERN</key>
-		<string>(/adobe/brackets/releases/tag/release-.+eb\d+)</string>
 		<key>DOWNLOAD_PATTERN</key>
 		<string>(/adobe/brackets/releases/download/release-.+eb\d+.+\.dmg)</string>
+		<key>NAME</key>
+		<string>Brackets</string>
+		<key>VERSION_PATTERN</key>
+		<string>(/adobe/brackets/releases/tag/release-.+eb\d+)</string>
+		<key>VERSION_URL</key>
+		<string>https://github.com/adobe/brackets/releases.atom</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>%VERSION_URL%</string>
 				<key>re_pattern</key>
 				<string>%VERSION_PATTERN%</string>
+				<key>url</key>
+				<string>%VERSION_URL%</string>
 			</dict>
-		</dict>
-		<dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>https://github.com%match%</string>
 				<key>re_pattern</key>
 				<string>%DOWNLOAD_PATTERN%</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
-			<key>Arguments</key>
-			<dict>
 				<key>url</key>
 				<string>https://github.com%match%</string>
-				<key>filename</key>
-				<string>%NAME%.dmg</string>
 			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>input_path</key>
-				<string>%pathname%/*.app</string>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://github.com%match%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Application: Adobe Systems, Inc.</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
+				<key>input_path</key>
+				<string>%pathname%/*.app</string>
 			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

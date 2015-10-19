@@ -34,28 +34,26 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>FlatPkgUnpacker</string>
 			<key>Arguments</key>
 			<dict>
-				<key>flat_pkg_path</key>
-				<string>%pkg_path%</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+				<key>flat_pkg_path</key>
+				<string>%pkg_path%</string>
 			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>FileFinder</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pattern</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Office2011_all_quit*</string>
 			</dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>Versioner</string>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
@@ -63,12 +61,10 @@
 				<key>plist_version_key</key>
 				<string>CFBundleVersion</string>
 			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PathDeleter</string>
-			<key>Comment</key>
-			<string>Gotta clean up after myself!</string>
 			<key>Arguments</key>
 			<dict>
 				<key>path_list</key>
@@ -76,24 +72,16 @@
 					<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
 				</array>
 			</dict>
+			<key>Comment</key>
+			<string>Gotta clean up after myself!</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>prod_name</key>
-				<string>%NAME%</string>
 				<key>category</key>
 				<string>%CATEGORY%</string>
-				<key>policy_category</key>
-				<string>%POLICY_CATEGORY%</string>
-				<key>policy_template</key>
-				<string>%POLICY_TEMPLATE%</string>
-				<key>policy_trigger</key>
-				<string>%POLICY_TRIGGER%</string>
-				<key>self_service_icon</key>
-				<string>%SELF_SERVICE_ICON%</string>
-				<key>self_service_description</key>
-				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>groups</key>
 				<array>
 					<dict>
@@ -105,6 +93,18 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
+				<key>policy_category</key>
+				<string>%POLICY_CATEGORY%</string>
+				<key>policy_template</key>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>policy_trigger</key>
+				<string>%POLICY_TRIGGER%</string>
+				<key>prod_name</key>
+				<string>%NAME%</string>
+				<key>self_service_description</key>
+				<string>%SELF_SERVICE_DESCRIPTION%</string>
+				<key>self_service_icon</key>
+				<string>%SELF_SERVICE_ICON%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
