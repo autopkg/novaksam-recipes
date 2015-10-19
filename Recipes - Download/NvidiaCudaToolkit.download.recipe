@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest CUDA toolkit from Nvidia.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.download.NvidiaCudaToolkit</string>
+	<string>com.github.novaksam.download.NvidiaCUDAToolkit</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -53,6 +53,21 @@
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Application: NVIDIA Corporation</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%pathname%/*.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

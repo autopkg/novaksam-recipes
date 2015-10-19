@@ -1,0 +1,5 @@
+#!/bin/bash
+# This is taken from the CUDA driver install scripts.
+set -x
+
+kextload /System/Library/Extensions/CUDA.kext

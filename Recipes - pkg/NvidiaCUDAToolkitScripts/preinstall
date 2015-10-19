@@ -1,0 +1,9 @@
+#!/bin/bash
+# This is taken from the CUDA driver install scripts.
+set -x
+
+kextstat -b com.nvidia.CUDA | grep CUDA
+if [ $? == 0 ]
+then
+	kextunload -b com.nvidia.CUDA
+fi

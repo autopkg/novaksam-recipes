@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads latest CUDA Toolkit and builds a package.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.pkg.NvidiaCudaToolkit</string>
+	<string>com.github.novaksam.pkg.NvidiaCUDAToolkit</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -14,38 +14,83 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.download.NvidiaCudaToolkit</string>
+	<string>com.github.novaksam.download.NvidiaCUDAToolkit</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
-				<key>flat_pkg_path</key>
-				<string>%pathname%</string>
+				<key>info_path</key>
+				<string>%pathname%/CUDAMacOSXInstaller.app/Contents/Info.plist</string>
+				<key>plist_keys</key>
+				<dict>
+					<key>CFBundleIdentifier</key>
+					<string>bundleid</string>
+				</dict>
 			</dict>
 			<key>Processor</key>
-			<string>FlatPkgUnpacker</string>
+			<string>PlistReader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgdirs</key>
+				<dict>
+					<key>Developer</key>
+					<string>0775</string>
+					<key>Library</key>
+					<string>0775</string>
+					<key>System</key>
+					<string>0775</string>
+					<key>usr</key>
+					<string>0775</string>
+				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Framework</string>
-				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/CUDAFramework.pkg/Payload</string>
-				<key>purge_destination</key>
-				<string>true</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/cuda_mac_installer_drv.tar.gz</string>
+				<key>source_path</key>
+				<string>%pathname%/CUDAMacOSXInstaller.app/Contents/Resources/payload/cuda_mac_installer_drv.tar.gz</string>
 			</dict>
 			<key>Processor</key>
-			<string>PkgPayloadUnpacker</string>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/cuda_mac_installer_drv.tar.gz</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/downloads/cuda_mac_installer_drv.tar.gz</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/Framework/CUDA.framework/Versions/Current/Resources/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Library/Frameworks/CUDA.framework/Versions/Current/Resources/Info.plist</string>
 			</dict>
 			<key>Processor</key>
 			<string>Versioner</string>
@@ -53,13 +98,147 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
-				<key>source_pkg</key>
-				<string>%pathname%</string>
+				<key>bundleid</key>
+				<string>%bundleid%</string>
+				<key>pkg_build_name</key>
+				<string>%NAME%-%version%</string>
+				<key>pkg_dir</key>
+				<string>%RECIPE_CACHE_DIR%</string>
+				<key>version</key>
+				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
-			<string>PkgCopier</string>
+			<string>PkgBuildTester</string>
+			<key>comment</key>
+			<string>Look in our recipe cache for an existing, current package.</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>predicate</key>
+				<string>pkg_build_matches == YES</string>
+			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+			<key>comment</key>
+			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/cuda_mac_installer_tk.tar.gz</string>
+				<key>source_path</key>
+				<string>%pathname%/CUDAMacOSXInstaller.app/Contents/Resources/payload/cuda_mac_installer_tk.tar.gz</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/cuda_mac_installer_tk.tar.gz</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<false/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/downloads/cuda_mac_installer_tk.tar.gz</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/cuda_mac_installer_samples.tar.gz</string>
+				<key>source_path</key>
+				<string>%pathname%/CUDAMacOSXInstaller.app/Contents/Resources/payload/cuda_mac_installer_samples.tar.gz</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/cuda_mac_installer_samples.tar.gz</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<false/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/downloads/cuda_mac_installer_samples.tar.gz</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_request</key>
+				<dict>
+					<key>chown</key>
+					<array>
+						<dict>
+							<key>group</key>
+							<string>admin</string>
+							<key>path</key>
+							<string>Library</string>
+							<key>user</key>
+							<string>root</string>
+						</dict>
+						<dict>
+							<key>group</key>
+							<string>admin</string>
+							<key>path</key>
+							<string>System</string>
+							<key>user</key>
+							<string>root</string>
+						</dict>
+						<dict>
+							<key>group</key>
+							<string>admin</string>
+							<key>path</key>
+							<string>usr</string>
+							<key>user</key>
+							<string>root</string>
+						</dict>
+					</array>
+					<key>id</key>
+					<string>%bundleid%</string>
+					<key>options</key>
+					<string>purge_ds_store</string>
+					<key>pkgname</key>
+					<string>%NAME%-%version%</string>
+					<key>scripts</key>
+					<string>NvidiaCUDAToolkitScripts</string>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
 		</dict>
 	</array>
 </dict>
