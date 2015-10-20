@@ -90,13 +90,62 @@
 			<dict>
 				<key>path_list</key>
 				<array>
-					<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
-					<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
 					<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.app</string>
 				</array>
 			</dict>
 			<key>Comment</key>
-			<string>Gotta clean up after myself!</string>
+			<string>Deleting the application because it was only used for versioning</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pathname</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/build.pkg/Scripts/post</string>
+				<key>text_to_replace</key>
+				<string>open "$2/$DE_APP"</string>
+				<key>replacement_text</key>
+				<string>#open "$2/$DE_APP"</string>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgScriptEditor</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
+				</array>
+			</dict>
+			<key>Comment</key>
+			<string>Delete original installer from Adobe</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>source_flatpkg_dir</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+				<key>destination_pkg</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgPacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+					<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
+				</array>
+			</dict>
+			<key>Comment</key>
+			<string>Deleting unpack and payload folders</string>
 			<key>Processor</key>
 			<string>PathDeleter</string>
 		</dict>
