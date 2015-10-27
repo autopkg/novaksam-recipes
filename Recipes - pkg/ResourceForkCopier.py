@@ -1,0 +1,63 @@
+#!/usr/bin/env python
+#
+# Copyright 2015 Sam Novak
+#
+
+import os.path
+import errno
+import traceback
+
+import xattr
+import FoundationPlist
+from autopkglib import Processor, ProcessorError
+from autopkglib.DmgMounter import DmgMounter
+
+
+class ResourceForkCopier(DmgMounter):
+    description = """Copies Resource Forks (because copier can't)"""
+
+    input_variables = {
+        "source_file": {
+            "required": True,
+            "description": "Path to the file with the Resource Fork you want to copy."
+        },
+        "destination_file": {
+            "required": True,
+            "description": """File you want the Resource Fork copied to."""
+        }
+    }
+
+    output_variables = {
+    }
+
+    __doc__ = description
+
+    def main(self):
+
+        source_file = self.env['source_file']
+        destination_file = self.env["destination_file"]
+        # Check if we're trying to copy something inside a dmg.
+        (dmg_path, dmg, dmg_source_path) = self.parsePathForDMG(source_file)
+        try:
+            if dmg:
+                # Mount dmg and copy path inside.
+                mount_point = self.mount(dmg_path)
+                source_file = os.path.join(mount_point, dmg_source_path)
+                source_file = source_file.decode("string_escape")
+                destination_file = destination_file.decode("string_escape")
+                xattr.listxattr(source_file)
+                temp = xattr.getxattr(source_file, "com.apple.ResourceFork")
+                xattr.setxattr(destination_file, "com.apple.ResourceFork", temp)
+                self.output("Resource Fork copied")
+        except:
+            var = traceback.format_exc()
+            print ("ERROR:", var)
+            self.output("Resoruce Fork error: " + var)
+        finally:
+            if dmg:
+                self.unmount(dmg_path)
+
+
+if __name__ == '__main__':
+    processor = ResourceForkCopier()
+    processor.execute_shell()
