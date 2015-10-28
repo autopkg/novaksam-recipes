@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Node.JS and creates a versioned package.</string>
+	<key>Identifier</key>
+	<string>com.github.novaksam.pkg.R_NoGui</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>R</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.R</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+				<key>flat_pkg_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pathname</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/r.pkg/Scripts/postinstall</string>
+				<key>replacement_text</key>
+				<string>rm -f R Rscript; rm -fr /Applications/R.app</string>
+				<key>text_to_replace</key>
+				<string>rm -f R Rscript</string>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgScriptEditor</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>source_flatpkg_dir</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+				<key>destination_pkg</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgPacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.app</string>
+				<key>overwrite</key>
+				<string>true</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/KeyAccess/*.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
