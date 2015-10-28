@@ -130,10 +130,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pathname</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Practica Musica Preferences</string>
 				<key>modifier</key>
 				<string>666</string>
+				<key>pathname</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Practica Musica Preferences</string>
 			</dict>
 			<key>Processor</key>
 			<string>FileChmodEditor</string>
