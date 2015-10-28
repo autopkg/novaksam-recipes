@@ -50,8 +50,7 @@
 			<key>Processor</key>
 			<string>Versioner</string>
 		</dict>
-		<!-- 
-<dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>path_list</key>
@@ -65,7 +64,6 @@
 			<key>Processor</key>
 			<string>PathDeleter</string>
 		</dict>
- -->
 		<dict>
 			<key>Arguments</key>
 			<dict>
