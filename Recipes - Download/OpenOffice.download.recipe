@@ -21,9 +21,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>http://sourceforge.net/projects/openofficeorg.mirror/files/(?P&lt;version&gt;[0-9\.]+)/binaries</string>
+				<string>http://sourceforge.net/projects/openofficeorg.mirror/files/(?P&lt;version&gt;[0-9\.]+)</string>
 				<key>url</key>
-				<string>http://sourceforge.net/projects/openofficeorg.mirror/rss?path=/</string>
+				<string>http://sourceforge.net/projects/openofficeorg.mirror/rss?limit=1</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
