@@ -32,7 +32,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.scriptingosx.pkg.garageband</string>
+	<string>com.github.novaksam.pkg.garageband</string>
 	<key>Process</key>
 	<array>
 		<dict>
