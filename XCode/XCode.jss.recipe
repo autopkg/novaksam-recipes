@@ -32,7 +32,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.scriptingosx.pkg.xcode_</string>
+	<string>com.github.nmcspadden.pkg.appstore</string>
 	<key>Process</key>
 	<array>
 		<dict>
