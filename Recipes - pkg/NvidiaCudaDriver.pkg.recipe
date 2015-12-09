@@ -23,7 +23,7 @@
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
 				<key>flat_pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/CUDADriver.pkg</string>
+				<string>%pathname%/*.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>FlatPkgUnpacker</string>
@@ -85,7 +85,7 @@
 				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
 				<key>source_pkg</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/CUDADriver.pkg</string>
+				<string>%pathname%/*.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCopier</string>
