@@ -8,11 +8,15 @@
 		<script>#!/bin/bash
 
 ExtensionVersion=""
-ExtensionVersion=$(defaults read /Library/Internet\ Plug-Ins/DirectorShockwave.plugin/Contents/Info.plist CFBundleShortVersionString)
 
-if [ "$ExtensionVersion" == "" ]
+if [ -f /Library/Internet\ Plug-Ins/DirectorShockwave.plugin/Contents/Info.plist ]
 	then
-		ExtensionVersion=$(defaults read /Library/Internet\ Plug-Ins/DirectorShockwave.plugin/ContentsInfo.plist CFBundleVersion)
+	ExtensionVersion=$(defaults read /Library/Internet\ Plug-Ins/DirectorShockwave.plugin/Contents/Info.plist CFBundleShortVersionString)
+
+	if [ "$ExtensionVersion" == "" ]
+		then
+			ExtensionVersion=$(defaults read /Library/Internet\ Plug-Ins/DirectorShockwave.plugin/Contents/Info.plist CFBundleVersion)
+	fi
 fi
 
 if [ "$ExtensionVersion" == "" ]

@@ -8,11 +8,14 @@
 		<script>#!/bin/bash
 
 ExtensionVersion=""
-ExtensionVersion=$(defaults read /Library/Frameworks/CUDA.framework/Versions/Current/Resources/Info.plist CFBundleShortVersionString)
-
-if [ "$ExtensionVersion" == "" ]
+if [ -f /Library/Frameworks/CUDA.framework/Versions/Current/Resources/Info.plist ]
 	then
-		ExtensionVersion=$(defaults read /Library/Frameworks/CUDA.framework/Versions/Current/Resources/Info.plist CFBundleVersion)
+	ExtensionVersion=$(defaults read /Library/Frameworks/CUDA.framework/Versions/Current/Resources/Info.plist CFBundleShortVersionString)
+
+	if [ "$ExtensionVersion" == "" ]
+		then
+			ExtensionVersion=$(defaults read /Library/Frameworks/CUDA.framework/Versions/Current/Resources/Info.plist CFBundleVersion)
+	fi
 fi
 
 if [ "$ExtensionVersion" == "" ]

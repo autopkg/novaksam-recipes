@@ -9,8 +9,10 @@
 			#!/bin/bash
 
 			ExtensionVersion=""
-			ExtensionVersion=$(defaults read %EXTENSION_PATH%/Info.plist CFBundleVersion)
-			
+			if [ -f %EXTENSION_PATH%/Info.plist ]
+				then
+				ExtensionVersion=$(defaults read %EXTENSION_PATH%/Info.plist CFBundleVersion)
+			fi
 			if [ "$ExtensionVersion" == "" ]
 				then
 					ExtensionVersion="Not Installed"

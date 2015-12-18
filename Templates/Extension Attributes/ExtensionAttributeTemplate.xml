@@ -9,11 +9,14 @@
 			#!/bin/bash
 
 			ExtensionVersion=""
-			ExtensionVersion=$(defaults read %EXTENSION_PATH%/Info.plist CFBundleShortVersionString)
-
-			if [ "$ExtensionVersion" == "" ]
+			if [ -f %EXTENSION_PATH%/Info.plist ]
 				then
-					ExtensionVersion=$(defaults read %EXTENSION_PATH%/Info.plist CFBundleVersion)
+				ExtensionVersion=$(defaults read %EXTENSION_PATH%/Info.plist CFBundleShortVersionString)
+
+				if [ "$ExtensionVersion" == "" ]
+					then
+						ExtensionVersion=$(defaults read %EXTENSION_PATH%/Info.plist CFBundleVersion)
+				fi
 			fi
 
 			if [ "$ExtensionVersion" == "" ]
