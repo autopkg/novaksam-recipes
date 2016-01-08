@@ -4,7 +4,7 @@
 # Making sure that OneDrive has been closed before installing the new one.
 PROCESS_NAME="OneDrive"
 RUNNING=0
-PATH=/usr/bin/:/usr/sbin/:/usr/local/bin/:/usr/local/sbin/
+PATH=/bin:/sbin:/usr/bin/:/usr/sbin/:/usr/local/bin/:/usr/local/sbin/
 
 checkRunning()
 {

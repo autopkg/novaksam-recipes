@@ -3,7 +3,7 @@
 # https://support.office.com/en-us/article/Deploying-the-OneDrive-Next-Generation-Sync-Client-on-OS-X-and-configuring-work-or-school-accounts-eadddc4e-edc0-4982-9f50-2aef5038c307?ui=en-US&rs=en-US&ad=US
 # Checked with http://www.shellcheck.net/
 TenantID=0
-PATH=/usr/bin/:/usr/sbin/:/usr/local/bin/:/usr/local/sbin/
+PATH=/bin:/sbin:/usr/bin/:/usr/sbin/:/usr/local/bin/:/usr/local/sbin/
 
 createDirectories() {
 	cd /Library || exit
