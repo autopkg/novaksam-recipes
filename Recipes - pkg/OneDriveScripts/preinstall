@@ -15,7 +15,7 @@ checkRunning()
 	fi
 }
 
-jamfHelper()
+jamfHelperCheck()
 {
 	jamf displayMessage -message "Please exit all running instances of OneDrive and click OK."
 	JRUNNING=1
@@ -30,7 +30,7 @@ jamfHelper()
 #checkRunning
 #while [ $RUNNING -eq 1 ]
 #do
-#	jamfHelper
+#	jamfHelperCheck
 #done
 #killall cfprefsd
 exit 0
