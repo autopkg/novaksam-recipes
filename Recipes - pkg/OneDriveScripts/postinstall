@@ -21,13 +21,15 @@ createDirectories() {
 }
 
 writePreference() {
-	defaults write /Library/Containers/com.microsoft.OneDrive-mac/Data/Library/Preferences/com.microsoft.OneDrive-mac "$1" "$2" "$3"
+	#defaults write /Library/Containers/com.microsoft.OneDrive-mac/Data/Library/Preferences/com.microsoft.OneDrive-mac "$1" "$2" "$3"
+	defaults write /Library/Preferences/com.microsoft.OneDrive-mac "$1" "$2" "$3"
+	chmod +R /Library/Preferences/com.microsoft.OneDrive-mac.plist
 }
 
 #writeTenants() {
 #/usr/libexec/PlistBuddy -c "Add :Tenants:$TenantID" /Library/Containers/com.microsoft.OneDrive-mac/Data/Library/Preferences/com.microsoft.OneDrive-mac.plist
 #}
-#createDirectories
+##createDirectories
 #writePreference "DefaultToBusinessFRE" "-bool" "True"
 #writePreference "EnableAddAccounts" "-bool" "True"
 #writePreference "DisablePersonalSync" "-bool" "True"
