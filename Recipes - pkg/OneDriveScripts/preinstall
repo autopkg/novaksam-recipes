@@ -1,0 +1,36 @@
+#!/bin/bash
+#  Pre-Install script for setting up OneDrive for business
+# https://support.office.com/en-us/article/Deploying-the-OneDrive-Next-Generation-Sync-Client-on-OS-X-and-configuring-work-or-school-accounts-eadddc4e-edc0-4982-9f50-2aef5038c307?ui=en-US&rs=en-US&ad=US
+# Making sure that OneDrive has been closed before installing the new one.
+PROCESS_NAME="OneDrive"
+RUNNING=0
+PATH=/usr/bin/:/usr/sbin/:/usr/local/bin/:/usr/local/sbin/
+
+checkRunning()
+{
+	if pgrep $PROCESS_NAME; then
+		RUNNING=1;
+	else
+		RUNNING=0;
+	fi
+}
+
+jamfHelper()
+{
+	jamf displayMessage -message "Please exit all running instances of OneDrive and click OK."
+	JRUNNING=1
+	while [ $JRUNNING -ge 1 ]
+	do
+		sleep 15
+		JRUNNING=$(ps aux | grep -i jamfHelper | grep -i OneDrive | wc -l)
+	done
+	checkRunning
+}
+
+#checkRunning
+#while [ $RUNNING -eq 1 ]
+#do
+#	jamfHelper
+#done
+#killall cfprefsd
+exit 0

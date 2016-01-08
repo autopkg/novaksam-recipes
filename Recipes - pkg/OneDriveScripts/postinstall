@@ -1,0 +1,36 @@
+#!/bin/bash
+# Post install script for setting up OneDrive for business
+# https://support.office.com/en-us/article/Deploying-the-OneDrive-Next-Generation-Sync-Client-on-OS-X-and-configuring-work-or-school-accounts-eadddc4e-edc0-4982-9f50-2aef5038c307?ui=en-US&rs=en-US&ad=US
+# Checked with http://www.shellcheck.net/
+TenantID=0
+PATH=/usr/bin/:/usr/sbin/:/usr/local/bin/:/usr/local/sbin/
+
+createDirectories() {
+	cd /Library || exit
+	if [ -d Containers ]
+		then
+		cd Containers || exit 
+	else
+		mkdir Containers
+		cd Containers || exit
+	fi
+	if [ ! -d com.microsoft.OneDrive-mac ]
+		then
+		mkdir -p com.microsoft.OneDrive-mac/Data/Library/Preferences
+	fi
+}
+
+writePreference() {
+	defaults write /Library/Containers/com.microsoft.OneDrive-mac/Data/Library/Preferences/com.microsoft.OneDrive-mac "$1" "$2" "$3"
+}
+
+#writeTenants() {
+#/usr/libexec/PlistBuddy -c "Add :Tenants:$TenantID" /Library/Containers/com.microsoft.OneDrive-mac/Data/Library/Preferences/com.microsoft.OneDrive-mac.plist
+#}
+#createDirectories
+#writePreference "DefaultToBusinessFRE" "-bool" "True"
+#writePreference "EnableAddAccounts" "-bool" "True"
+#writePreference "DisablePersonalSync" "-bool" "True"
+#killall cfprefsd
+#jamf displayMessage -message "OneDrive has been updated. You may now re-open the application."
+exit 0
