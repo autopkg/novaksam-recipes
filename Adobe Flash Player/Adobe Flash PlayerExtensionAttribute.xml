@@ -12,11 +12,6 @@ ExtensionVersion=""
 if [ -f /Library/Internet\ Plug-Ins/Flash\ Player.plugin/Contents/Info.plist ]
 	then
 	ExtensionVersion=$(defaults read /Library/Internet\ Plug-Ins/Flash\ Player.plugin/Contents/Info.plist CFBundleShortVersionString)
-
-	if [ "$ExtensionVersion" == "" ]
-		then
-			ExtensionVersion=$(defaults read /Library/Internet\ Plug-Ins/Flash\ Player.plugin/Contents/Info.plist CFBundleVersion)
-	fi
 fi
 
 if [ "$ExtensionVersion" == "" ]

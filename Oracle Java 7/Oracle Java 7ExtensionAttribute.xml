@@ -10,13 +10,7 @@
 ExtensionVersion=""
 if [ -f /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist ]
 	then
-	ExtensionVersion=$(defaults read /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist CFBundleShortVersionString)
-
-	if [ "$ExtensionVersion" == "" ]
-		then
-			ExtensionVersion=$(defaults read /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist CFBundleVersion)
-	fi
-	
+	ExtensionVersion=$(defaults read /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist CFBundleVersion)
 fi
 
 if [ "$ExtensionVersion" == "" ]
