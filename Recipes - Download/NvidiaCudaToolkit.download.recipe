@@ -12,10 +12,6 @@
 		<string>NvidiaCudaToolkit</string>
 		<key>SEARCH_PATTERN</key>
 		<string>(http\://developer.download.nvidia.com/compute/cuda/[0-9].[0-9]/Prod/local_installers/cuda_[0-9].[0-9].[0-9][0-9]_mac.dmg)</string>
-<!-- 
-		<key>SEARCH_PATTERN_2</key>
-		<string>(https\://developer.nvidia.com/sites/default/files/js/js_.+\.js)</string>
- -->
 		<key>SEARCH_URL</key>
 		<string>https://developer.nvidia.com/cuda-downloads</string>
 	</dict>
@@ -34,19 +30,6 @@
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
 		</dict>
-<!-- 
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>%SEARCH_PATTERN%</string>
-				<key>url</key>
-				<string>%match%</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
- -->
 		<dict>
 			<key>Arguments</key>
 			<dict>
