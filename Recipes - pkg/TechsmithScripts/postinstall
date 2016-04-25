@@ -1,0 +1,9 @@
+#!/bin/bash
+cd /Users/Shared/
+if [ -d TechSmithRecorder ]; then
+	cd TechSmithRecorder
+	installer -pkg ./TechSmithRelayInstaller.pkg -target /
+	cd /Users/Shared
+	rm -fr TechSmithRecorder
+fi
+killall TechSmith\ Relay
