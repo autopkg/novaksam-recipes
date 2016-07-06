@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>POLICY_TRIGGER</key>
-		<string>Install_AdobeAcrobatReaderDC</string>
+		<string>Install_AdobeAcrobatReaderDCUpdate</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Views, prints, and comments on PDF documents, and connects to Adobe Document Cloud.</string>
 		<key>SELF_SERVICE_ICON</key>
@@ -32,7 +32,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.pkg.AdobeAcrobatReaderDC</string>
+	<string>com.github.novaksam.pkg.AdobeAcrobatReaderDCUpdate</string>
 	<key>Process</key>
 	<array>
 		<dict>
