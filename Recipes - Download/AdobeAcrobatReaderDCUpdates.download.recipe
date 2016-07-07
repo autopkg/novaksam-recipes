@@ -7,7 +7,7 @@
 Set MAJOR_VERSION to "Acrobat2015" to download the 'Classic Track' updates for acrobat DC instead of the Continuous track.
 	</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.download.AdobeAcrobatReaderDCUpdate</string>
+	<string>com.github.novaksam.download.AdobeAcrobatReaderDCUpdates</string>
 	<key>Input</key>
 	<dict>
 		<key>LANGUAGE</key>

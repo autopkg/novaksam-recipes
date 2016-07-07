@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads updates for Adobe Acrobat Reader DC and copies pkg.</string>
+	<key>Identifier</key>
+	<string>com.github.novaksam.pkg.AdobeAcrobatReaderDCUpdates</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Adobe Acrobat Reader DC Updates</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.novaksam.download.AdobeAcrobatReaderDCUpdates</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%pathname%/*.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
