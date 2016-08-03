@@ -13,7 +13,7 @@
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>SmartGroupTemplate.xml</string>
+		<string>Adobe Acrobat Reader DC UpdatesSmartGroupTemplate.xml</string>
 		<key>NAME</key>
 		<string>Adobe Acrobat Reader DC Updates</string>
 		<key>OS_REQUIREMENTS</key>
