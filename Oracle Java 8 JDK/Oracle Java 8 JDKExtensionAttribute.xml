@@ -15,7 +15,7 @@ ExtensionVersion=""
 # Cut that value to a "1.8.0_45" format
 if [ -d /Library/Java/JavaVirtualMachines ]; then
 	cd /Library/Java/JavaVirtualMachines
-	ExtensionVersion=$(find ./  -d 1 -name "*.jdk" | grep -v '1.6.0' | cut -d '/' -f3 | sort -r | head -n 1 | cut -b 4-11)
+	ExtensionVersion=$(find ./  -d 1 -name "*.jdk" | grep -v '1.6.0' | cut -d '/' -f3 | sort -r | head -n 1 | cut -d '.' -f1,2,3 | cut -d 'k' -f2 )
 fi
 
 if [ "$ExtensionVersion" == "" ]
