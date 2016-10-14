@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://store.soundslides.com/apps/downloads/PlusMac/</string>
+		<string>https://store.soundslides.com/apps/downloads/PlusMac/</string>
 		<key>NAME</key>
 		<string>Soundslides Plus</string>
 	</dict>
