@@ -9,14 +9,12 @@
 
 ExtensionVersion=""
 
-if [ -f /Applications/GitHub\ Desktop.app/Contents/Info.plist ]
-	then
+if [ -f /Applications/GitHub\ Desktop.app/Contents/Info.plist ]; then
 	ExtensionVersion=$(defaults read /Applications/GitHub\ Desktop.app/Contents/Info.plist CFBundleVersion)
 fi
 
-if [ "$ExtensionVersion" == "" ]
-	then
-		ExtensionVersion="Not Installed"
+if [ "$ExtensionVersion" == "" ]; then
+	ExtensionVersion="Not Installed"
 fi
 
 echo "&lt;result&gt;$ExtensionVersion&lt;/result&gt;"

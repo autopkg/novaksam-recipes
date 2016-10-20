@@ -16,9 +16,8 @@
 			# and return the first result (ex. 7.0.29)'
 			VERSION=$(find /Developer/NVIDIA/ -name "cuda-gdb*.src.tar.gz" | cut -d '-' -f4 | sort -r | cut -d '.' -f1,2,3 | head -n 1)
 			
-			if [ "$VERSION" == "" ]
-				then
-					VERSION="Not Installed"
+			if [ "$VERSION" == "" ]; then
+				VERSION="Not Installed"
 			fi
 			
 			

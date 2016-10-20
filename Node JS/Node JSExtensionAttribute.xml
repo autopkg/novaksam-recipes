@@ -8,19 +8,16 @@
 		<script>#!/bin/bash
 
 ExtensionVersion=""
-if [ -f /usr/local/bin/node ]
-	then
+if [ -f /usr/local/bin/node ]; then
 	ExtensionVersion=$(/usr/local/bin/node --version)
 
-	if [ "$ExtensionVersion" != "" ]
-		then
-			ExtensionVersion=`echo ${ExtensionVersion:1}`
+	if [ "$ExtensionVersion" != "" ]; then
+		ExtensionVersion=`echo ${ExtensionVersion:1}`
 	fi
 fi
 
-if [ "$ExtensionVersion" == "" ]
-	then
-		ExtensionVersion="Not Installed"
+if [ "$ExtensionVersion" == "" ]; then
+	ExtensionVersion="Not Installed"
 fi
 
 echo "&lt;result&gt;$ExtensionVersion&lt;/result&gt;"

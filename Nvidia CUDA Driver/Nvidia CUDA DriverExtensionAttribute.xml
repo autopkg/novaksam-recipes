@@ -8,14 +8,12 @@
 		<script>#!/bin/bash
 
 ExtensionVersion=""
-if [ -f /Library/Frameworks/CUDA.framework/Versions/Current/Resources/Info.plist ]
-	then
+if [ -f /Library/Frameworks/CUDA.framework/Versions/Current/Resources/Info.plist ]; then
 	ExtensionVersion=$(defaults read /Library/Frameworks/CUDA.framework/Versions/Current/Resources/Info.plist CFBundleShortVersionString)
 fi
 
-if [ "$ExtensionVersion" == "" ]
-	then
-		ExtensionVersion="Not Installed"
+if [ "$ExtensionVersion" == "" ]; then
+	ExtensionVersion="Not Installed"
 fi
 
 echo "&lt;result&gt;$ExtensionVersion&lt;/result&gt;"

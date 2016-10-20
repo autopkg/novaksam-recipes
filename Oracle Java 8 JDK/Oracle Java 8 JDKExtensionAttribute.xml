@@ -18,9 +18,8 @@ if [ -d /Library/Java/JavaVirtualMachines ]; then
 	ExtensionVersion=$(find ./  -d 1 -name "*.jdk" | grep -v '1.6.0' | cut -d '/' -f3 | sort -r | head -n 1 | cut -d '.' -f1,2,3 | cut -d 'k' -f2 )
 fi
 
-if [ "$ExtensionVersion" == "" ]
-	then
-		ExtensionVersion="Not Installed"
+if [ "$ExtensionVersion" == "" ]; then
+	ExtensionVersion="Not Installed"
 fi
 
 echo "&lt;result&gt;$ExtensionVersion&lt;/result&gt;"
