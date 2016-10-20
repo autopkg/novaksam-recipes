@@ -16,6 +16,8 @@
 		<string>Nvidia CUDA ToolkitSmartGroupTemplate.xml</string>
 		<key>NAME</key>
 		<string>Nvidia CUDA Toolkit</string>
+		<key>OS_REQUIREMENTS</key>
+		<string>10.12.x,10.11.x</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
@@ -56,6 +58,8 @@
 						<string>%GROUP_TEMPLATE%</string>
 					</dict>
 				</array>
+				<key>os_requirements</key>
+				<string>%OS_REQUIREMENTS%</string>
 				<key>policy_category</key>
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
