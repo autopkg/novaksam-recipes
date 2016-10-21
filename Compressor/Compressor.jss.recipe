@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Packages a local installation of Compressor, then uploads to the JSS.</string>
+	<string>Checks for Compressor update, packages, and adds to the JSS</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.jss.Compressor</string>
 	<key>Input</key>

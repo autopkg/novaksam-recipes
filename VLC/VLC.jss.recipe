@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads VLC disk image and builds a package, then uploads to the JSS.</string>
+	<string>Downloads latest VLC disk image, and builds a package, and uploads to the JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.jss.VLC</string>
 	<key>Input</key>

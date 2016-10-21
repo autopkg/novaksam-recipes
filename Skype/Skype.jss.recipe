@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads Skype installer and extracts the embedded package, uploads to JSS.</string>
+	<string>Downloads latest Skype disk image, builds a package, and uploads to the JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.jss.Skype</string>
 	<key>Input</key>

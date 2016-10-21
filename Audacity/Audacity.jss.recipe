@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads Audacity disk image and builds a package, then uploads to the JSS.</string>
+	<string>Downloads the latest version of Audacity and makes a pkg of it then uploads it to the JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.jss.Audacity</string>
 	<key>Input</key>

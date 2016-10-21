@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads Adobe Reader installer and extracts the embedded package, uploads to JSS.</string>
+	<string>Downloads the latest version of Adobe Reader and makes a pkg of it then uploads it to the JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.jss.AdobeReader</string>
 	<key>Input</key>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Packages a local installation of Microsoft Remote Desktop, then uploads to the JSS.</string>
+	<string>Checks for Microsoft Remote Desktop update, packages, and adds to the JSS</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.jss.MicrosoftRemoteDesktop</string>
 	<key>Input</key>

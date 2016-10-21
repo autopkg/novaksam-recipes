@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Builds a package for the installed Casper Suite, then uploads to the JSS.</string>
+	<string>Packages Casper Suite from the local Mac, and uploads it to the JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.jss.CasperSuite</string>
 	<key>Input</key>

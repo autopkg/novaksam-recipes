@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads Oracle Java 8 JDK installer and extracts the embedded package, uploads to JSS.</string>
+	<string>Downloads the latest version of Oracle Java 8 JDK and creates a package. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.jss.OracleJava8JDK</string>
 	<key>Input</key>

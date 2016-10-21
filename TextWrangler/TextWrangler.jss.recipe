@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads TextWrangler installer and extracts the embedded package, uploads to JSS.</string>
+	<string>Downloads the latest TextWrangler and creates a package. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.jss.TextWrangler</string>
 	<key>Input</key>
