@@ -60,6 +60,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>file_path</key>
+				<string>%pathname%/Applications/%NAME%.app/Contents/Resources/OneDrive.app.manifest</string>
+			</dict>
+			<key>Processor</key>
+			<string>DSStoreEraser</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_request</key>
 				<dict>
 					<key>chown</key>
