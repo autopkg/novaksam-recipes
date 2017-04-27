@@ -9,11 +9,11 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_PATTERN</key>
-		<string>(/adobe/brackets/releases/download/release-.+eb\d+.+\.dmg)</string>
+		<string>(/adobe/brackets/releases/download/release-\d+\.\d+/.+\.dmg)</string>
 		<key>NAME</key>
 		<string>Brackets</string>
 		<key>VERSION_PATTERN</key>
-		<string>(/adobe/brackets/releases/tag/release-.+eb\d+)</string>
+		<string>(/adobe/brackets/releases/tag/release-\d+\.\d+(?="))</string>
 		<key>VERSION_URL</key>
 		<string>https://github.com/adobe/brackets/releases.atom</string>
 	</dict>
@@ -59,7 +59,7 @@
 			<dict>
 				<key>expected_authority_names</key>
 				<array>
-					<string>Developer ID Application: Adobe Systems, Inc.</string>
+					<string>Developer ID Application: Adobe Systems, Inc. (JQ525L2MZD)</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
