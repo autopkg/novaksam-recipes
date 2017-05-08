@@ -15,7 +15,7 @@
 		<key>GROUP_TEMPLATE</key>
 		<string>Skype For BusinessSmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>Skype</string>
+		<string>Skype For Business</string>
 		<key>OS_REQUIREMENTS</key>
 		<string>10.12.x,10.11.x</string>
 		<key>POLICY_CATEGORY</key>
