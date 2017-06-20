@@ -14,7 +14,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.hansen-m.download.EndNote</string>
+	<string>com.github.hansen-m.download.EndNoteX7</string>
 	<key>Process</key>
 	<array>
 		<dict>
