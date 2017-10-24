@@ -3,34 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Audacity and makes a pkg of it then uploads it to the JSS.</string>
+	<string>Downloads the latest version of Adobe DNG Converter and makes a pkg of it. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jss.Audacity</string>
+	<string>com.github.jss-recipes.jss.AdobeDNGConverter</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Media</string>
+		<string>Digital Media</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>Audacity</string>
+		<string>Adobe DNG Converter</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
-		<key>POLICY_TRIGGER</key>
-		<string>Install_Audacity</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Install the latest version of %NAME%.</string>
+		<string>Convert proprietary RAW files to the Digital Negative format.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Audacity.png</string>
+		<string>Adobe DNG Converter.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>0.2.9</string>
 	<key>ParentRecipe</key>
-	<string>com.github.scriptingosx.pkg.audacity</string>
+	<string>com.github.sheagcraig.pkg.AdobeDNGConverter</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -53,16 +51,12 @@
 				<string>%POLICY_CATEGORY%</string>
 				<key>policy_template</key>
 				<string>%POLICY_TEMPLATE%</string>
-				<key>policy_trigger</key>
-				<string>%POLICY_TRIGGER%</string>
 				<key>prod_name</key>
 				<string>%NAME%</string>
 				<key>self_service_description</key>
 				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
 				<string>%SELF_SERVICE_ICON%</string>
-				<key>version</key>
-				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
