@@ -102,7 +102,7 @@ class MinimumOSExtractor(DmgMounter):
                 if maximum_os_version is 'HOST_OS':
                     # https://stackoverflow.com/a/1777365
                     v, _, _ = platform.mac_ver()
-                    v = str('.'.join(v.split('.')[:2]))
+                    maximum_os_version = str('.'.join(v.split('.')[:2]))
                     # Append on .x
                     # maximum_os_version = v + '.x'
                 # else:
@@ -111,16 +111,18 @@ class MinimumOSExtractor(DmgMounter):
 
                 # At this point it's fairly safe to say the Lion (10.7)
                 # is an acceptably low number to consider an app not having a minimum OS
-                if int(minimum_os_version.split('.')[1]) is int((self.env['minimum_os_version']).split('.')[1]):
+                if int(minimum_os_version.split('.')[1]) is int(self.env['minimum_os_version'].split('.')[1]):
                     minimum_os_version = 'No_Minimum'
 
                 if not minimum_os_version is 'No_Minimum':
                     # Create the list of all the OS's between the min and max
                     # It's ok if minimum_os_version contains 3 numbers, since
                     # we only use the second one to create our range
+                    print minimum_os_version
                     os_min = int(minimum_os_version.split('.')[1])
                     # You have to add one to the maximum OS version, because the range
                     # appears to start at the minimum, but end one short of the max
+                    print maximum_os_version
                     os_max = int(maximum_os_version.split('.')[1]) + 1
                     os_requirement = ''
                     for os_version in range(os_min, os_max):
@@ -133,7 +135,7 @@ class MinimumOSExtractor(DmgMounter):
                     self.env['OS_REQUIREMENTS'] = ''
 
                 self.output("OS Version requirements %s in file %s"
-                            % (self.env['os_requirement'], input_plist_path))
+                            % (self.env['OS_REQUIREMENTS'], input_plist_path))
 
             except FoundationPlist.FoundationPlistException, err:
                 raise ProcessorError(err)
