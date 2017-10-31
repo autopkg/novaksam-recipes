@@ -33,12 +33,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>expected_authority_names</key>
-				<array>
-					<string>Developer ID Application: JAMF Software (483DWKW443)</string>
-					<string>Developer ID Certification Authority</string>
-					<string>Apple Root CA</string>
-				</array>
+				<key>requirement</key>
+				<string>anchor apple generic and identifier "com.jamfsoftware.CasperAdmin" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "483DWKW443"</string>
 				<key>input_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Admin.app</string>
 			</dict>
@@ -48,12 +44,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>expected_authority_names</key>
-				<array>
-					<string>Developer ID Application: JAMF Software (483DWKW443)</string>
-					<string>Developer ID Certification Authority</string>
-					<string>Apple Root CA</string>
-				</array>
+				<key>requirement</key>
+				<string>anchor apple generic and identifier "com.jamfsoftware.CasperImaging" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "483DWKW443"</string>
 				<key>input_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Imaging.app</string>
 			</dict>
@@ -63,14 +55,32 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>expected_authority_names</key>
-				<array>
-					<string>Developer ID Application: JAMF Software (483DWKW443)</string>
-					<string>Developer ID Certification Authority</string>
-					<string>Apple Root CA</string>
-				</array>
+				<key>requirement</key>
+				<string>anchor apple generic and identifier "com.jamfsoftware.CasperRemote" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "483DWKW443"</string>
 				<key>input_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Casper Remote.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>requirement</key>
+				<string>anchor apple generic and identifier "com.jamfsoftware.Composer" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "483DWKW443"</string>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Composer.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>requirement</key>
+				<string>anchor apple generic and identifier "com.jamfsoftware.Recon" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "483DWKW443"</string>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Recon.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
