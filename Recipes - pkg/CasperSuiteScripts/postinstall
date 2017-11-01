@@ -7,4 +7,6 @@ if [ -d "$FOLDER" ]
 then
 	cd "$FOLDER"
 	/usr/bin/xattr-2.6 -xw com.apple.FinderInfo '00 00 00 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00' .
+	/usr/bin/find ./ -name "*nfo.plist" -exec chmod 666 {} \;
 fi
+
