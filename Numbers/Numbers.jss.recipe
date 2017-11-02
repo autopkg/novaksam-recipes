@@ -16,8 +16,6 @@
 		<string>NumbersSmartGroupTemplate.xml</string>
 		<key>NAME</key>
 		<string>Numbers</string>
-		<key>OS_REQUIREMENTS</key>
-		<string>10.13.x,10.12.x</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
@@ -35,6 +33,15 @@
 	<string>com.github.nmcspadden.pkg.appstore</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%PATH%/Contents/Info.plist</string>				
+			</dict>
+			<key>Processor</key>
+			<string>com.github.autopkg.novaksam-recipes.Processors/MinimumOSExtractor</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
