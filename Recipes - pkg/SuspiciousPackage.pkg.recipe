@@ -26,7 +26,7 @@
 				<string>%RECIPE_CACHE_DIR%/Extract</string>
 			</dict>
 			<key>Processor</key>
-			<string>XarExpander</string>
+			<string>com.github.autopkg.novaksam-recipes.Processors/XarExpander</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -47,6 +47,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/Extract/%NAME%.app/Contents/Info.plist</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.autopkg.novaksam-recipes.Processors/MinimumOSExtractor</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>bundleid</key>
 				<string>%bundleid%</string>
 				<key>pkg_build_name</key>
@@ -57,7 +66,7 @@
 				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
-			<string>PkgBuildTester</string>
+			<string>com.github.autopkg.novaksam-recipes.Processors/PkgBuildTester</string>
 			<key>comment</key>
 			<string>Look in our recipe cache for an existing, current package.</string>
 		</dict>
