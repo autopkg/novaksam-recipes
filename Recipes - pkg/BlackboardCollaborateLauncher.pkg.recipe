@@ -65,6 +65,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Contents/Info.plist</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.autopkg.novaksam-recipes.Processors/MinimumOSExtractor</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>info_path</key>
 				<string>%pkgroot%/Applications/Blackboard Collaborate Launcher.app/Contents/Info.plist</string>
 				<key>plist_keys</key>
@@ -89,7 +98,7 @@
 				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
-			<string>PkgBuildTester</string>
+			<string>com.github.autopkg.novaksam-recipes.Processors/PkgBuildTester</string>
 			<key>comment</key>
 			<string>Look in our recipe cache for an existing, current package.</string>
 		</dict>
