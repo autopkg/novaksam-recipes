@@ -39,7 +39,7 @@
 				<string>rm -f R Rscript</string>
 			</dict>
 			<key>Processor</key>
-			<string>FlatPkgScriptEditor</string>
+			<string>com.github.autopkg.novaksam-recipes.Processors/FlatPkgScriptEditor</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

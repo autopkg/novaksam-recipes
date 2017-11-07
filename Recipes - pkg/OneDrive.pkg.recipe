@@ -28,7 +28,7 @@
 				</array>
 			</dict>
 			<key>Processor</key>
-			<string>PathListCopier</string>
+			<string>com.github.autopkg.novaksam-recipes.Processors/PathListCopier</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -55,7 +55,7 @@
 				<string>dummy</string>
 			</dict>
 			<key>Processor</key>
-			<string>MASReceipt</string>
+			<string>com.github.autopkg.novaksam-recipes.Processors/MASReceipt</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -64,7 +64,7 @@
 				<string>%pathname%/Applications/%NAME%.app/Contents/Resources/OneDrive.app.manifest</string>
 			</dict>
 			<key>Processor</key>
-			<string>DSStoreEraser</string>
+			<string>com.github.autopkg.novaksam-recipes.Processors/DSStoreEraser</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

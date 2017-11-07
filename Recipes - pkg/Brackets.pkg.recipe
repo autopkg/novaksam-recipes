@@ -39,7 +39,7 @@
 				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
-			<string>PkgBuildTester</string>
+			<string>com.github.autopkg.novaksam-recipes.Processors/PkgBuildTester</string>
 			<key>comment</key>
 			<string>Look in our recipe cache for an existing, current package.</string>
 		</dict>
