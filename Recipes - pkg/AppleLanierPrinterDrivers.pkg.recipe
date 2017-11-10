@@ -16,6 +16,15 @@
 	<key>Process</key>
 	<array>
 		<dict>
+            <key>Processor</key>
+            <string>StopProcessingIf</string>
+            <key>Arguments</key>
+            <dict>
+                <key>predicate</key>
+                <string>download_changed == FALSE</string>
+            </dict>
+        </dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
@@ -25,6 +34,41 @@
 			</dict>
 			<key>Processor</key>
 			<string>PkgCopier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+				<key>flat_pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>purge_destination</key>
+				<string>true</string>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>packageinfo_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/*Drivers.pkg/PackageInfo</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.autopkg.novaksam-recipes.Processors/PackageInfoReader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+				</array>
+			</dict>
+			<key>Comment</key>
+			<string>Gotta clean up after myself!</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 	</array>
 </dict>
