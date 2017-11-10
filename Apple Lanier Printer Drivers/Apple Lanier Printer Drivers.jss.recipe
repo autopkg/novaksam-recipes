@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads Apple HP Printer Drivers installer, 
+	<string>Downloads Apple Lanier Printer Drivers installer, 
 	extracts some info needed for EA version tracking, 
 	and uploads it to JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jss.AppleHPPrinterDrivers</string>
+	<string>com.github.novaksam.jss.AppleLanierPrinterDrivers</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -15,9 +15,9 @@
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>Apple HP Printer DriversSmartGroupTemplate.xml</string>
+		<string>Apple Lanier Printer DriversSmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>Apple HP Printer Drivers</string>
+		<string>Apple Lanier Printer Drivers</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
@@ -25,14 +25,14 @@
 		<key>POLICY_TRIGGER</key>
 		<string>Install_AppleHPPrinterDrivers</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Install the latest version of Apple HP Printer Drivers.</string>
+		<string>Install the latest version of Apple Lanier Printer Drivers.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string>Apple HP Printer Drivers.png</string>
+		<string>Apple Lanier Printer Drivers.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.pkg.AppleHPPrinterDrivers</string>
+	<string>com.github.novaksam.pkg.AppleLanierPrinterDrivers</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -44,7 +44,7 @@
 				<array>
 					<dict>
 						<key>ext_attribute_path</key>
-						<string>Apple HP Printer DriversExtensionAttribute.xml</string>
+						<string>Apple Lanier Printer DriversExtensionAttribute.xml</string>
 					</dict>
 				</array>
 				<key>groups</key>
