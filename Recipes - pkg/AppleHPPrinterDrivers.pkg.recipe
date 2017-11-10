@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads latest Apple HP printer drivers and builds a package.</string>
+	<key>Identifier</key>
+	<string>com.github.novaksam.pkg.AppleHPPrinterDrivers</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Apple HP Printer Drivers</string>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.n8felton.download.AppleHPPrinterDrivers</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%pathname%/*.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
