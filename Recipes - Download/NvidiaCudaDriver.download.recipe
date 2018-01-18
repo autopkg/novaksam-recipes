@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Nvidia CUDA driver</string>
 		<key>SEARCH_PATTERN</key>
-		<string>(http\://us.download.nvidia.com/Mac/Quadro_Certified/[0-9]+.[0-9]+.[0-9]+/cudadriver-[0-9]+.[0-9]+.[0-9]+-macos.dmg)</string>
+		<string>(http\://us.download.nvidia.com/Mac/cuda_[0-9]+/cudadriver_[0-9]+.[0-9]+_macos.dmg)</string>
 		<key>SEARCH_URL</key>
 		<string>http://www.nvidia.com/object/cuda-mac-driver.html</string>
 	</dict>
