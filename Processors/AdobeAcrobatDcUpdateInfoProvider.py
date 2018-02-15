@@ -28,14 +28,13 @@ __all__ = ["AdobeAcrobatDcUpdateInfoProvider"]
 
 MAJOR_VERSION_DEFAULT = "AcrobatDC"
 CHECK_OS_VERSION_DEFAULT = "10.8"
-MAJOR_VERSION_MATCH_STR = "adobe/reader/mac/%s"
 
 AR_UPDATER_DOWNLOAD_URL = (
     "http://download.adobe.com/"
     "pub/adobe/acrobat/mac/%s/%s/%sUpd%s.dmg")
 
 AR_UPDATER_BASE_URL = "https://armmf.adobe.com/arm-manifests/mac"
-AR_URL_TEMPLATE = "/%s/reader/current_version.txt"
+AR_URL_TEMPLATE = "/%s/acrobat/current_version.txt"
 AR_MAJREV_IDENTIFIER = "{MAJREV}"
 OSX_MAJREV_IDENTIFIER = "{OS_VER_MAJ}"
 OSX_MINREV_IDENTIFIER = "{OS_VER_MIN}"
