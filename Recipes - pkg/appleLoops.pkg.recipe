@@ -68,7 +68,7 @@
 					<key>usr/local/</key>
 					<string>0755</string>
 					<key>usr/local/bin/</key>
-					<string>0775</string>
+					<string>0755</string>
 				</dict>
 				<key>pkgroot</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
@@ -96,9 +96,9 @@
 					<array>
 						<dict>
 							<key>group</key>
-							<string>admin</string>
+							<string>wheel</string>
 							<key>path</key>
-							<string>usr/local/bin</string>
+							<string>usr</string>
 							<key>user</key>
 							<string>root</string>
 						</dict>
