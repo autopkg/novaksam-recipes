@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Extract version number and other information from MAU. Slight variation that uses CFBundleVersion for versioning.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.pkg.MicrosoftAutoUpdateFullVersion</string>
+	<string>com.github.novaksam.pkg.MicrosoftAutoUpdateCFBundleVersion</string>
 	<key>Input</key>
 	<dict>
 		<key>CHANNEL</key>
