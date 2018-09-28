@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads latest Suspicious Package installer, unpacks it, and re-labels the installer.</string>
+	<string>Downloads latest Suspicious Package dmg, unpacks it, and creates a pkg.</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.pkg.SuspiciousPackage</string>
 	<key>Input</key>
@@ -18,122 +18,10 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/Extract</string>
-			</dict>
 			<key>Processor</key>
-			<string>com.github.autopkg.novaksam-recipes.Processors/XarExpander</string>
-		</dict>
-		<dict>
+			<string>AppPkgCreator</string>
 			<key>Arguments</key>
-			<dict>
-				<key>info_path</key>
-				<string>%RECIPE_CACHE_DIR%/Extract/%NAME%.app</string>
-				<key>plist_keys</key>
-				<dict>
-					<key>CFBundleIdentifier</key>
-					<string>bundleid</string>
-					<key>CFBundleShortVersionString</key>
-					<string>version</string>
-				</dict>
-			</dict>
-			<key>Processor</key>
-			<string>PlistReader</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/Extract/%NAME%.app/Contents/Info.plist</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.autopkg.novaksam-recipes.Processors/MinimumOSExtractor</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>bundleid</key>
-				<string>%bundleid%</string>
-				<key>pkg_build_name</key>
-				<string>%NAME%-%version%</string>
-				<key>pkg_dir</key>
-				<string>%RECIPE_CACHE_DIR%</string>
-				<key>version</key>
-				<string>%version%</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.autopkg.novaksam-recipes.Processors/PkgBuildTester</string>
-			<key>comment</key>
-			<string>Look in our recipe cache for an existing, current package.</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>predicate</key>
-				<string>pkg_build_matches == YES</string>
-			</dict>
-			<key>Processor</key>
-			<string>StopProcessingIf</string>
-			<key>comment</key>
-			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkgdirs</key>
-				<dict>
-					<key>Applications</key>
-					<string>0775</string>
-				</dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-			</dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
-				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/Extract/%NAME%.app</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_request</key>
-				<dict>
-					<key>chown</key>
-					<array>
-						<dict>
-							<key>group</key>
-							<string>admin</string>
-							<key>path</key>
-							<string>Applications</string>
-							<key>user</key>
-							<string>root</string>
-						</dict>
-					</array>
-					<key>id</key>
-					<string>%bundleid%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
-					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
-					<key>version</key>
-					<string>%version%</string>
-				</dict>
-			</dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
+			<dict/>
 		</dict>
 	</array>
 </dict>
