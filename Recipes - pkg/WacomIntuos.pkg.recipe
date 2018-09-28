@@ -54,7 +54,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>modifier</key>
-				<string>777</string>
+				<string>755</string>
 				<key>pathname</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Library/LaunchAgents</string>
 			</dict>
@@ -65,7 +65,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>modifier</key>
-				<string>777</string>
+				<string>755</string>
 				<key>pathname</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Library/LaunchDaemons</string>
 			</dict>
