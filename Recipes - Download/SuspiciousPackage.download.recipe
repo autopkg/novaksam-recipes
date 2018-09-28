@@ -3,8 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest installer for suspicious package. 
-	Verification bit borrowed from com.github.jps3.download.SuspiciousPackageQLP</string>
+	<string>Downloads the latest dmg for Suspicious Package.</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.download.SuspiciousPackage</string>
 	<key>Input</key>
@@ -12,7 +11,7 @@
 		<key>NAME</key>
 		<string>Suspicious Package</string>
 		<key>pkg_url</key>
-		<string>http://www.mothersruin.com/software/downloads/SuspiciousPackage.xip</string>
+		<string>https://www.mothersruin.com/software/downloads/SuspiciousPackage.dmg</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
@@ -26,6 +25,17 @@
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/*.app</string>
+				<key>requirement</key>
+				<string>anchor apple generic and identifier "com.mothersruin.SuspiciousPackageApp" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "936EB786NH")</string>
+			</dict>
 		</dict>
 		<dict>
 			<key>Processor</key>
