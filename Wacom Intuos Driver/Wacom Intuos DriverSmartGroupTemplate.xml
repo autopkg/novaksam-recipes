@@ -31,10 +31,10 @@
 			<value>Testing</value>
 		</criterion>
 		<criterion>
-			<name>Operating System</name>
+			<name>Operating System Version</name>
 			<priority>4</priority>
 			<and_or>and</and_or>
-			<search_type>like</search_type>
+			<search_type>greater than or equal</search_type>
 			<value>10.10</value>
 		</criterion>
 	</criteria>
