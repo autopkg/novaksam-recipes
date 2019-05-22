@@ -1,0 +1,39 @@
+<computer_extension_attribute>
+	<name>Office Version</name>
+	<description>Determines what version of Office is installed</description>
+	<data_type>string</data_type>
+	<input_type>
+		<type>script</type>
+		<platform>Mac</platform>
+		<script>#!/bin/bash
+
+ExtensionVersion=""
+
+if [ -f /Applications/Microsoft\ Word.app/Contents/Info.plist ]; then
+	versionString1=$(defaults read /Applications/Microsoft\ Word.app/Contents/Info.plist CFBundleShortVersionString | cut -d'.' -f1)
+	versionString2=$(defaults read /Applications/Microsoft\ Word.app/Contents/Info.plist CFBundleShortVersionString | cut -d'.' -f2)
+
+	if [ "$versionString1" -eq "15" ]; then
+		ExtensionVersion="Office 2016"
+	elif [ "$versionString1" -eq "16" -a "$versionString2" -le "16" ]; then
+		ExtensionVersion="Office 2016"
+	elif [ "$versionString1" -eq "16" -a "$versionString2" -ge "17" ]; then
+		ExtensionVersion="Office 2019"
+	else
+		ExtensionVersion="Missing or newer release"
+	fi
+
+fi
+
+if [ "$ExtensionVersion" == "" ]; then
+	ExtensionVersion="Not Installed"
+fi
+
+
+echo "&lt;result&gt;$ExtensionVersion&lt;/result&gt;"
+
+exit 0</script>
+	</input_type>
+	<inventory_display>Extension Attributes</inventory_display>
+	<recon_display>Extension Attributes</recon_display>
+</computer_extension_attribute>
