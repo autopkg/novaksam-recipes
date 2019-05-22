@@ -11,9 +11,9 @@
 		<key>NAME</key>
 		<string>NvidiaCudaToolkit</string>
 		<key>SEARCH_PATTERN</key>
-		<string>(http\://developer.download.nvidia.com/compute/cuda/[0-9]+.[0-9]+/Prod/local_installers/cuda_[0-9]+.[0-9]+.[0-9]+_mac.dmg)</string>
+		<string>(/compute/cuda/[0-9]+.[0-9]+/Prod/local_installers/cuda_[0-9]+.[0-9]+.[0-9]+_mac)</string>
 		<key>SEARCH_URL</key>
-		<string>https://developer.nvidia.com/cuda-downloads</string>
+		<string>https://developer.nvidia.com/cuda-downloads?target_os=MacOSX&amp;target_arch=x86_64&amp;target_type=dmglocal</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
@@ -36,7 +36,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>%match%</string>
+				<string>http://developer.download.nvidia.com/%match%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
