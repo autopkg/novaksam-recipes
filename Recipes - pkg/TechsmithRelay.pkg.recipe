@@ -65,7 +65,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/%NAME%.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Techsmith Relay.app/Contents/Info.plist</string>
 				<key>plist_keys</key>
 				<dict>
 					<key>CFBundleIdentifier</key>
@@ -81,7 +81,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/%NAME%.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Techsmith Relay.app/Contents/Info.plist</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.autopkg.novaksam-recipes.Processors/MinimumOSExtractor</string>

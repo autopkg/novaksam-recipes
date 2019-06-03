@@ -22,7 +22,7 @@
 				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 				<key>sourcelist</key>
 				<array>
-					<string>/Applications/%NAME%.app</string>
+					<string>/Applications/GarageBand.app</string>
 					<string>/Library/Application Support/GarageBand</string>
 					<string>/Library/Application Support/Logic</string>
 					<string>/Library/Audio/Apple Loops</string>

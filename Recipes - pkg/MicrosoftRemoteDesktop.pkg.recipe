@@ -9,7 +9,7 @@
 		<key>NAME</key>
 		<string>Microsoft Remote Desktop</string>
 		<key>PATH</key>
-		<string>/Applications/%NAME%.app</string>
+		<string>/Applications/Microsoft Remote Desktop.app</string>
 	</dict>
 	<key>ParentRecipe</key>
 	<string>com.github.nmcspadden.pkg.appstore</string>

@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
-				<string>%pathname%/%NAME%/%NAME%.app</string>
+				<string>%pathname%/%NAME%/EndNote X7.app</string>
 				<key>plist_keys</key>
 				<dict>
 					<key>CFBundleIdentifier</key>
@@ -71,7 +71,7 @@
 					<string>Apple Root CA</string>
 				</array>
 				<key>input_path</key>
-				<string>%pathname%/%NAME%/%NAME%.app</string>
+				<string>%pathname%/%NAME%/EndNote X7.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -116,7 +116,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pkgroot%/Applications/%NAME%/%NAME%.app</string>
+				<string>%pkgroot%/Applications/%NAME%/EndNote X7.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
