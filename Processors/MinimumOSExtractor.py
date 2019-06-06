@@ -35,7 +35,7 @@ class MinimumOSExtractor(DmgMounter):
             <key>Arguments</key>
             <dict>
                 <key>input_plist_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.app/Contents/Info.plist</string>
+                <string>%RECIPE_CACHE_DIR%/downloads/Foo.app/Contents/Info.plist</string>
                 <key>maximum_os_version</key>
                 <string>10.12</string>
                 <key>minimum_os_version</key>

@@ -23,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/Practica Musica.app</string>
 				<key>plist_keys</key>
 				<dict>
 					<key>CFBundleIdentifier</key>
@@ -81,9 +81,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
+				<string>%pkgroot%/Applications/Practica Musica.app</string>
 				<key>source_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/Practica Musica.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
@@ -92,12 +92,12 @@
 			<key>Arguments</key>
 			<dict>
 				<key>check_version_path</key>
-				<string>/Applications/%NAME%.app</string>
+				<string>/Applications/Practica Musica.app</string>
 				<key>pathname</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/license/</string>
 				<key>sourcelist</key>
 				<array>
-					<string>/Applications/%NAME%.app/Practica Musica Preferences</string>
+					<string>/Applications/Practica Musica.app/Practica Musica Preferences</string>
 				</array>
 			</dict>
 			<key>Processor</key>
@@ -108,7 +108,7 @@
 			<dict>
 				<key>path_list</key>
 				<array>
-					<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Practica Musica Preferences</string>
+					<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Practica Musica.app/Practica Musica Preferences</string>
 				</array>
 			</dict>
 			<key>Comment</key>
@@ -120,9 +120,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Practica Musica.app/</string>
 				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/license/Applications/%NAME%.app/Practica Musica Preferences</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/license/Applications/Practica Musica.app/Practica Musica Preferences</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
@@ -133,7 +133,7 @@
 				<key>modifier</key>
 				<string>666</string>
 				<key>pathname</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Practica Musica Preferences</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Practica Musica.app/Practica Musica Preferences</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.autopkg.novaksam-recipes.Processors/FileChmodEditor</string>
@@ -142,7 +142,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Practica Musica.app/Contents/Info.plist</string>
 			</dict>
 			<key>Processor</key>
 			<string>Versioner</string>
@@ -151,7 +151,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Practica Musica.app/Contents/Info.plist</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.autopkg.novaksam-recipes.Processors/MinimumOSExtractor</string>

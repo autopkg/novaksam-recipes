@@ -67,7 +67,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/Practica Musica.app</string>
 				<key>overwrite</key>
 				<string>true</string>
 				<key>source_path</key>
@@ -80,7 +80,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/Practica Musica.app/Contents/Info.plist</string>
 			</dict>
 			<key>Processor</key>
 			<string>Versioner</string>
@@ -103,7 +103,7 @@
 				<array>
 					<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
 					<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
-					<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.app</string>
+					<string>%RECIPE_CACHE_DIR%/downloads/Practica Musica.app</string>
 				</array>
 			</dict>
 			<key>Comment</key>
