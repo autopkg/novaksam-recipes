@@ -9,8 +9,12 @@
 
 ExtensionVersion=""
 
-if [ -f /usr/local/bin/appleLoops.py ]; then
+if [ -f /usr/local/bin/appleloops.py ]; then
 	ExtensionVersion=$(python /usr/local/bin/appleLoops.py --version | cut -d' ' -f3)
+fi
+
+if [ -f /usr/local/bin/appleloops ]; then
+	ExtensionVersion=$(python /usr/local/bin/appleloops --version | cut -d' ' -f3)
 fi
 
 if [ "$ExtensionVersion" == "" ]; then

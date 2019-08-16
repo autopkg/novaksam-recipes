@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/usr/bin/env python
 
-python /usr/local/bin/appleLoops.py --deployment -m
+python /usr/local/bin/appleloops --deployment -m
