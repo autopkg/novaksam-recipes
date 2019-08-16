@@ -14,7 +14,7 @@ if [ -f /usr/local/bin/appleloops.py ]; then
 fi
 
 if [ -f /usr/local/bin/appleloops ]; then
-	ExtensionVersion=$(python /usr/local/bin/appleloops --version | cut -d' ' -f3)
+	ExtensionVersion=$(python /usr/local/bin/appleloops --version 2&gt;&amp;1 | awk '{print $2}')
 fi
 
 if [ "$ExtensionVersion" == "" ]; then
