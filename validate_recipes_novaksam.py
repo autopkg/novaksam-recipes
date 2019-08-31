@@ -30,6 +30,8 @@ optional arguments:
 """
 
 
+from __future__ import absolute_import
+from __future__ import print_function
 import argparse
 import os
 import subprocess
@@ -135,13 +137,13 @@ class Results(object):
                 if verbose or not result[0]:
                     self._print_result(result)
         else:
-            print "Ok."
+            print("Ok.")
 
     def report_all(self):
         self.report(verbose=True)
 
     def _print_result(self, line):
-        print "Test: %s Result: %s" % (line[1], line[0])
+        print("Test: %s Result: %s" % (line[1], line[0]))
 
 
 def get_argument_parser():
@@ -212,13 +214,13 @@ def validate_recipe(recipe_path, verbose=False):
 
     header = "Testing recipe: %s" % recipe_path
     print_bar(len(header))
-    print header
+    print(header)
     print_bar(len(header))
 
     if os.path.exists(recipe_path):
         recipe = get_recipe(recipe_path)
     else:
-        print "File not found."
+        print("File not found.")
         sys.exit(1)
 
     results = Results()
@@ -886,7 +888,7 @@ def test_lint(recipe):
 
 def print_bar(length=79):
     """Print a line of '-'s."""
-    print length * "-"
+    print(length * "-")
 
 
 def main():

@@ -20,6 +20,7 @@
 # specific processors.
 # pylint: disable=e1101
 
+from __future__ import absolute_import
 import urllib2
 
 from autopkglib import Processor, ProcessorError

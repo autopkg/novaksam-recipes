@@ -17,6 +17,7 @@
 # limitations under the License.
 """See docstring for MinimumOSExtractor class"""
 
+from __future__ import absolute_import
 import os.path
 
 from autopkglib import Processor, ProcessorError
@@ -154,7 +155,7 @@ class MinimumOSExtractor(DmgMounter):
                 self.output("Maximum OS Version requirements %s in file %s"
                             % (self.env['OS_MAXIMUM'], input_plist_path))
 
-            except FoundationPlist.FoundationPlistException, err:
+            except FoundationPlist.FoundationPlistException as err:
                 raise ProcessorError(err)
 
         finally:

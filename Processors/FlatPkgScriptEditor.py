@@ -13,6 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from __future__ import absolute_import
 import os
 import errno
 import shutil
@@ -61,7 +62,7 @@ class FlatPkgScriptEditor(Processor):
     
     def main(self):
         
-        os.chmod(self.env["pathname"],0644)
+        os.chmod(self.env["pathname"],0o644)
         f = open(self.env["pathname"],'r')
         filedata = f.read()
         f.close()
@@ -71,7 +72,7 @@ class FlatPkgScriptEditor(Processor):
         f=open(self.env["pathname"],'w')
         f.write(newdata)
         f.close()
-        os.chmod(self.env["pathname"],0744)
+        os.chmod(self.env["pathname"],0o744)
         
 
 

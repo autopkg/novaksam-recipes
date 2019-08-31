@@ -16,6 +16,7 @@
 # limitations under the License.
 """See docstring for URLDownloader class"""
 
+from __future__ import absolute_import
 import os.path
 import re
 import subprocess
@@ -134,7 +135,7 @@ class CURLRedirectDownloader(Processor):
         if not os.path.exists(download_dir):
             try:
                 os.makedirs(download_dir)
-            except OSError, err:
+            except OSError as err:
                 raise ProcessorError(
                     "Can't create %s: %s" % (download_dir, err.strerror))
 
