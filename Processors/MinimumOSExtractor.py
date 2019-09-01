@@ -127,11 +127,11 @@ class MinimumOSExtractor(DmgMounter):
                     # Create the list of all the OS's between the min and max
                     # It's ok if minimum_os_version contains 3 numbers, since
                     # we only use the second one to create our range
-                    # print minimum_os_version
+                    # print(minimum_os_version)
                     os_min = int(minimum_os_version.split('.')[1])
                     # You have to add one to the maximum OS version, because the range
                     # appears to start at the minimum, but end one short of the max
-                    # print maximum_os_version
+                    # print(maximum_os_version)
                     os_max = int(maximum_os_version.split('.')[1]) + 1
                     os_requirement = ''
                     for os_version in range(os_min, os_max):
