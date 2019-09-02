@@ -15,10 +15,11 @@
 # limitations under the License.
 
 from __future__ import absolute_import
+
 import re
-import FoundationPlist
 
 from autopkglib import Processor, ProcessorError
+
 
 class DSStoreEraser(Processor):
     description = """Given a text file, will read and the and exclude lines containing DS_Store"""

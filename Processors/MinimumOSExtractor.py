@@ -18,12 +18,13 @@
 """See docstring for MinimumOSExtractor class"""
 
 from __future__ import absolute_import
-import os.path
 
+import os.path
+import platform
+
+import FoundationPlist
 from autopkglib import Processor, ProcessorError
 from autopkglib.DmgMounter import DmgMounter
-import FoundationPlist
-import platform
 
 __all__ = ["MinimumOSExtractor"]
 

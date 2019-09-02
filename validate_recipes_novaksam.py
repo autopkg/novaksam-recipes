@@ -30,18 +30,21 @@ optional arguments:
 """
 
 
-from __future__ import absolute_import
-from __future__ import print_function
+from __future__ import absolute_import, print_function
+
 import argparse
 import os
 import subprocess
 import sys
 
 # pylint: disable=no-name-in-module
-from Foundation import (NSData,
-                        NSPropertyListSerialization,
-                        NSPropertyListMutableContainersAndLeaves,
-                        NSPropertyListXMLFormat_v1_0)
+from Foundation import (
+    NSData,
+    NSPropertyListMutableContainersAndLeaves,
+    NSPropertyListSerialization,
+    NSPropertyListXMLFormat_v1_0,
+)
+
 # pylint: enable=no-name-in-module
 
 

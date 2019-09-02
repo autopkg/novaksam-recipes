@@ -17,15 +17,18 @@
 """See docstring for URLDownloader class"""
 
 from __future__ import absolute_import
+
 import os.path
 import re
 import subprocess
 import time
+
 # import urllib2
 import xattr
+from autopkglib import Processor, ProcessorError
+
 # import zlib
 
-from autopkglib import Processor, ProcessorError
 
 try:
     from autopkglib import BUNDLE_ID

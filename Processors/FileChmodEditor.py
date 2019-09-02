@@ -15,11 +15,9 @@
 # limitations under the License.
 
 from __future__ import absolute_import
-import os
-import errno
-import shutil
 
-import FoundationPlist
+import errno
+import os
 
 from autopkglib import Processor, ProcessorError
 

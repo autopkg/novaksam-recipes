@@ -16,9 +16,9 @@
 
 
 from __future__ import absolute_import
+
 import os.path
 import subprocess
-import xml.etree.ElementTree as ET
 
 from autopkglib import Processor, ProcessorError
 
