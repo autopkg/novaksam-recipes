@@ -109,7 +109,7 @@ class MinimumOSExtractor(DmgMounter):
                 # Set the Maximum OS, if default
                 # https://stackoverflow.com/a/1777365
                 maximum_os_version = str(self.env['maximum_os_version'])
-                if maximum_os_version is 'HOST_OS':
+                if maximum_os_version == 'HOST_OS':
                     # https://stackoverflow.com/a/1777365
                     v, _, _ = platform.mac_ver()
                     maximum_os_version = str('.'.join(v.split('.')[:2]))
@@ -136,7 +136,7 @@ class MinimumOSExtractor(DmgMounter):
                     os_max = int(maximum_os_version.split('.')[1]) + 1
                     os_requirement = ''
                     for os_version in range(os_min, os_max):
-                        if os_requirement is '':
+                        if os_requirement == '':
                             os_requirement = '10.' + str(os_version) + '.x'
                         else:
                             os_requirement = os_requirement + ',10.' + str(os_version) + '.x'
