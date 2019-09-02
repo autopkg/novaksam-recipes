@@ -203,7 +203,7 @@ class CURLRedirectDownloader(Processor):
             else:
                 time.sleep(0.1)
 
-            if proc.poll() != None:
+            if proc.poll() is not None:
                 # For small download files curl may exit before all headers
                 # have been parsed, don't immediately exit.
                 maxheaders -= 1
@@ -272,7 +272,7 @@ class CURLRedirectDownloader(Processor):
                 else:
                     time.sleep(0.1)
 
-                if proc2.poll() != None:
+                if proc2.poll() is not None:
                     # For small download files curl may exit before all headers
                     # have been parsed, don't immediately exit.
                     maxheaders2 -= 1
