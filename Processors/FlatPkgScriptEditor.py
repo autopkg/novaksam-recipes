@@ -6,7 +6,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#	  http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -52,32 +52,30 @@ class FlatPkgScriptEditor(Processor):
             "description": """The text to replace the found text with"""
         }
     }
-    
+
     output_variables = {
     }
-    
+
     __doc__ = description
 
 
-    
+
     def main(self):
-        
+
         os.chmod(self.env["pathname"],0o644)
         f = open(self.env["pathname"],'r')
         filedata = f.read()
         f.close()
-        
+
         newdata = filedata.replace(self.env["text_to_replace"],self.env["replacement_text"])
-        
+
         f=open(self.env["pathname"],'w')
         f.write(newdata)
         f.close()
         os.chmod(self.env["pathname"],0o744)
-        
+
 
 
 if __name__ == '__main__':
     processor = FlatPkgScriptEditor()
     processor.execute_shell()
-    
-
