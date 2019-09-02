@@ -40,7 +40,7 @@ class DSStoreEraser(Processor):
 
     def main(self):
         inputfile = open(self.env["file_path"], 'r')
-        temp = (re.sub("(.*?)DS_Store", "", inputfile.read()))
+        temp = (re.sub(r"(.*?)DS_Store", "", inputfile.read()))
         outputfile = open(self.env["file_path"], 'w')
         outputfile.write(temp)
         inputfile.close()
