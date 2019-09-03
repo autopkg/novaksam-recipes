@@ -77,7 +77,7 @@ class AdobeAcrobatDcUpdateInfoProvider(Processor):
             url_handle = urlopen(AR_UPDATER_BASE_URL + AR_URL_TEMPLATE % major_version)
             version_string = url_handle.read()
             url_handle.close()
-        except BaseException as err:
+        except Exception as err:
             raise ProcessorError("Can't open URL template: %s" % (err))
         version_string = version_string.replace(AR_MAJREV_IDENTIFIER, major_version)
 
