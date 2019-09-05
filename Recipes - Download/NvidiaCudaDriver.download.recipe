@@ -13,7 +13,7 @@
 		<key>SEARCH_PATTERN</key>
 		<string>(//us.download.nvidia.com/Mac/cuda_[0-9]+/cudadriver_[0-9]+.[0-9]+_macos.dmg)</string>
 		<key>SEARCH_URL</key>
-		<string>http://www.nvidia.com/object/cuda-mac-driver.html</string>
+		<string>https://www.nvidia.com/object/cuda-mac-driver.html</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
