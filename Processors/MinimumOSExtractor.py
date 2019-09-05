@@ -17,12 +17,14 @@
 # limitations under the License.
 """See docstring for MinimumOSExtractor class"""
 
-import os.path
+from __future__ import absolute_import
 
+import os.path
+import platform
+
+import FoundationPlist
 from autopkglib import Processor, ProcessorError
 from autopkglib.DmgMounter import DmgMounter
-import FoundationPlist
-import platform
 
 __all__ = ["MinimumOSExtractor"]
 
@@ -107,7 +109,7 @@ class MinimumOSExtractor(DmgMounter):
                 # Set the Maximum OS, if default
                 # https://stackoverflow.com/a/1777365
                 maximum_os_version = str(self.env['maximum_os_version'])
-                if maximum_os_version is 'HOST_OS':
+                if maximum_os_version == 'HOST_OS':
                     # https://stackoverflow.com/a/1777365
                     v, _, _ = platform.mac_ver()
                     maximum_os_version = str('.'.join(v.split('.')[:2]))
@@ -126,15 +128,15 @@ class MinimumOSExtractor(DmgMounter):
                     # Create the list of all the OS's between the min and max
                     # It's ok if minimum_os_version contains 3 numbers, since
                     # we only use the second one to create our range
-                    # print minimum_os_version
+                    # print(minimum_os_version)
                     os_min = int(minimum_os_version.split('.')[1])
                     # You have to add one to the maximum OS version, because the range
                     # appears to start at the minimum, but end one short of the max
-                    # print maximum_os_version
+                    # print(maximum_os_version)
                     os_max = int(maximum_os_version.split('.')[1]) + 1
                     os_requirement = ''
                     for os_version in range(os_min, os_max):
-                        if os_requirement is '':
+                        if os_requirement == '':
                             os_requirement = '10.' + str(os_version) + '.x'
                         else:
                             os_requirement = os_requirement + ',10.' + str(os_version) + '.x'
@@ -154,7 +156,7 @@ class MinimumOSExtractor(DmgMounter):
                 self.output("Maximum OS Version requirements %s in file %s"
                             % (self.env['OS_MAXIMUM'], input_plist_path))
 
-            except FoundationPlist.FoundationPlistException, err:
+            except FoundationPlist.FoundationPlistException as err:
                 raise ProcessorError(err)
 
         finally:

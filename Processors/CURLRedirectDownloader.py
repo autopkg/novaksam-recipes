@@ -16,15 +16,19 @@
 # limitations under the License.
 """See docstring for URLDownloader class"""
 
+from __future__ import absolute_import
+
 import os.path
 import re
 import subprocess
 import time
+
 # import urllib2
 import xattr
+from autopkglib import Processor, ProcessorError
+
 # import zlib
 
-from autopkglib import Processor, ProcessorError
 
 try:
     from autopkglib import BUNDLE_ID
@@ -134,7 +138,7 @@ class CURLRedirectDownloader(Processor):
         if not os.path.exists(download_dir):
             try:
                 os.makedirs(download_dir)
-            except OSError, err:
+            except OSError as err:
                 raise ProcessorError(
                     "Can't create %s: %s" % (download_dir, err.strerror))
 
@@ -199,7 +203,7 @@ class CURLRedirectDownloader(Processor):
             else:
                 time.sleep(0.1)
 
-            if proc.poll() != None:
+            if proc.poll() is not None:
                 # For small download files curl may exit before all headers
                 # have been parsed, don't immediately exit.
                 maxheaders -= 1
@@ -268,7 +272,7 @@ class CURLRedirectDownloader(Processor):
                 else:
                     time.sleep(0.1)
 
-                if proc2.poll() != None:
+                if proc2.poll() is not None:
                     # For small download files curl may exit before all headers
                     # have been parsed, don't immediately exit.
                     maxheaders2 -= 1

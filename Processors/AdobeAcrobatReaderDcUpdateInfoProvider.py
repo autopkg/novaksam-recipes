@@ -20,9 +20,14 @@
 # specific processors.
 # pylint: disable=e1101
 
-import urllib2
+from __future__ import absolute_import
 
 from autopkglib import Processor, ProcessorError
+
+try:
+    from urllib.parse import urlopen  # For Python 3
+except ImportError:
+    from urllib2 import urlopen  # For Python 2
 
 __all__ = ["AdobeAcrobatReaderDcUpdateInfoProvider"]
 
@@ -69,13 +74,11 @@ class AdobeAcrobatReaderDcUpdateInfoProvider(Processor):
     def get_reader_updater_dmg_url(self, major_version):
         '''Returns download URL for Adobe Reader Updater DMG'''
 
-        request = urllib2.Request(
-            AR_UPDATER_BASE_URL + AR_URL_TEMPLATE % major_version)
         try:
-            url_handle = urllib2.urlopen(request)
+            url_handle = urlopen(AR_UPDATER_BASE_URL + AR_URL_TEMPLATE % major_version)
             version_string = url_handle.read()
             url_handle.close()
-        except BaseException as err:
+        except Exception as err:
             raise ProcessorError("Can't open URL template: %s" % (err))
         version_string = version_string.replace(AR_MAJREV_IDENTIFIER, major_version)
 

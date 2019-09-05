@@ -17,6 +17,8 @@
 # limitations under the License.
 """See docstring for MinimumOSExtractor class"""
 
+from __future__ import absolute_import
+
 import os.path
 import xml.etree.ElementTree as ET
 
@@ -66,7 +68,7 @@ class PackageInfoReader(Processor):
             self.env["pkginfo_version"] = str(pkginfo_version)
             self.env["bundleid"] = str(bundleid)
 
-        except FoundationPlist.FoundationPlistException, err:
+        except FoundationPlist.FoundationPlistException as err:
             raise ProcessorError(err)
 
 
