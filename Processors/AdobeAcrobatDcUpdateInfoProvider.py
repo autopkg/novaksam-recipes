@@ -35,7 +35,7 @@ MAJOR_VERSION_DEFAULT = "AcrobatDC"
 CHECK_OS_VERSION_DEFAULT = "10.8"
 
 AR_UPDATER_DOWNLOAD_URL = (
-    "http://download.adobe.com/"
+    "https://download.adobe.com/"
     "pub/adobe/acrobat/mac/%s/%s/%sUpd%s.dmg")
 
 AR_UPDATER_BASE_URL = "https://armmf.adobe.com/arm-manifests/mac"
