@@ -8,8 +8,6 @@
 	<string>com.github.novaksam.download.SoundslidesPlus</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://store.soundslides.com/apps/downloads/PlusMac/</string>
 		<key>NAME</key>
 		<string>Soundslides Plus</string>
 	</dict>
@@ -20,13 +18,22 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>Soundslides 1.x has been deprecated (https://help.soundslides.com/guide/Migrating.html#legacy-software) and the latest version is a web app.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://final-soundslides-installers.s3.amazonaws.com/soundslides_plus.dmg</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.autopkg.novaksam-recipes.Processors/CURLRedirectDownloader</string>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
