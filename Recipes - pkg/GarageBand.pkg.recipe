@@ -60,7 +60,7 @@
 				<string>dummy</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.autopkg.novaksam-recipes.Processors/MASReceipt</string>
+			<string>com.scriptingosx.processors/MASReceipt</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
