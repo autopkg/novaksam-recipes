@@ -48,7 +48,7 @@
 				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.autopkg.novaksam-recipes.Processors/PkgBuildTester</string>
+			<string>com.github.nmcspadden.check.appstore/PkgBuildTester</string>
 			<key>comment</key>
 			<string>Look in our recipe cache for an existing, current package.</string>
 		</dict>
@@ -101,7 +101,7 @@
 				</array>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.autopkg.novaksam-recipes.Processors/PathListCopier</string>
+			<string>com.scriptingosx.processors/PathListCopier</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

@@ -29,7 +29,7 @@
 				</array>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.autopkg.novaksam-recipes.Processors/PathListCopier</string>
+			<string>com.scriptingosx.processors/PathListCopier</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
@@ -60,7 +60,7 @@
 				<string>dummy</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.autopkg.novaksam-recipes.Processors/MASReceipt</string>
+			<string>com.scriptingosx.processors/MASReceipt</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
