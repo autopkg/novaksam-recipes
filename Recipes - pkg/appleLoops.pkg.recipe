@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Identifier</key>
-    <string>com.github.novaksam.pkg.appleloops</string>
+    <string>com.github.novaksam.pkg.appleLoops</string>
     <key>Description</key>
     <string>Downloads the latest version of appleloops from Github</string>
     <key>Input</key>
