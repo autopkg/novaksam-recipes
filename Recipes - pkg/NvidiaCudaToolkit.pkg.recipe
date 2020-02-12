@@ -98,34 +98,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>bundleid</key>
-				<string>%bundleid%</string>
-				<key>pkg_build_name</key>
-				<string>%NAME%-%version%</string>
-				<key>pkg_dir</key>
-				<string>%RECIPE_CACHE_DIR%</string>
-				<key>version</key>
-				<string>%version%</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.nmcspadden.check.appstore/PkgBuildTester</string>
-			<key>comment</key>
-			<string>Look in our recipe cache for an existing, current package.</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>predicate</key>
-				<string>pkg_build_matches == YES</string>
-			</dict>
-			<key>Processor</key>
-			<string>StopProcessingIf</string>
-			<key>comment</key>
-			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/cuda_mac_installer_tk.tar.gz</string>
 				<key>source_path</key>

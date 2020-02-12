@@ -52,7 +52,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>packageinfo_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/*Drivers.pkg/PackageInfo</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/RicohPrinterDrivers.pkg/PackageInfo</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.autopkg.novaksam-recipes.Processors/PackageInfoReader</string>

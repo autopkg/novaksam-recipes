@@ -29,57 +29,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_build_name</key>
-				<string>%NAME%-%version%</string>
-				<key>pkg_dir</key>
-				<string>%RECIPE_CACHE_DIR%</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.nmcspadden.check.appstore/PkgBuildTester</string>
-			<key>comment</key>
-			<string>Look in our recipe cache for an existing, current package.</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>predicate</key>
-				<string>pkg_build_matches == YES</string>
-			</dict>
-			<key>Processor</key>
-			<string>StopProcessingIf</string>
-			<key>comment</key>
-			<string>If a package has already been built with this version and ID (and "force_pkg_build" is False), we're done.</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkgdirs</key>
-				<dict>
-					<key>Applications</key>
-					<string>0775</string>
-				</dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-			</dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%app_name%</string>
-				<key>source_path</key>
-				<string>%pathname%/%app_name%</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Android Studio.app</string>
+				<string>%pathname%/%app_name%</string>
 				<key>requirement</key>
 				<string>identifier "com.google.android.studio" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = EQHXZ8M8AV</string>
 			</dict>
@@ -90,7 +41,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Android Studio.app/Contents/Info.plist</string>
+				<string>%pathname%/%app_name%/Contents/Info.plist</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.autopkg.novaksam-recipes.Processors/MinimumOSExtractor</string>
@@ -98,31 +49,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_request</key>
-				<dict>
-					<key>chown</key>
-					<array>
-						<dict>
-							<key>group</key>
-							<string>admin</string>
-							<key>path</key>
-							<string>Applications</string>
-							<key>user</key>
-							<string>root</string>
-						</dict>
-					</array>
-					<key>id</key>
-					<string>%bundleid%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
-					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
-					<key>version</key>
-					<string>%version%</string>
-				</dict>
+				<key>app_path</key>
+				<string>%pathname%/%app_name%</string>
 			</dict>
 			<key>Processor</key>
-			<string>PkgCreator</string>
+			<string>AppPkgCreator</string>
 		</dict>
 	</array>
 </dict>
