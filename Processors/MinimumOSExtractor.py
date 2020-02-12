@@ -22,7 +22,7 @@ from __future__ import absolute_import
 import os.path
 import platform
 
-import FoundationPlist
+import plistlib
 from autopkglib import Processor, ProcessorError
 from autopkglib.DmgMounter import DmgMounter
 
@@ -103,7 +103,7 @@ class MinimumOSExtractor(DmgMounter):
                     "File '%s' does not exist or could not be read." %
                     input_plist_path)
             try:
-                plist = FoundationPlist.readPlist(input_plist_path)
+                plist = plistlib.readPlist(input_plist_path)
                 minimum_os_version = plist.get("LSMinimumSystemVersion", "No_Minimum")
 
                 # Set the Maximum OS, if default
@@ -156,7 +156,7 @@ class MinimumOSExtractor(DmgMounter):
                 self.output("Maximum OS Version requirements %s in file %s"
                             % (self.env['OS_MAXIMUM'], input_plist_path))
 
-            except FoundationPlist.FoundationPlistException as err:
+            except Exception as err:
                 raise ProcessorError(err)
 
         finally:
