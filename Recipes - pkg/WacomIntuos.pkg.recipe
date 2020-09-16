@@ -43,9 +43,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Library/Application Support/Tablet/WacomTabletDriver.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/Applications/Wacom Tablet.localized/Wacom Tablet Utility.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
-				<string>CFBundleVersion</string>
+				<string>CFBundleShortVersionString</string>
 			</dict>
 			<key>Processor</key>
 			<string>Versioner</string>
