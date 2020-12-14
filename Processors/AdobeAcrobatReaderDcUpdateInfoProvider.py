@@ -31,7 +31,7 @@ CHECK_OS_VERSION_DEFAULT = "10.8"
 MAJOR_VERSION_MATCH_STR = "adobe/reader/mac/%s"
 
 AR_UPDATER_DOWNLOAD_URL = (
-    "https://download.adobe.com/pub/adobe/reader/mac/%s/%s/%sUpd%s_MUI.dmg"
+    "https://ardownload2.adobe.com/pub/adobe/reader/mac/%s/%s/%sUpd%s_MUI.dmg"
 )
 # AcroRdrDCUpd1501620045_MUI.dmg
 AR_UPDATER_BASE_URL = "https://armmf.adobe.com/arm-manifests/mac"
