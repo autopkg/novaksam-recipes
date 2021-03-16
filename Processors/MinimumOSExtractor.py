@@ -129,7 +129,10 @@ class MinimumOSExtractor(DmgMounter):
                     # It's ok if minimum_os_version contains 3 numbers, since
                     # we only use the second one to create our range
                     # print(minimum_os_version)
-                    os_min = int(minimum_os_version.split('.')[1])
+                    if minimum_os_version.split('.')[0] == '11':
+                        os_min = '16'
+                    else:
+                        os_min = int(minimum_os_version.split('.')[1])
                     # You have to add one to the maximum OS version, because the range
                     # appears to start at the minimum, but end one short of the max
                     # print(maximum_os_version)
