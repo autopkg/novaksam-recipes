@@ -15,8 +15,6 @@ and enabling installation on non-boot volumes.</string>
 		<string>AcrobatDC</string>
 		<key>NAME</key>
 		<string>Adobe Acrobat Reader DC</string>
-		<key>OS_VERSION</key>
-		<string>10.9.0</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
