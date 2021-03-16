@@ -137,9 +137,18 @@ class MinimumOSExtractor(DmgMounter):
                     os_requirement = ''
                     for os_version in range(os_min, os_max):
                         if os_requirement == '':
-                            os_requirement = '10.' + str(os_version) + '.x'
+                            # I currently don't have a better way to detect Big Sur
+                            # maybe this will just need to eventually go away
+                            if str(os_version) == '16':
+                                os_requirement = '11.x'
+                            else:
+                                os_requirement = '10.' + str(os_version) + '.x'
                         else:
-                            os_requirement = os_requirement + ',10.' + str(os_version) + '.x'
+                            if str(os_version) == '16':
+                                os_requirement = os_requirement + ',11.x'
+                            else:
+                                os_requirement = os_requirement + ',10.' + str(os_version) + '.x'
+                            
 
                     self.env['OS_REQUIREMENTS'] = os_requirement
                 else:
@@ -147,6 +156,10 @@ class MinimumOSExtractor(DmgMounter):
 
                 # Return minimum and maximum regardless, so they can be used as variables
                 # for say, dynamic smart group names
+                if minimum_os_version == '10.16':
+                    minimum_os_version = '11'
+                if maximum_os_version == '10.16':
+                    maximum_os_version = '11'
                 self.env["OS_MINIMUM"] = str(minimum_os_version)
                 self.env["OS_MAXIMUM"] = str(maximum_os_version)
                 self.output("OS Version requirements %s in file %s"
