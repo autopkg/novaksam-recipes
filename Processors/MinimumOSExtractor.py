@@ -130,7 +130,7 @@ class MinimumOSExtractor(DmgMounter):
                     # we only use the second one to create our range
                     # print(minimum_os_version)
                     if minimum_os_version.split('.')[0] == '11':
-                        os_min = '16'
+                        os_min = int('16')
                     else:
                         os_min = int(minimum_os_version.split('.')[1])
                     # You have to add one to the maximum OS version, because the range
@@ -138,6 +138,8 @@ class MinimumOSExtractor(DmgMounter):
                     # print(maximum_os_version)
                     os_max = int(maximum_os_version.split('.')[1]) + 1
                     os_requirement = ''
+                    self.output("OS Version requirements %s"
+                            % (os_max))
                     for os_version in range(os_min, os_max):
                         if os_requirement == '':
                             # I currently don't have a better way to detect Big Sur
