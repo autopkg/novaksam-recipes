@@ -27,8 +27,10 @@ from autopkglib import Processor, ProcessorError, URLGetter
 __all__ = ["AdobeAcrobatDcUpdateInfoProvider"]
 
 MAJOR_VERSION_DEFAULT = "AcrobatDC"
-CHECK_OS_VERSION_DEFAULT = "10.8"
-
+CHECK_OS_VERSION_DEFAULT = "10.13"
+# https://ardownload2.adobe.com/pub/adobe/reader/mac/AcrobatDC/2100120145/AcroRdrDC_2100120145_MUI.dmg
+# https://sstats.adobe.com/ee/v1/interact?configId=11dd9af9-1455-4159-bb5e-0b1fdf039f76:prod&requestId=d3354307-9e9b-4049-ac00-5255c845ab62
+# https://sstats.adobe.com/ee/v1/interact?configId=11dd9af9-1455-4159-bb5e-0b1fdf039f76:prod&requestId=d3354307-9e9b-4049-ac00-5255c845ab62
 AR_UPDATER_DOWNLOAD_URL = (
     "https://ardownload2.adobe.com/pub/adobe/acrobat/mac/%s/%s/%sUpd%s.dmg"
 )
