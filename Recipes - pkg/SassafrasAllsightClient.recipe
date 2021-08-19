@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of the Sassafras K2Client installer and creates a package.</string>
+	<key>Identifier</key>
+	<string>com.github.novaksam.pkg.SassafrasAllsightClient</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Sassafras K2 Client</string>
+		<key>INSTALLER_TYPE</key>
+		<string>client</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.4.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.jazzace.download.sassafrasallsight</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pattern</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/*.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Sassafras Software, Inc. (7Z2KSDFMVY)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%found_filename%</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+				<key>flat_pkg_path</key>
+				<string>%found_filename%</string>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK/KeyAccess.pkg/Payload</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgPayloadUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/Practica Musica.app</string>
+				<key>overwrite</key>
+				<string>true</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD/KeyAccess/*.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%found_filename%</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
+					<string>%RECIPE_CACHE_DIR%/downloads/PAYLOAD</string>
+					<string>%RECIPE_CACHE_DIR%/downloads/Practica Musica.app</string>
+				</array>
+			</dict>
+			<key>Comment</key>
+			<string>Gotta clean up after myself!</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
