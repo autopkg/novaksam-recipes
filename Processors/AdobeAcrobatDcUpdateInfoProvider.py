@@ -77,6 +77,8 @@ class AdobeAcrobatDcUpdateInfoProvider(URLGetter):
         version_string = version_string.replace(AR_MAJREV_IDENTIFIER, major_version)
 
         versioncode = version_string.replace(".", "")
+        versioncode = versioncode.replace("\n","")
+    
         url = AR_UPDATER_DOWNLOAD_URL % (
             major_version,
             versioncode,
