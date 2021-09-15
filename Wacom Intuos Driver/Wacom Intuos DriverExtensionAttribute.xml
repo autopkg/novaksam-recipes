@@ -8,8 +8,8 @@
 		<script>#!/bin/bash
 
 ExtensionVersion=""
-if [ -f /Library/Application\ Support/Tablet/WacomTabletDriver.app/Contents/Info.plist ]; then
-	ExtensionVersion=$(defaults read /Library/Application\ Support/Tablet/WacomTabletDriver.app/Contents/Info.plist CFBundleVersion)
+if [ -f /Applications/Wacom\ Tablet/.Tablet/WacomTabletDriver.app/Contents/Info.plist ]; then
+	ExtensionVersion=$(defaults read /Applications/Wacom\ Tablet/.Tablet/WacomTabletDriver.app/Contents/Info.plist CFBundleVersion)
 fi
 
 if [ "$ExtensionVersion" == "" ]; then
