@@ -80,6 +80,8 @@ class AdobeAcrobatReaderDcUpdateInfoProvider(URLGetter):
         version_string = version_string.replace(AR_MAJREV_IDENTIFIER, major_version)
 
         versioncode = version_string.replace(".", "")
+        versioncode = versioncode.replace("\n","")
+
         readerversion = "AcroRdrDC"
         url = AR_UPDATER_DOWNLOAD_URL % (
             major_version,
@@ -88,7 +90,7 @@ class AdobeAcrobatReaderDcUpdateInfoProvider(URLGetter):
             versioncode,
         )
 
-        return (url, version_string)
+        return (url, versioncode)
 
     def main(self):
         major_version = self.env.get("major_version", MAJOR_VERSION_DEFAULT)
