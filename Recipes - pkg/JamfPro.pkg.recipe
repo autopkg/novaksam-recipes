@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>check_version_path</key>
-				<string>/Applications/%NAME%/Jamf Imaging.app</string>
+				<string>/Applications/%NAME%/Jamf Admin.app</string>
 				<key>pathname</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 				<key>sourcelist</key>
@@ -37,17 +37,6 @@
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Jamf Admin.app</string>
 				<key>requirement</key>
 				<string>identifier "com.jamfsoftware.JamfAdmin" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "483DWKW443"</string>
-			</dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%/Jamf Imaging.app</string>
-				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.jamfsoftware.JamfImaging" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "483DWKW443"</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -93,7 +82,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
-				<string>%pathname%/Applications/%NAME%/Jamf Imaging.app/Contents/Info.plist</string>
+				<string>%pathname%/Applications/%NAME%/Jamf Admin.app/Contents/Info.plist</string>
 				<key>plist_keys</key>
 				<dict>
 					<key>CFBundleIdentifier</key>
@@ -109,7 +98,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Applications/%NAME%/Jamf Imaging.app/Contents/Info.plist</string>
+				<string>%pathname%/Applications/%NAME%/Jamf Admin.app/Contents/Info.plist</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.autopkg.novaksam-recipes.Processors/MinimumOSExtractor</string>
