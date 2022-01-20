@@ -88,8 +88,7 @@ class MinimumOSExtractor(DmgMounter):
     def main(self):
         """Return a version for file at input_plist_path"""
         # Check if we're trying to read something inside a dmg.
-        (dmg_path, dmg, dmg_source_path) = (
-            self.parsePathForDMG(self.env['input_plist_path']))
+        (dmg_path, dmg, dmg_source_path) = (            self.parsePathForDMG(self.env['input_plist_path']))
         try:
             if dmg:
                 # Mount dmg and copy path inside.
@@ -129,7 +128,7 @@ class MinimumOSExtractor(DmgMounter):
                     # It's ok if minimum_os_version contains 3 numbers, since
                     # we only use the second one to create our range
                     # print(minimum_os_version)
-                    if minimum_os_version.split('.')[0] == '11':
+                    if minimum_os_version.split('.')[0] == '12':
                         os_min = int('16')
                     else:
                         os_min = int(minimum_os_version.split('.')[1])
@@ -145,12 +144,12 @@ class MinimumOSExtractor(DmgMounter):
                             # I currently don't have a better way to detect Big Sur
                             # maybe this will just need to eventually go away
                             if str(os_version) == '16':
-                                os_requirement = '11.x'
+                                os_requirement = '11.x,12.x'
                             else:
                                 os_requirement = '10.' + str(os_version) + '.x'
                         else:
                             if str(os_version) == '16':
-                                os_requirement = os_requirement + ',11.x'
+                                os_requirement = os_requirement + ',11.x,12.x'
                             else:
                                 os_requirement = os_requirement + ',10.' + str(os_version) + '.x'
                             
@@ -162,9 +161,9 @@ class MinimumOSExtractor(DmgMounter):
                 # Return minimum and maximum regardless, so they can be used as variables
                 # for say, dynamic smart group names
                 if minimum_os_version == '10.16':
-                    minimum_os_version = '11'
+                    minimum_os_version = '12'
                 if maximum_os_version == '10.16':
-                    maximum_os_version = '11'
+                    maximum_os_version = '12'
                 self.env["OS_MINIMUM"] = str(minimum_os_version)
                 self.env["OS_MAXIMUM"] = str(maximum_os_version)
                 self.output("OS Version requirements %s in file %s"
