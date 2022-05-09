@@ -19,23 +19,12 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>Brackets\.Release\.[\d\.]+\.dmg</string>
+				<string>Brackets\.[\d\.]+\.signed\.dmg</string>
 				<key>github_repo</key>
-				<string>adobe/brackets</string>
+				<string>brackets-cont/brackets</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>index</key>
-				<integer>1</integer>
-				<key>split_on</key>
-				<string>-</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -52,7 +41,7 @@
 				<key>input_path</key>
 				<string>%pathname%/Brackets.app</string>
 				<key>requirement</key>
-				<string>identifier "io.brackets.appshell" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JQ525L2MZD</string>
+				<string>identifier "io.brackets.appshell" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "8F632A866K"</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
