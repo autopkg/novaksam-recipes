@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>Brackets\.[\d\.]+\.signed\.dmg</string>
+				<string>[Bb]rackets\.[\d\.]+\.dmg</string>
 				<key>github_repo</key>
 				<string>brackets-cont/brackets</string>
 			</dict>
