@@ -8,6 +8,8 @@
 	<string>com.github.novaksam.jamf.XCode</string>
 	<key>Input</key>
 	<dict>
+		<key>APPLICATION_NAME</key>
+		<string>XCode.app</string>
 		<key>CATEGORY</key>
 		<string>Plugins and Frameworks</string>
 		<key>GROUP_NAME</key>
