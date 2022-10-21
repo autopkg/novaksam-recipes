@@ -11,7 +11,7 @@
 		<key>CATEGORY</key>
 		<string>Productivity</string>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
-		<string>Zoom Outlook Plugin Version</string>
+		<string>Zoom Outlook Plugin</string>
 		<key>EXTENSION_ATTRIBUTE_SCRIPT</key>
 		<string>ExtensionAttribute-ZoomOutlookPlugin.sh</string>
 		<key>GROUP_NAME</key>

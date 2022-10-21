@@ -11,7 +11,7 @@
 		<key>CATEGORY</key>
 		<string>Utilities</string>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
-		<string>Wacom Intuos Driver Version</string>
+		<string>Wacom Intuos Driver</string>
 		<key>EXTENSION_ATTRIBUTE_SCRIPT</key>
 		<string>ExtensionAttribute-WacomIntuosDriver.sh</string>
 		<key>GROUP_NAME</key>
