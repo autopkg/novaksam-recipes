@@ -13,7 +13,7 @@
 		<key>CATEGORY</key>
 		<string>Productivity</string>
 		<key>GROUP_NAME</key>
-		<string>Outdated Zoom</string>
+		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>JamfSmartGroupTemplate-zoom.xml</string>
 		<key>NAME</key>
