@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Recipe automatically generated from local.jss.MicrosoftOneDrive by JamfRecipeMaker</string>
+	<string>Recipe automatically generated from local.jss.Logic Pro X by JamfRecipeMaker</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jamf.OneDrive</string>
+	<string>com.github.novaksam.jamf.LogicProX</string>
 	<key>Input</key>
 	<dict>
 		<key>APPLICATION_NAME</key>
-		<string>OneDrive.app</string>
+		<string>Logic Pro.app</string>
 		<key>CATEGORY</key>
-		<string>Productivity</string>
+		<string>Media</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>JamfSmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>OneDrive</string>
+		<string>Logic Pro X</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_NAME</key>
@@ -25,11 +25,11 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>JamfPolicyTemplate.xml</string>
 		<key>POLICY_TRIGGER</key>
-		<string>Install_OneDrive</string>
+		<string>Install_LogicPro</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Save your files and photos to OneDrive and access them from any device, anywhere.</string>
+		<string>Logic Pro is a digital audio workstation and MIDI sequencer software application for the Mac OS X platform.</string>
 		<key>SELF_SERVICE_DISPLAY_NAME</key>
-		<string>%NAME%</string>
+		<string>Install Latest %NAME%</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>%NAME%.png</string>
 		<key>TESTING_GROUP_NAME</key>
@@ -40,7 +40,7 @@
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.rtrouton.pkg.microsoftonedrive</string>
+	<string>com.github.nmcspadden.pkg.appstore</string>
 	<key>Process</key>
 	<array>
 		<dict>
