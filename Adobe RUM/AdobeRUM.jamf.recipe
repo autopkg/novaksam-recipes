@@ -11,7 +11,7 @@
 		<key>CATEGORY</key>
 		<string>Adobe Tools</string>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
-		<string>Adobe RUM Version</string>
+		<string>Adobe RUM</string>
 		<key>EXTENSION_ATTRIBUTE_SCRIPT</key>
 		<string>ExtensionAttribute-AdobeRUM.sh</string>
 		<key>GROUP_NAME</key>
