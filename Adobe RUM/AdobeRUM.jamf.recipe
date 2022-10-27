@@ -36,6 +36,8 @@
 		<string>Testing</string>
 		<key>UPDATE_PREDICATE</key>
 		<string>pkg_uploaded == False</string>
+		<key>replace_ea</key>
+		<string>True</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
