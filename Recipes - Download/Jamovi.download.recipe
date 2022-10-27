@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>jamovi</string>
 		<key>RELEASE</key>
-		<string>current</string>
+		<string>solid</string>
 		<key>Sig_OU_Note</key>
 		<string>Depending on if you choose solid (W84U6Y3S2L) or current ("9NCBP559AB") the Team ID has changed. Obviously this is inconvenient, and less secure, but we play the hands we're dealt</string>
 		<key>Sig_OU</key>
@@ -31,7 +31,7 @@
 				<key>url</key>
 				<string>https://www.jamovi.org/download.html</string>
 				<key>result_output_var_name</key>
-                			<string>version</string>
+                <string>version</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -44,7 +44,7 @@
 				<key>url</key>
 				<string>https://www.jamovi.org/download.html</string>
 				<key>result_output_var_name</key>
-                			<string>url</string>
+                <string>url</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
