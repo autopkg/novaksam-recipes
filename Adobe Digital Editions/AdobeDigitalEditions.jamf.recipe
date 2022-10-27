@@ -8,6 +8,8 @@
 	<string>com.github.novaksam.jamf.AdobeDigitalEditions</string>
 	<key>Input</key>
 	<dict>
+		<key>APPLICATION_NAME</key>
+		<string>Adobe Digital Editions.app</string>
 		<key>CATEGORY</key>
 		<string>Media</string>
 		<key>GROUP_NAME</key>

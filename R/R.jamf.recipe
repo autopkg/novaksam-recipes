@@ -8,6 +8,8 @@
 	<string>com.github.novaksam.jamf.R</string>
 	<key>Input</key>
 	<dict>
+		<key>APPLICATION_NAME</key>
+		<string>R.app</string>
 		<key>CATEGORY</key>
 		<string>Productivity</string>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
