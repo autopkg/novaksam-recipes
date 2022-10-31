@@ -14,31 +14,98 @@
         <string></string>
         <key>GITHUB_REPO</key>
         <string>Lawrence-Public-Schools/appleloops</string>
+        <key>DOWNLOAD_URL</key>
+        <string>https://raw.githubusercontent.com/Lawrence-Public-Schools/appleloops/master/dist/zipapp/usr/local/bin/appleloops</string>
+        <key>SEARCH_URL</key>
+        <string>https://raw.githubusercontent.com/Lawrence-Public-Schools/appleloops/64fa0ffde6c80e1d38625bfb707af5c85376c505/src/loopslib/version.py</string>
+        <key>SEARCH_PATTERN</key>
+        <string>VERSION\ =\ \'(.*?)\'</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.5.0</string>
     <key>Process</key>
     <array>
         <dict>
-            <key>Processor</key>
-            <string>GitHubReleasesInfoProvider</string>
-            <key>Arguments</key>
-            <dict>
-                <key>asset_regex</key>
-                <string>appleloops.*?pkg$</string>
-                <key>github_repo</key>
-                <string>%GITHUB_REPO%</string>
-                <key>include_prereleases</key>
-                <string>%INCLUDE_PRERELEASES%</string>
-            </dict>
-        </dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>%SEARCH_PATTERN%</string>
+				<key>url</key>
+				<string>%SEARCH_URL%</string>
+                <key>result_output_var_name</key>
+				<string>version</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
         <dict>
+            <key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
+			</dict>
             <key>Processor</key>
             <string>URLDownloader</string>
         </dict>
         <dict>
             <key>Processor</key>
+            <string>PkgRootCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkgroot</key>
+                <string>%RECIPE_CACHE_DIR%/payload</string>
+                <key>pkgdirs</key>
+                <dict>
+                    <key>usr/local/bin</key>
+                    <string>0755</string>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>Copier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>source_path</key>
+                <string>%pathname%</string>
+                <key>destination_path</key>
+                <string>%pkgroot%/usr/local/bin/appleloops</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
             <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>PkgCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_request</key>
+                <dict>
+                    <key>chown</key>
+                    <array>
+                        <dict>
+                            <key>user</key>
+                            <string>root</string>
+                            <key>group</key>
+                            <string>wheel</string>
+                            <key>path</key>
+                            <string>usr</string>
+                            <key>mode</key>
+                            <string>755</string>
+                        </dict>
+                    </array>
+                    <key>id</key>
+                    <string>com.github.carlashley.appleloops</string>
+                    <key>options</key>
+                    <string>purge_ds_store</string>
+                    <key>pkgname</key>
+                    <string>%NAME%-%version%</string>
+                    <key>pkgroot</key>
+                    <string>%RECIPE_CACHE_DIR%/payload</string>
+                </dict>
+            </dict>
         </dict>
     </array>
 </dict>
