@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Android Studio IDE from Google.</string>
+	<string>Downloads the latest Adoptium JDK version 8.</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.download.AdoptiumJDK8Intel</string>
 	<key>Input</key>
 	    <dict>
         	<key>NAME</key>
-        	<string>Adoptium JDK 11</string>
+        	<string>Adoptium JDK 8</string>
         	<key>VENDOR</key>
         	<string>Adoptium</string>
         	<key>DISTRIBUTION</key>
