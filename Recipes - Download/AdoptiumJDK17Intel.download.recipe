@@ -3,18 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Android Studio IDE from Google.</string>
+	<string>Downloads the latest Adoptium JDK version 17.</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.download.AndroidStudio</string>
+	<string>com.github.novaksam.download.AdoptiumJDK17Intel</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>AndroidStudio</string>
-		<key>SEARCH_PATTERN</key>
-		<string>(https\://redirector\.gvt1\.com/edgedl/android/studio/install/.+/android-studio.+\.dmg)</string>
+		<string>Adoptium JDK 17</string>
+		<key>VENDOR</key>
+		<string>Adoptium</string>
+		<key>DISTRIBUTION</key>
+		<string>OpenJDK</string>
+		<key>SOFTWARETITLE</key>
+		<string>Java</string>
+		<key>SOFTWARETYPE</key>
+		<string>JDK</string>
 		<key>SEARCH_URL</key>
-		<string>https://developer.android.com/studio</string>
-	</dict>
+		<string>https://github.com/adoptium/temurin17-binaries/releases/latest</string>
+		<key>SEARCH_PATTERN</key>
+		<string>(https.*?OpenJDK17U-jdk.*?\.pkg)</string>
+    	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>Process</key>
