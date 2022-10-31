@@ -13,7 +13,7 @@
         <key>INCLUDE_PRERELEASES</key>
         <string></string>
         <key>GITHUB_REPO</key>
-        <string>carlashley/appleloops</string>
+        <string>Lawrence-Public-Schools/appleloops</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.5.0</string>
