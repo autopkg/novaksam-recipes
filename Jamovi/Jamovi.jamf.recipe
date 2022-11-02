@@ -8,6 +8,8 @@
 	<string>com.github.novaksam.jamf.Jamovi</string>
 	<key>Input</key>
 	<dict>
+		<key>APPLICATION_NAME</key>
+		<string>Jamovi.app</string>
 		<key>CATEGORY</key>
 		<string>Productivity</string>
 		<key>GROUP_NAME</key>
