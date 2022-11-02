@@ -44,7 +44,7 @@
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.beatlemike.pkg.EclipseTemurin8</string>
+	<string>com.github.novaksam.pkg.EclipseTemurin8</string>
 	<key>Process</key>
 	<array>
 		<dict>
