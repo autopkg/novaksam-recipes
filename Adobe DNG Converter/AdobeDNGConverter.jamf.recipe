@@ -27,7 +27,7 @@
 		<key>POLICY_TRIGGER</key>
 		<string>Install_AdobeDNG</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Convert proprietary RAW files to the Digital Negative format.</string>>
+		<string>Convert proprietary RAW files to the Digital Negative format.</string>
 		<key>SELF_SERVICE_ICON</key>
 		<string>%NAME%.png</string>
 		<key>TESTING_GROUP_NAME</key>
