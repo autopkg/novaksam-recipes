@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Identifier</key>
-	<string>com.github.novaksam.jamf.AdobeAcrobatReaderDC</string>
+	<string>com.github.novaksam.jamf.AdobeAcrobatReaderDCUpdates</string>
 	<key>Input</key>
 	<dict>
 		<key>APPLICATION_NAME</key>
@@ -15,7 +15,7 @@
 		<key>GROUP_TEMPLATE</key>
 		<string>JamfSmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>Adobe Acrobat Reader DC</string>
+		<string>Adobe Acrobat Reader DC Updates</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_NAME</key>
@@ -23,7 +23,7 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>JamfPolicyTemplate.xml</string>
 		<key>POLICY_TRIGGER</key>
-		<string>Install_AdobeAcrobatReaderDC</string>
+		<string>Install_AdobeAcrobatReaderDCUpdates</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string>Adobe Acrobat Reader DC software is the free global standard for reliably viewing, printing, and commenting on PDF documents.</string>
 		<key>SELF_SERVICE_ICON</key>
@@ -34,7 +34,7 @@
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.pkg.AdobeAcrobatReaderDC</string>
+	<string>com.github.novaksam.pkg.AdobeAcrobatReaderDCUpdates</string>
 	<key>Process</key>
 	<array>
 <dict>
