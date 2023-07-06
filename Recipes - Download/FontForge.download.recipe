@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_PATTERN</key>
-		<string>(/fontforge/fontforge/releases/download/\d+\/.+\.dmg)</string>
+		<string>(.*/fontforge/fontforge/releases/download/\d+\/.+\.dmg)</string>
 		<key>NAME</key>
 		<string>FontForge</string>
 		<key>VERSION_PATTERN</key>
@@ -21,35 +21,25 @@
 	<string>0.4.0</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>%VERSION_PATTERN%</string>
-				<key>url</key>
-				<string>%VERSION_URL%</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>%DOWNLOAD_PATTERN%</string>
-				<key>url</key>
-				<string>https://github.com%match%</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
+
+                <dict>
+                        <key>Arguments</key>
+                        <dict>
+                                <key>asset_regex</key>
+                                <string>[Ff]ont[Ff]orge-.+\.dmg</string>
+                                <key>github_repo</key>
+                                <string>fontforge/fontforge</string>
+                        </dict>
+                        <key>Processor</key>
+                        <string>GitHubReleasesInfoProvider</string>
+                </dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://github.com%match%</string>
+				<string>%url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
