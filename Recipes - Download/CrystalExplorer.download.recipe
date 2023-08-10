@@ -21,7 +21,7 @@
 				<key>re_pattern</key>
 				<string>CrystalExplorer-([0-9\.]+)-Darwin.dmg</string>
 				<key>url</key>
-				<string>https://crystalexplorer.net/download.html</string>
+				<string>https://crystalexplorer.net/download</string>
 				<key>result_output_var_name</key>
                 <string>version</string>
 			</dict>
@@ -32,9 +32,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(https://.*CrystalExplorer-[0-9\.]+-Darwin.dmg)</string>
+				<string>(https://releases.crystalexplorer.net/CrystalExplorer-[0-9\.]+-Darwin.dmg)</string>
 				<key>url</key>
-				<string>https://crystalexplorer.net/download.html</string>
+				<string>https://crystalexplorer.net/download</string>
 				<key>result_output_var_name</key>
                 <string>url</string>
 			</dict>
