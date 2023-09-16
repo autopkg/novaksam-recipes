@@ -90,15 +90,16 @@ class AdobeAcrobatReaderDcUpdateInfoProvider(URLGetter):
             versioncode,
         )
 
-        return (url, versioncode)
+        return (url, versioncode, version_string)
 
     def main(self):
         major_version = self.env.get("major_version", MAJOR_VERSION_DEFAULT)
 
-        (url, version) = self.get_reader_updater_dmg_url(major_version)
+        (url, versioncode, version_string) = self.get_reader_updater_dmg_url(major_version)
 
         self.env["url"] = url
-        self.env["version"] = version
+        self.env["version"] = version_string
+        self.env["versioncode"] = versioncode
 
         self.output("Found URL %s" % self.env["url"])
 
