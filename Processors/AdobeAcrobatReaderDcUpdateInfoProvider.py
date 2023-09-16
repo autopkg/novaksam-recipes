@@ -66,6 +66,9 @@ class AdobeAcrobatReaderDcUpdateInfoProvider(URLGetter):
     output_variables = {
         "url": {"description": "URL to the latest Adobe Reader release.",},
         "version": {"description": "Version for this update.",},
+        "versioncode": {
+            "description": "Version string without decimails (e.g. '.')."
+        }
     }
 
     def get_reader_updater_dmg_url(self, major_version):
