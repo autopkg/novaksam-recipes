@@ -78,8 +78,8 @@ class AdobeAcrobatDcUpdateInfoProvider(URLGetter):
             raise ProcessorError("Can't open URL template: %s" % (err))
         version_string = version_string.replace(AR_MAJREV_IDENTIFIER, major_version)
 
+        version_string = version_string.replace("\n","")
         versioncode = version_string.replace(".", "")
-        versioncode = versioncode.replace("\n","")
 
         url = AR_UPDATER_DOWNLOAD_URL % (
             major_version,
