@@ -66,6 +66,9 @@ class AdobeAcrobatReaderDcUpdateInfoProvider(URLGetter):
     output_variables = {
         "url": {"description": "URL to the latest Adobe Reader release.",},
         "version": {"description": "Version for this update.",},
+        "versioncode": {
+            "description": "Version string without decimails (e.g. '.')."
+        }
     }
 
     def get_reader_updater_dmg_url(self, major_version):
@@ -79,8 +82,8 @@ class AdobeAcrobatReaderDcUpdateInfoProvider(URLGetter):
             raise ProcessorError("Can't open URL template: %s" % (err))
         version_string = version_string.replace(AR_MAJREV_IDENTIFIER, major_version)
 
+        version_string = version_string.replace("\n","")
         versioncode = version_string.replace(".", "")
-        versioncode = versioncode.replace("\n","")
 
         readerversion = "AcroRdrDC"
         url = AR_UPDATER_DOWNLOAD_URL % (
@@ -90,15 +93,16 @@ class AdobeAcrobatReaderDcUpdateInfoProvider(URLGetter):
             versioncode,
         )
 
-        return (url, versioncode)
+        return (url, versioncode, version_string)
 
     def main(self):
         major_version = self.env.get("major_version", MAJOR_VERSION_DEFAULT)
 
-        (url, version) = self.get_reader_updater_dmg_url(major_version)
+        (url, versioncode, version_string) = self.get_reader_updater_dmg_url(major_version)
 
         self.env["url"] = url
-        self.env["version"] = version
+        self.env["version"] = version_string
+        self.env["versioncode"] = versioncode
 
         self.output("Found URL %s" % self.env["url"])
 
