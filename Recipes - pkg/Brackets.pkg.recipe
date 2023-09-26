@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads latest Brackets disk image and builds a package.</string>
+	<string>Downloads latest Brackets disk image and builds a package.
+	Relies on the Github version string rather than the Info.plist within the app bundle.
+	The application version is not reliably maintained by developer.</string>
 	<key>Identifier</key>
 	<string>com.github.novaksam.pkg.Brackets</string>
 	<key>Input</key>
