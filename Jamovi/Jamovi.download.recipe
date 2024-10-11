@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of jamovi.</string>
 	<key>Identifier</key>
@@ -12,12 +10,17 @@
 	<dict>
 		<key>NAME</key>
 		<string>jamovi</string>
+		<!--
+		  Release has two options available. Either current or solid. You will need to update the ARCH input based on your choice here.
+		-->
 		<key>RELEASE</key>
 		<string>solid</string>
-		<key>Sig_OU_Note</key>
-		<string>Depending on if you choose solid (W84U6Y3S2L) or current ("9NCBP559AB") the Team ID has changed. Obviously this is inconvenient, and less secure, but we play the hands we're dealt</string>
-		<key>Sig_OU</key>
-		<string>"9NCBP559AB"</string>
+		<!--
+		  ARCH input changes based on your RELEASE selection. If using solid, just set it to macos.
+            If you are using current. Either use macos-arm64 or macos-x64 based on your need.
+		-->
+		<key>ARCH</key>
+		<string>macos</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -27,7 +30,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>([0-9\.]+).*[\r\n|\n|\r]+.*%RELEASE%</string>
+				<string>&lt;td&gt;(macOS)&lt;\/td&gt;&lt;td&gt;(%RELEASE%)&lt;\/td&gt;&lt;td&gt;(\d+\.\d+\.\d+)&lt;\/td&gt;</string>
 				<key>url</key>
 				<string>https://www.jamovi.org/download.html</string>
 				<key>result_output_var_name</key>
@@ -40,7 +43,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(/downloads/.*%version%.*.dmg)</string>
+				<string>(/downloads/.*%version%.*-%ARCH%.dmg)</string>
 				<key>url</key>
 				<string>https://www.jamovi.org/download.html</string>
 				<key>result_output_var_name</key>
@@ -52,8 +55,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>%NAME%.dmg</string>
+                <key>prefetch_filename</key>
+                <string>True</string>
 				<key>url</key>
 				<string>https://www.jamovi.org%url%</string>
 			</dict>
@@ -66,7 +69,7 @@
 				<key>input_path</key>
 				<string>%pathname%/jamovi.app</string>
 				<key>requirement</key>
-				<string>identifier "org.jamovi.jamovi" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = %Sig_OU%</string>
+				<string>identifier "org.jamovi.jamovi" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "9NCBP559AB"</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
