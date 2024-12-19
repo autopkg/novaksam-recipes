@@ -23,7 +23,7 @@
 				<key>re_pattern</key>
 				<string>http://sourceforge.net/projects/openofficeorg.mirror/files/(?P&lt;version&gt;[0-9\.]+)</string>
 				<key>url</key>
-				<string>http://sourceforge.net/projects/openofficeorg.mirror/rss?limit=1</string>
+				<string>https://sourceforge.net/projects/openofficeorg.mirror/rss?limit=1</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
