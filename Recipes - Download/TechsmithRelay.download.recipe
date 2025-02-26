@@ -17,6 +17,10 @@
 	<string>0.4.0</string>
 	<key>Process</key>
 	<array>
+        <dict>
+            <key>Processor</key>
+            <string>DeprecationWarning</string>
+        </dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
