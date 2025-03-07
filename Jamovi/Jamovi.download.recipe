@@ -11,16 +11,15 @@
 		<key>NAME</key>
 		<string>jamovi</string>
 		<!--
-		  Release has two options available. Either current or solid. You will need to update the ARCH input based on your choice here.
+		  Release has two options available. Either current or solid.
 		-->
 		<key>RELEASE</key>
 		<string>solid</string>
 		<!--
-		  ARCH input changes based on your RELEASE selection. If using solid, just set it to macos.
-            If you are using current. Either use macos-arm64 or macos-x64 based on your need.
+		  Use macos-arm64 or macos-x64 based on your need. Default is macos-x64.
 		-->
 		<key>ARCH</key>
-		<string>macos</string>
+		<string>macos-x64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -30,11 +29,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>&lt;td&gt;(macOS)&lt;\/td&gt;&lt;td&gt;(%RELEASE%)&lt;\/td&gt;&lt;td&gt;(\d+\.\d+\.\d+)&lt;\/td&gt;</string>
+				<string>&lt;td&gt;(%RELEASE%)&lt;\/td&gt;&lt;td&gt;(\d+\.\d+\.\d+)&lt;\/td&gt;&lt;td&gt;x64|arm64&lt;\/td&gt;&lt;td&gt;\.dmg&lt;\/td&gt;</string>
 				<key>url</key>
 				<string>https://www.jamovi.org/download.html</string>
 				<key>result_output_var_name</key>
-                <string>version</string>
+                		<string>version</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -47,7 +46,7 @@
 				<key>url</key>
 				<string>https://www.jamovi.org/download.html</string>
 				<key>result_output_var_name</key>
-                <string>url</string>
+                		<string>url</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -55,8 +54,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-                <key>prefetch_filename</key>
-                <string>True</string>
+                		<key>prefetch_filename</key>
+                		<string>True</string>
 				<key>url</key>
 				<string>https://www.jamovi.org%url%</string>
 			</dict>
