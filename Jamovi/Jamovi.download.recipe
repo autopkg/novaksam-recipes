@@ -42,7 +42,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(/downloads/.*%version%.*-%ARCH%.dmg)</string>
+				<string>(dl.jamovi.org/.*%version%.*-%ARCH%.dmg)</string>
 				<key>url</key>
 				<string>https://www.jamovi.org/download.html</string>
 				<key>result_output_var_name</key>
@@ -57,7 +57,7 @@
                 		<key>prefetch_filename</key>
                 		<string>True</string>
 				<key>url</key>
-				<string>https://www.jamovi.org%url%</string>
+				<string>https://%url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
