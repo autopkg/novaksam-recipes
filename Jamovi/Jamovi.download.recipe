@@ -29,11 +29,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>&lt;td&gt;(%RELEASE%)&lt;\/td&gt;&lt;td&gt;(\d+\.\d+\.\d+)&lt;\/td&gt;&lt;td&gt;x64|arm64&lt;\/td&gt;&lt;td&gt;\.dmg&lt;\/td&gt;</string>
+				<string>&lt;td&gt;(%RELEASE%)&lt;\/td&gt;&lt;td&gt;(?P&lt;version&gt;\d+\.\d+\.\d+)&lt;\/td&gt;&lt;td&gt;(x64|arm64)&lt;\/td&gt;&lt;td&gt;\.dmg&lt;\/td&gt;</string>
 				<key>url</key>
 				<string>https://www.jamovi.org/download.html</string>
-				<key>result_output_var_name</key>
-                		<string>version</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
