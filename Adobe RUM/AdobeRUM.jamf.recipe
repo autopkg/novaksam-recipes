@@ -42,7 +42,7 @@
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.novaksam.pkg.AdobeRUM</string>
+	<string>com.github.moofit-recipes.pkg.RemoteUpdateManager</string>
 	<key>Process</key>
 	<array>
 		<dict>
