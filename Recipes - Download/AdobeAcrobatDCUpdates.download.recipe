@@ -46,6 +46,10 @@ Set MAJOR_VERSION to "Acrobat2015" to download the 'Classic Track' updates for a
 			<string>URLDownloader</string>
 		</dict>
 		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>expected_authority_names</key>
@@ -59,10 +63,6 @@ Set MAJOR_VERSION to "Acrobat2015" to download the 'Classic Track' updates for a
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
 		</dict>
 	</array>
 </dict>

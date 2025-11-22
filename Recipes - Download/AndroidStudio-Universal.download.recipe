@@ -112,10 +112,6 @@ Downloads both the ARM and Intel builds.
 				<key>Processor</key>
 				<string>CodeSignatureVerifier</string>
 			</dict>
-			<dict>
-				<key>Processor</key>
-				<string>EndOfCheckPhase</string>
-			</dict>
 		</array>
 	</dict>
 </plist>
