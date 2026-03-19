@@ -20,7 +20,7 @@
 		<key>SUPPORTED_ARCH</key>
 		<string>x86_64</string>
 		<key>SEARCH_PATTERN</key>
-		<string>(https\://redirector\.gvt1\.com/edgedl/android/studio/install/.+/android-studio.+%DOWNLOAD_ARCH%\.dmg)</string>
+		<string>(https\://edgedl\.me\.gvt1\.com/android/studio/install/.+/android-studio.+%DOWNLOAD_ARCH%\.dmg)</string>
 		<key>SEARCH_URL</key>
 		<string>https://developer.android.com/studio</string>
 	</dict>
