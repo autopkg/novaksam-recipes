@@ -20,34 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pattern</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/*.pkg</string>
-			</dict>
-			<key>Processor</key>
-			<string>FileFinder</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>expected_authority_names</key>
-				<array>
-					<string>Developer ID Installer: Sassafras Software, Inc. (7Z2KSDFMVY)</string>
-					<string>Developer ID Certification Authority</string>
-					<string>Apple Root CA</string>
-				</array>
-				<key>input_path</key>
-				<string>%found_filename%</string>
-			</dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/UNPACK</string>
 				<key>flat_pkg_path</key>
-				<string>%found_filename%</string>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>FlatPkgUnpacker</string>
@@ -91,7 +67,7 @@
 				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
 				<key>source_pkg</key>
-				<string>%found_filename%</string>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCopier</string>
