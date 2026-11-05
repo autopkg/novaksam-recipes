@@ -18,9 +18,9 @@ Downloads both the ARM and Intel builds.
 			<key>INTEL_ARCHITECTURE</key>
 			<string>mac</string>
 			<key>SEARCH_PATTERN_ARM</key>
-			<string>(https\://redirector\.gvt1\.com/edgedl/android/studio/install/.+/android-studio.+%ARM_ARCHITECTURE%\.dmg)</string>
+			<string>(https\://edgedl\.me\.gvt1\.com/android/studio/install/.+/android-studio.+%ARM_ARCHITECTURE%\.dmg)</string>
 			<key>SEARCH_PATTERN_INTEL</key>
-			<string>(https\://redirector\.gvt1\.com/edgedl/android/studio/install/.+/android-studio.+%INTEL_ARCHITECTURE%\.dmg)</string>
+			<string>(https\://edgedl\.me\.gvt1\.com/android/studio/install/.+/android-studio.+%INTEL_ARCHITECTURE%\.dmg)</string>
 			<key>SEARCH_URL</key>
 			<string>https://developer.android.com/studio</string>
 		</dict>
